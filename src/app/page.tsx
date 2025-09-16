@@ -1,3 +1,9 @@
+import { ping } from './lib/ping';
+
 export default function Home() {
-  return <>Hello world</>;
+  return (
+    <main className="p-6">
+      <h1 className="text-2xl font-bold">Hello world – {ping}</h1>
+    </main>
+  );
 }
