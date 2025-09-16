@@ -1,4 +1,4 @@
-import { ping } from './lib/ping';
+import { ping } from '@/app/lib/ping';
 
 export default function Home() {
   return (
