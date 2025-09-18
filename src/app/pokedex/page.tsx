@@ -10,15 +10,18 @@ import PokemonType from '@/components/pokemon-type';
 import SearchForm from '@/components/search-form';
 import SpriteContainer from '@/components/sprite-container';
 
+// --- API types you actually use on this page ---
 type Pokemon = {
   id: number;
   name: string;
-  height: number;
-  weight: number;
+  height: number; // decimeters
+  weight: number; // hectograms
   sprites: { front_default: string | null };
   types: { slot: number; type: { name: string } }[];
-  // add fields you need later (stats, etc.)
+  stats: { base_stat: number; stat: { name: StatName } }[];
 };
+
+type StatName = 'hp' | 'attack' | 'defense' | 'special-attack' | 'special-defense' | 'speed';
 
 export default function App() {
   const [searchText, setSearchText] = useState('');
@@ -43,9 +46,7 @@ export default function App() {
         throw new Error('Failed to fetch Pokémon.');
       }
       const data: Pokemon = await res.json();
-      // Log fetched data for QA
-      console.log('Fetched Pokémon:', data);
-
+      console.log('Fetched Pokémon:', data); // QA log
       setPokemon(data);
     } catch (err: any) {
       setError(err?.message ?? 'Unexpected error.');
@@ -57,14 +58,32 @@ export default function App() {
   const onSearch = () => fetchPokemon(searchText);
   const onRandom = () => {
     const randomId = Math.floor(Math.random() * 1025) + 1; // 1–1025
-    setSearchText(String(randomId));
-    fetchPokemon(String(randomId));
+    const q = String(randomId);
+    setSearchText(q);
+    fetchPokemon(q);
   };
   const onClear = () => {
     setSearchText('');
     setPokemon(null);
     setError(null);
   };
+
+  // --- Derived props for children (keeps JSX tidy) ---
+  const titleName = pokemon?.name ?? null;
+  const titleId = pokemon?.id ?? null;
+
+  const spriteUrl = pokemon?.sprites.front_default ?? null;
+  const spriteAlt = pokemon?.name ?? undefined;
+
+  const typeNames = (pokemon?.types ?? []).map((t) => t.type.name);
+  const weight = pokemon?.weight;
+  const height = pokemon?.height;
+
+  const statProps =
+    (pokemon?.stats ?? []).map((s) => ({
+      name: s.stat.name as StatName,
+      base: s.base_stat,
+    })) ?? [];
 
   return (
     <main className="px-30 py-20">
@@ -76,14 +95,14 @@ export default function App() {
         <ActionButtons onSearch={onSearch} onRandom={onRandom} onClear={onClear} />
 
         <ContentBlock>
-          {/* You can remove this once you show a proper title */}
-          <p className="opacity-80">{searchText}</p>
+          {/* Dynamic components */}
+          <PokemonTitle name={titleName} id={titleId} />
 
-          {/* Example: pass fetched data to your UI components as needed */}
-          <PokemonTitle name={pokemon?.name} id={pokemon?.id} />
-          <SpriteContainer spriteUrl={pokemon?.sprites.front_default ?? null} />
-          <PokemonType types={pokemon?.types?.map((t) => t.type.name) ?? []} />
-          <PokemonStatsBars /* stats={pokemon?.stats} */ />
+          <SpriteContainer spriteUrl={spriteUrl} alt={spriteAlt} />
+
+          <PokemonType types={typeNames} weight={weight ?? null} height={height ?? null} />
+
+          <PokemonStatsBars stats={statProps} />
 
           {loading && <p className="text-sm">Loading…</p>}
           {error && <p className="text-sm text-red-400">{error}</p>}
