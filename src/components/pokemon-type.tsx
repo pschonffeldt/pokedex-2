@@ -16,7 +16,7 @@ export default function PokemonType({ types, weight, height }: Props) {
     <div className="flex flex-col items-center gap-4 px-6 py-4">
       <h3 className="text-2xl font-bold text-black/100">Type</h3>
 
-      <div className="flex flex-wrap justify-center gap-2">
+      <div className="flex flex-wrap justify-center items-center gap-2 min-h-20">
         {types.length > 0 ? (
           types.map((t) => (
             <span

@@ -26,7 +26,7 @@ export default function PokemonStatsBars({ stats }: Props) {
     StatName,
     number | undefined
   >;
-  const maxBase = 255; // common upper bound for base stats
+  const maxBase = 155; // common upper bound for base stats
 
   return (
     <div className="px-6 py-4">

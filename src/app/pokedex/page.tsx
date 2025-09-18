@@ -110,8 +110,10 @@ export default function App() {
 
   return (
     <main className="px-30 py-20">
-      <ContentBlock className="h-[700px] flex flex-col gap-3 p-10 py-6 items-start bg-[#dc0a2d] shadow-[10px_10px_rgba(0,0,0,0.4)]">
+      <ContentBlock className="flex flex-col h-auto gap-3 p-10 py-6 items-start bg-[#dc0a2d] shadow-[10px_10px_rgba(0,0,0,0.4)]">
         <AppTitle />
+        {/* {isLoading && <p className="text-sm">Loading…</p>}
+        {errorMessage && <p className="text-sm text-red-400">{errorMessage}</p>} */}
 
         <SearchForm searchText={searchText} setSearchText={setSearchText} onSearch={handleSearch} />
 
@@ -133,9 +135,6 @@ export default function App() {
           <PokemonType types={typeNames} weight={weight} height={height} />
 
           <PokemonStatsBars stats={statProps} />
-
-          {isLoading && <p className="text-sm">Loading…</p>}
-          {errorMessage && <p className="text-sm text-red-400">{errorMessage}</p>}
         </ContentBlock>
       </ContentBlock>
     </main>
