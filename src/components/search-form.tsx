@@ -1,18 +1,18 @@
 'use client';
 
-import { Dispatch, SetStateAction } from 'react';
+import { FormEvent } from 'react';
 
 interface Props {
   searchText: string;
-  setSearchText: Dispatch<SetStateAction<string>>;
+  setSearchText: (v: string) => void;
+  onSearch: () => void;
 }
 
-export default function SearchForm({ searchText, setSearchText }: Props) {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+export default function SearchForm({ searchText, setSearchText, onSearch }: Props) {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!searchText) return;
-    console.log(`Text input on form is "${searchText}"`);
-    // We should add a toast presenting that use needs to add something on the input in order to search, either a number or a pokemon name
+    console.log(searchText);
+    onSearch();
   };
 
   return (
