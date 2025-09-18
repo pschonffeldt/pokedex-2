@@ -109,8 +109,8 @@ export default function App() {
     })) ?? [];
 
   return (
-    <main className="px-30 py-20">
-      <ContentBlock className="flex flex-col h-auto gap-3 p-10 py-6 items-start bg-[#dc0a2d] shadow-[10px_10px_rgba(0,0,0,0.4)]">
+    <main className="px-10 py-10">
+      <ContentBlock className="flex flex-col h-auto gap-3 px-5 py-5 items-start bg-[#dc0a2d] shadow-[10px_10px_rgba(0,0,0,0.4)]">
         <AppTitle />
         {/* {isLoading && <p className="text-sm">Loading…</p>}
         {errorMessage && <p className="text-sm text-red-400">{errorMessage}</p>} */}
