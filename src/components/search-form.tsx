@@ -31,11 +31,12 @@ export default function SearchForm({ searchText, setSearchText, onSearch }: Prop
             block w-full h-[60px] rounded-full
             bg-white text-black placeholder:text-black/60
             pl-12 pr-6
-            border border-white   /* thin white edge like the mock */
+            border border-white
             transition-colors duration-150
             focus-visible:outline-none
             ring-blue-600 focus-visible:ring-2
-            ring-offset-0 ring-offset-white  /* blue glow stands out on red bg */
+            ring-offset-0 ring-offset-white
+            hover:bg-secondary/90
           "
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
