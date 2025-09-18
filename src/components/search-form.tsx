@@ -1,21 +1,15 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 export default function SearchForm() {
   const [searchText, setsearchText] = useState('');
-  const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    console.log(`Text input on form is "${searchText}"`);
     e.preventDefault();
 
     if (!searchText) return;
-
-    // router.push(`/app/${searchText}`);
-
-    // Forcing redirect to searched pokemon api route (still need to fetchthis data)
-    router.push(`https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${searchText}`);
   };
 
   return (

@@ -4,7 +4,7 @@ import ContentBlock from '@/components/content-block';
 import PokemonStatsBars from '@/components/pokemon-stats-bars';
 import PokemonTitle from '@/components/pokemon-title';
 import PokemonType from '@/components/pokemon-type';
-import SearchForm from '@/components/search-bar';
+import SearchForm from '@/components/search-form';
 import SpriteContainer from '@/components/sprite-container';
 
 export default function App() {
