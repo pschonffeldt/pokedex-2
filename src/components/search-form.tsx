@@ -1,6 +1,7 @@
 'use client';
 
 import { FormEvent } from 'react';
+import { Search as SearchIcon } from 'lucide-react';
 
 interface Props {
   searchText: string;
@@ -11,19 +12,38 @@ interface Props {
 export default function SearchForm({ searchText, setSearchText, onSearch }: Props) {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(searchText);
     onSearch();
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full sm:w-[580px]">
-      <input
-        className="w-full h-16 rounded-lg bg-white/[7%] px-6 outline-none ring-accent/50 transition focus:ring-2 focus:bg-white/10"
-        value={searchText}
-        onChange={(e) => setSearchText(e.target.value)}
-        placeholder="Search Pokémon by name or number"
-        spellCheck={false}
-      />
+    <form onSubmit={handleSubmit} className="w-full">
+      <div className="relative">
+        <SearchIcon
+          aria-hidden
+          className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-red-600"
+          strokeWidth={3}
+        />
+
+        <input
+          type="search"
+          aria-label="Search Pokémon by name or number"
+          className="
+            block w-full h-[60px] rounded-full
+            bg-white text-black placeholder:text-black/60
+            pl-12 pr-6
+            border border-white   /* thin white edge like the mock */
+            transition-colors duration-150
+            focus-visible:outline-none
+            ring-blue-600 focus-visible:ring-2
+            ring-offset-0 ring-offset-white  /* blue glow stands out on red bg */
+          "
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+          placeholder="e.g. Pikachu or 25"
+          spellCheck={false}
+          autoComplete="off"
+        />
+      </div>
     </form>
   );
 }
