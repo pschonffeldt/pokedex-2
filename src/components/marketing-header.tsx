@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const routes = [
   { label: 'Home', path: '/' },
-  { label: 'Pokédex', path: '/app' },
+  { label: 'Pokédex', path: '/pokedex' },
   { label: 'About', path: '/about' },
   { label: 'Learn', path: '/learn' },
   { label: 'Types', path: '/learn/pokemon-types' },
