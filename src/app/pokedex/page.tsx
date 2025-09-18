@@ -48,7 +48,7 @@ export default function App() {
 
     setIsLoading(true);
     setErrorMessage(null);
-    setPokemon(null);
+    // setPokemon(null);
 
     try {
       const requestUrl = `https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${encodeURIComponent(
@@ -124,9 +124,6 @@ export default function App() {
         />
 
         <ContentBlock>
-          {/* Optional: echo the query while debugging */}
-          {/* <p className="opacity-80">{searchText}</p> */}
-
           {/* Dynamic components */}
           <PokemonTitle name={titleName} id={titleId} />
 
@@ -134,7 +131,7 @@ export default function App() {
 
           <PokemonType types={typeNames} weight={weight} height={height} />
 
-          <PokemonStatsBars stats={statProps} />
+          <PokemonStatsBars apiStats={pokemon?.stats ?? []} />
         </ContentBlock>
       </ContentBlock>
     </main>
