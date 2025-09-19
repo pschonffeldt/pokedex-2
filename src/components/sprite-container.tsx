@@ -1,20 +1,31 @@
 'use client';
 
-// Using a plain <img> so you don't have to configure Next remote images yet.
-// Swap to <Image> later once you add remotePatterns for poke sprite domains.
+import Image from 'next/image';
+
 interface Props {
   spriteUrl?: string | null;
   alt?: string | null;
+  /** Square box size in px (both width & height). Default: 250 */
+  size?: number;
+  /** Pass true for above-the-fold Pokémon to pre-load */
+  priority?: boolean;
 }
 
-export default function SpriteContainer({ spriteUrl, alt }: Props) {
+export default function SpriteContainer({ spriteUrl, alt, size = 250, priority = false }: Props) {
   return (
-    <div className="flex justify-center">
+    <div className="mx-auto flex items-center justify-center" style={{ width: size, height: size }}>
       {spriteUrl ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img src={spriteUrl} alt={alt ?? 'Pokémon sprite'} width={150} height={150} />
+        <Image
+          src={spriteUrl}
+          alt={alt ?? 'Pokémon sprite'}
+          width={size}
+          height={size}
+          sizes={`${size}px`}
+          priority={priority}
+          className="object-contain"
+        />
       ) : (
-        <div className="h-[150px] w-[150px] grid place-content-center text-sm opacity-60 border border-white/20 rounded">
+        <div className="grid w-full h-full place-content-center text-sm opacity-60 border border-white/20 rounded">
           No sprite
         </div>
       )}
