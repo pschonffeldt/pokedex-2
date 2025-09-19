@@ -3,24 +3,29 @@
 /**
  * PokemonType
  * -----------
- * - Renders colored type capsules using a fixed palette
- * - Displays weight/height converted to kg/m
- * - Avoids duplication with small helpers & a single placeholder constant
+ * Renders:
+ *  - A section heading ("Type")
+ *  - One or more colored "type capsules" (e.g., Fire, Water) using a fixed palette
+ *  - Weight and height converted to friendly units (kg / m)
+ *
+ * Props:
+ *  - types:     array of Pokémon type names (already normalized by your page)
+ *  - weight:    PokeAPI "weight" (hectograms) — optional
+ *  - height:    PokeAPI "height" (decimeters) — optional
  */
 
 interface PokemonTypeProps {
   /** e.g., ["electric"] or ["bug","flying"] */
   types: string[];
-  /** PokeAPI: hectograms (optional) */
+  /** Raw PokeAPI weight in hectograms (optional) */
   weight?: number | null;
-  /** PokeAPI: decimeters (optional) */
+  /** Raw PokeAPI height in decimeters (optional) */
   height?: number | null;
 }
 
-/* ── Shared fallback ────────────────────────────────────────────────────────── */
-const NO_DATA = '—';
-
-/* ── Fixed styles per type (bg + readable fg) ──────────────────────────────── */
+/**
+ * Fixed styles per type: background + readable foreground
+ */
 const TYPE_STYLE_MAP: Record<string, { bg: string; fg: string }> = {
   normal: { bg: '#a8a77a', fg: '#111111' },
   fire: { bg: '#ee8130', fg: '#ffffff' },
@@ -42,61 +47,47 @@ const TYPE_STYLE_MAP: Record<string, { bg: string; fg: string }> = {
   fairy: { bg: '#d685ad', fg: '#111111' },
 };
 
-/* ── Helpers (normalize input, format for display) ──────────────────────────── */
-
-/** Normalize a type token for lookups (e.g., " Fire " → "fire"). */
-const normalizeTypeToken = (value?: string | null): string => (value ?? '').toLowerCase().trim();
-
-/** Title-case for display (safe on empty). */
+/** Title-case a (possibly empty) string without throwing on undefined/null
+ *  Turn a type token like "fire" into "Fire" for the capsule label.
+ */
 const toTitleCase = (value?: string | null): string =>
   value ? value.charAt(0).toUpperCase() + value.slice(1) : '';
 
-/** Format PokeAPI weight (hectograms) → "kg" string with 1 decimal or NO_DATA. */
-const toKilogramsDisplay = (w?: number | null): string =>
-  typeof w === 'number' ? (w / 10).toFixed(1) : NO_DATA;
-
-/** Format PokeAPI height (decimeters) → "m" string with 1 decimal or NO_DATA. */
-const toMetersDisplay = (h?: number | null): string =>
-  typeof h === 'number' ? (h / 10).toFixed(1) : NO_DATA;
-
-/** Small reusable placeholder element (avoids repeating the "—" JSX). */
-const Placeholder = () => <span className="opacity-60">{NO_DATA}</span>;
-
-/* ── Component ─────────────────────────────────────────────────────────────── */
-
 export default function PokemonType({ types, weight, height }: PokemonTypeProps) {
-  const weightKgDisplay = toKilogramsDisplay(weight);
-  const heightMDisplay = toMetersDisplay(height);
-
-  const hasTypes = Array.isArray(types) && types.length > 0;
+  // Convert PokeAPI units to friendlier units for display, or shows "-" ifvalue is 0
+  const weightKgDisplay = typeof weight === 'number' ? (weight / 10).toFixed(1) : '—';
+  const heightMDisplay = typeof height === 'number' ? (height / 10).toFixed(1) : '—';
 
   return (
     <section className="flex flex-col items-center gap-4 px-6 py-4">
+      {/* Section heading */}
       <h3 className="text-2xl font-bold text-black/100">Type</h3>
 
-      {/* Type capsules */}
+      {/* Type capsules row (supports 1–2 types; falls back to em dash) */}
       <div className="min-h-20 flex flex-wrap items-center justify-center gap-2">
-        {hasTypes ? (
+        {types.length > 0 ? (
           types.map((rawTypeName) => {
-            const key = normalizeTypeToken(rawTypeName);
-            const { bg, fg } = TYPE_STYLE_MAP[key] ?? { bg: '#777777', fg: '#ffffff' };
+            // Normalize type token for lookup (e.g., " Fire " → "fire")
+            const typeKey = rawTypeName.toLowerCase().trim();
+            const { bg, fg } = TYPE_STYLE_MAP[typeKey] ?? { bg: '#777777', fg: '#ffffff' }; // fallback
+
             return (
               <span
-                key={key || 'unknown'}
+                key={typeKey}
                 className="inline-block rounded-full px-4 py-1 text-sm font-semibold capitalize shadow-sm"
                 style={{ backgroundColor: bg, color: fg }}
-                aria-label={`Type ${toTitleCase(key) || NO_DATA}`}
+                aria-label={`Type ${toTitleCase(typeKey)}`}
               >
-                {toTitleCase(key) || NO_DATA}
+                {toTitleCase(typeKey)}
               </span>
             );
           })
         ) : (
-          <Placeholder />
+          <span className="opacity-60">—</span>
         )}
       </div>
 
-      {/* Weight / Height */}
+      {/* Weight / Height row */}
       <div className="flex flex-row justify-center gap-6 text-sm">
         <p>
           Weight: <span className="font-semibold">{weightKgDisplay}</span> kg
