@@ -30,7 +30,7 @@ export default function MarketingHeader() {
           <svg
             viewBox="0 0 24 24"
             aria-hidden="true"
-            className="h-6 w-6 text-black"
+            className="h-6 w-6 text-indigo-500"
             fill="none"
             stroke="currentColor"
             strokeWidth={2}
