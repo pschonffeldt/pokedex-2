@@ -1,13 +1,27 @@
 'use client';
 
-interface Props {
-  types: string[]; // e.g. ["electric"] or ["bug","flying"]
-  weight?: number | null; // PokeAPI: hectograms
-  height?: number | null; // PokeAPI: decimeters
+/**
+ * PokemonType
+ * -----------
+ * - Renders colored type capsules using a fixed palette
+ * - Displays weight/height converted to kg/m
+ * - Avoids duplication with small helpers & a single placeholder constant
+ */
+
+interface PokemonTypeProps {
+  /** e.g., ["electric"] or ["bug","flying"] */
+  types: string[];
+  /** PokeAPI: hectograms (optional) */
+  weight?: number | null;
+  /** PokeAPI: decimeters (optional) */
+  height?: number | null;
 }
 
-/** Fixed styles per type: background + readable foreground */
-const TYPE_STYLES: Record<string, { bg: string; fg: string }> = {
+/* ── Shared fallback ────────────────────────────────────────────────────────── */
+const NO_DATA = '—';
+
+/* ── Fixed styles per type (bg + readable fg) ──────────────────────────────── */
+const TYPE_STYLE_MAP: Record<string, { bg: string; fg: string }> = {
   normal: { bg: '#a8a77a', fg: '#111111' },
   fire: { bg: '#ee8130', fg: '#ffffff' },
   water: { bg: '#6390f0', fg: '#ffffff' },
@@ -28,46 +42,69 @@ const TYPE_STYLES: Record<string, { bg: string; fg: string }> = {
   fairy: { bg: '#d685ad', fg: '#111111' },
 };
 
-const titleCase = (s: string) => (s ? s[0].toUpperCase() + s.slice(1) : s);
+/* ── Helpers (normalize input, format for display) ──────────────────────────── */
 
-export default function PokemonType({ types, weight, height }: Props) {
-  // convert to friendlier units
-  const kg = typeof weight === 'number' ? (weight / 10).toFixed(1) : '—';
-  const m = typeof height === 'number' ? (height / 10).toFixed(1) : '—';
+/** Normalize a type token for lookups (e.g., " Fire " → "fire"). */
+const normalizeTypeToken = (value?: string | null): string => (value ?? '').toLowerCase().trim();
+
+/** Title-case for display (safe on empty). */
+const toTitleCase = (value?: string | null): string =>
+  value ? value.charAt(0).toUpperCase() + value.slice(1) : '';
+
+/** Format PokeAPI weight (hectograms) → "kg" string with 1 decimal or NO_DATA. */
+const toKilogramsDisplay = (w?: number | null): string =>
+  typeof w === 'number' ? (w / 10).toFixed(1) : NO_DATA;
+
+/** Format PokeAPI height (decimeters) → "m" string with 1 decimal or NO_DATA. */
+const toMetersDisplay = (h?: number | null): string =>
+  typeof h === 'number' ? (h / 10).toFixed(1) : NO_DATA;
+
+/** Small reusable placeholder element (avoids repeating the "—" JSX). */
+const Placeholder = () => <span className="opacity-60">{NO_DATA}</span>;
+
+/* ── Component ─────────────────────────────────────────────────────────────── */
+
+export default function PokemonType({ types, weight, height }: PokemonTypeProps) {
+  const weightKgDisplay = toKilogramsDisplay(weight);
+  const heightMDisplay = toMetersDisplay(height);
+
+  const hasTypes = Array.isArray(types) && types.length > 0;
 
   return (
-    <div className="flex flex-col items-center gap-4 px-6 py-4">
+    <section className="flex flex-col items-center gap-4 px-6 py-4">
       <h3 className="text-2xl font-bold text-black/100">Type</h3>
 
+      {/* Type capsules */}
       <div className="min-h-20 flex flex-wrap items-center justify-center gap-2">
-        {types.length > 0 ? (
-          types.map((raw) => {
-            const key = raw.toLowerCase().trim();
-            const { bg, fg } = TYPE_STYLES[key] ?? { bg: '#777777', fg: '#ffffff' };
+        {hasTypes ? (
+          types.map((rawTypeName) => {
+            const key = normalizeTypeToken(rawTypeName);
+            const { bg, fg } = TYPE_STYLE_MAP[key] ?? { bg: '#777777', fg: '#ffffff' };
             return (
               <span
-                key={key}
+                key={key || 'unknown'}
                 className="inline-block rounded-full px-4 py-1 text-sm font-semibold capitalize shadow-sm"
                 style={{ backgroundColor: bg, color: fg }}
-                aria-label={`Type ${titleCase(key)}`}
+                aria-label={`Type ${toTitleCase(key) || NO_DATA}`}
               >
-                {titleCase(key)}
+                {toTitleCase(key) || NO_DATA}
               </span>
             );
           })
         ) : (
-          <span className="opacity-60">—</span>
+          <Placeholder />
         )}
       </div>
 
+      {/* Weight / Height */}
       <div className="flex flex-row justify-center gap-6 text-sm">
         <p>
-          Weight: <span className="font-semibold">{kg}</span> kg
+          Weight: <span className="font-semibold">{weightKgDisplay}</span> kg
         </p>
         <p>
-          Height: <span className="font-semibold">{m}</span> m
+          Height: <span className="font-semibold">{heightMDisplay}</span> m
         </p>
       </div>
-    </div>
+    </section>
   );
 }
