@@ -6,15 +6,21 @@ import { usePathname } from 'next/navigation';
 const routes = [
   { label: 'Home', path: '/' },
   { label: 'Pokédex', path: '/pokedex' },
-  { label: 'About', path: '/about' },
   { label: 'Learn', path: '/learn' },
   { label: 'Types', path: '/learn/pokemon-types' },
   { label: 'Regions', path: '/learn/pokemon-regions' },
   { label: 'Generations', path: '/learn/pokemon-generations' },
+  { label: 'About', path: '/about' },
 ];
 
 export default function MarketingHeader() {
   const pathname = usePathname();
+
+  // NEW: pick the most specific (longest) matching route for the current path
+  const activeRoute =
+    routes
+      .filter((r) => pathname === r.path || (r.path !== '/' && pathname.startsWith(`${r.path}/`)))
+      .sort((a, b) => b.path.length - a.path.length)[0] ?? routes.find((r) => r.path === pathname);
 
   return (
     <nav className="sticky top-0 z-50 border-b border-gray-200 bg-white shadow-sm">
@@ -37,11 +43,8 @@ export default function MarketingHeader() {
             strokeLinecap="round"
             strokeLinejoin="round"
           >
-            {/* outer ring */}
             <circle cx="12" cy="12" r="9" />
-            {/* center line */}
             <line x1="3" y1="12" x2="21" y2="12" />
-            {/* center button */}
             <circle cx="12" cy="12" r="3" fill="currentColor" />
           </svg>
         </div>
@@ -49,9 +52,7 @@ export default function MarketingHeader() {
         {/* Desktop links */}
         <ul className="ml-4 hidden items-center gap-2 md:flex">
           {routes.map((route) => {
-            const isActive =
-              pathname === route.path || (route.path !== '/' && pathname.startsWith(route.path));
-
+            const isActive = route.path === activeRoute?.path;
             return (
               <li key={route.path}>
                 <Link
@@ -75,9 +76,7 @@ export default function MarketingHeader() {
         <div className="md:hidden">
           <ul className="flex max-w-[80vw] items-center gap-2 overflow-x-auto whitespace-nowrap">
             {routes.map((route) => {
-              const isActive =
-                pathname === route.path || (route.path !== '/' && pathname.startsWith(route.path));
-
+              const isActive = route.path === activeRoute?.path;
               return (
                 <li key={route.path} className="shrink-0">
                   <Link
