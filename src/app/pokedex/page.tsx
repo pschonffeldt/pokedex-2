@@ -1,16 +1,15 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import ActionButtons from '@/components/action-buttons';
-import AppTitle from '@/components/app-title';
-import ContentBlock from '@/components/content-block';
 import PokemonStatsBars from '@/components/pokemon-stats-bars';
 import PokemonTitle from '@/components/pokemon-title';
 import PokemonType from '@/components/pokemon-type';
 import SearchForm from '@/components/search-form';
 import SpriteContainer from '@/components/sprite-container';
 
-// --- API types used on this page ---
+/* --------------------------- Types from your page --------------------------- */
 type StatName = 'hp' | 'attack' | 'defense' | 'special-attack' | 'special-defense' | 'speed';
 
 type Pokemon = {
@@ -23,7 +22,7 @@ type Pokemon = {
   stats: { base_stat: number; stat: { name: StatName } }[];
 };
 
-// --- Helpers ---
+/* --------------------------------- Helpers -------------------------------- */
 function normalizePokemonInput(rawInput: string) {
   return rawInput
     .trim()
@@ -34,27 +33,25 @@ function normalizePokemonInput(rawInput: string) {
     .replace(/♂/g, '-m');
 }
 
-export default function App() {
+/* --------------------------------- Page ----------------------------------- */
+export default function PokedexPage() {
   // Explicit state names
   const [searchText, setSearchText] = useState('');
   const [pokemon, setPokemon] = useState<Pokemon | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  // Fetch based on user query
   const fetchPokemonByUserQuery = async (userQuery: string) => {
     const normalizedQuery = normalizePokemonInput(userQuery);
     if (!normalizedQuery) return;
 
     setIsLoading(true);
     setErrorMessage(null);
-    // setPokemon(null);
 
     try {
       const requestUrl = `https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${encodeURIComponent(
         normalizedQuery
       )}`;
-
       const response = await fetch(requestUrl);
 
       if (!response.ok) {
@@ -63,9 +60,6 @@ export default function App() {
       }
 
       const pokemonData: Pokemon = await response.json();
-      // QA log
-      console.log('Fetched Pokémon:', pokemonData);
-
       setPokemon(pokemonData);
     } catch (caughtError: unknown) {
       const message = caughtError instanceof Error ? caughtError.message : 'Unexpected error.';
@@ -75,14 +69,13 @@ export default function App() {
     }
   };
 
-  // Handlers with descriptive names
+  // Handlers
   const handleSearch = () => fetchPokemonByUserQuery(searchText);
 
   const handleRandomSearch = () => {
     const randomId = Math.floor(Math.random() * 1025) + 1; // 1–1025
-    const randomQuery = String(randomId);
-    setSearchText(randomQuery);
-    fetchPokemonByUserQuery(randomQuery);
+    setSearchText(String(randomId));
+    fetchPokemonByUserQuery(String(randomId));
   };
 
   const handleClearAll = () => {
@@ -91,49 +84,217 @@ export default function App() {
     setErrorMessage(null);
   };
 
-  // --- Derived props for children (keeps JSX tidy) ---
-  const titleName = pokemon?.name ?? null;
-  const titleId = pokemon?.id ?? null;
-
-  const spriteUrl = pokemon?.sprites.front_default ?? null;
-  const spriteAlt = pokemon?.name ?? undefined;
-
+  // Derived
   const typeNames = (pokemon?.types ?? []).map((t) => t.type.name);
-  const weight = pokemon?.weight ?? null;
-  const height = pokemon?.height ?? null;
-
   const statProps =
     (pokemon?.stats ?? []).map((s) => ({
       name: s.stat.name as StatName,
       base: s.base_stat,
     })) ?? [];
 
+  // Reusable button styles (match your system)
+  const primaryBtn =
+    'rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60';
+  const darkBtn =
+    'rounded-full bg-gray-900 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-black';
+
+  // Example chips (showcases normalization too)
+  const examples = [
+    'Pikachu',
+    'Gengar',
+    'Mr. Mime',
+    'Farfetch’d',
+    'Nidoran♀',
+    'Nidoran♂',
+    '#150',
+    'Rayquaza',
+  ];
+
   return (
-    <main className="px-10 py-10">
-      <ContentBlock className="flex flex-col h-auto gap-3 px-5 py-5 items-start bg-[#dc0a2d] shadow-[10px_10px_rgba(0,0,0,0.4)]">
-        <AppTitle />
-        {/* {isLoading && <p className="text-sm">Loading…</p>}
-        {errorMessage && <p className="text-sm text-red-400">{errorMessage}</p>} */}
+    <main className="min-h-screen bg-white">
+      {/* Breadcrumb */}
+      <nav className="border-b border-gray-200 bg-white">
+        <div className="mx-auto flex h-16 max-w-7xl items-center gap-2 px-6 sm:px-8 lg:px-12 text-sm">
+          <Link href="/" className="text-gray-500 hover:text-gray-900">
+            Home
+          </Link>
+          <span className="text-gray-300">/</span>
+          <span className="font-medium text-gray-900">Pokédex</span>
+        </div>
+      </nav>
 
-        <SearchForm searchText={searchText} setSearchText={setSearchText} onSearch={handleSearch} />
+      {/* Hero */}
+      <section className="border-b border-gray-100 bg-indigo-50/50">
+        <div className="mx-auto max-w-7xl px-6 py-12 sm:px-8 sm:py-16 lg:px-12">
+          <div className="flex items-start gap-3">
+            <div>
+              <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
+                Pokédex
+              </h1>
+              <p className="mt-3 max-w-prose text-gray-600 sm:text-lg">
+                Fast, readable Pokémon profiles. Search by name or Pokédex #, then scan types,
+                height/weight, and base stats. Use examples below to try special names (Mr. Mime,
+                Nidoran forms) and see how our input normalization works.
+              </p>
 
-        <ActionButtons
-          onSearch={handleSearch}
-          onRandom={handleRandomSearch}
-          onClear={handleClearAll}
-        />
+              {/* Quick actions */}
+              <div className="mt-6 flex flex-wrap gap-3">
+                <button onClick={handleRandomSearch} className={primaryBtn} type="button">
+                  Random Pokémon
+                </button>
+                <button onClick={handleClearAll} className={darkBtn} type="button">
+                  Clear
+                </button>
+                <Link
+                  href="/learn"
+                  className="rounded-full border border-gray-300 bg-white px-5 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-100"
+                >
+                  Learn hub
+                </Link>
+              </div>
 
-        <ContentBlock>
-          {/* Dynamic components */}
-          <PokemonTitle name={titleName} id={titleId} />
+              {/* Example chips */}
+              <div className="mt-6 flex flex-wrap gap-2 text-xs">
+                {examples.map((label) => (
+                  <button
+                    key={label}
+                    type="button"
+                    onClick={() => {
+                      const value = label.startsWith('#') ? label.slice(1) : label;
+                      setSearchText(value);
+                      fetchPokemonByUserQuery(value);
+                    }}
+                    className="rounded-full border border-gray-200 bg-white px-3 py-1 font-medium text-gray-700 hover:bg-gray-100"
+                    title={`Search for ${label}`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <SpriteContainer spriteUrl={spriteUrl} alt={spriteAlt} />
+      {/* Main content */}
+      <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-3">
+          {/* Search panel */}
+          <article className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+            <h2 className="text-xl font-semibold text-gray-900">Search</h2>
+            <p className="mt-1 text-sm text-gray-600">
+              Type a name (e.g., <span className="font-medium">pikachu</span>,{' '}
+              <span className="font-medium">mr mime</span>) or a number (e.g.,{' '}
+              <span className="font-medium">25</span>, <span className="font-medium">150</span>).
+            </p>
 
-          <PokemonType types={typeNames} weight={weight} height={height} />
+            <div className="mt-4 space-y-4">
+              <SearchForm
+                searchText={searchText}
+                setSearchText={setSearchText}
+                onSearch={handleSearch}
+              />
 
-          <PokemonStatsBars apiStats={pokemon?.stats ?? []} />
-        </ContentBlock>
-      </ContentBlock>
+              <ActionButtons
+                onSearch={handleSearch}
+                onRandom={handleRandomSearch}
+                onClear={handleClearAll}
+              />
+
+              {/* Tips */}
+              <div className="rounded-lg border border-gray-200 bg-white p-4">
+                <div className="text-sm font-semibold text-gray-900">Tips</div>
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-700">
+                  <li>
+                    Special names supported: <span className="font-medium">Mr. Mime</span>,{' '}
+                    <span className="font-medium">Farfetch’d</span>,{' '}
+                    <span className="font-medium">Nidoran♀/♂</span>.
+                  </li>
+                  <li>
+                    Use <span className="font-medium">#</span> + number to jump by Dex ID (e.g.,{' '}
+                    <span className="font-medium">#384</span> for Rayquaza).
+                  </li>
+                  <li>
+                    Want type advice? Visit the{' '}
+                    <Link
+                      href="/learn/pokemon-types"
+                      className="underline underline-offset-4 hover:no-underline"
+                    >
+                      Types page
+                    </Link>
+                    .
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          {/* Result panel */}
+          <article className="lg:col-span-2 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+            <h2 className="text-xl font-semibold text-gray-900">Result</h2>
+
+            {/* Status */}
+            <div className="mt-2 min-h-[28px] text-sm">
+              {isLoading && <span className="text-gray-600">Loading…</span>}
+              {!isLoading && errorMessage && <span className="text-red-600">{errorMessage}</span>}
+              {!isLoading && !errorMessage && !pokemon && (
+                <span className="text-gray-500">Search for a Pokémon to see details.</span>
+              )}
+            </div>
+
+            {/* Details */}
+            {pokemon && (
+              <div className="mt-4 grid gap-6 md:grid-cols-2">
+                <div className="space-y-4">
+                  <PokemonTitle name={pokemon.name} id={pokemon.id} />
+                  <SpriteContainer
+                    spriteUrl={pokemon.sprites.front_default ?? null}
+                    alt={pokemon.name}
+                  />
+                  <PokemonType
+                    types={typeNames}
+                    weight={pokemon.weight ?? null}
+                    height={pokemon.height ?? null}
+                  />
+                </div>
+
+                <div className="space-y-4">
+                  <div className="rounded-lg border border-gray-200 bg-white p-4">
+                    <div className="text-sm font-semibold text-gray-900">Base Stats</div>
+                    <div className="mt-2">
+                      <PokemonStatsBars apiStats={pokemon.stats ?? []} />
+                    </div>
+                  </div>
+
+                  <div className="rounded-lg border border-gray-200 bg-white p-4">
+                    <div className="text-sm font-semibold text-gray-900">Quick Actions</div>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <Link
+                        href={`/pokedex?share=${pokemon.id}`}
+                        className="rounded-full border border-gray-300 bg-white px-3 py-1 text-xs font-medium text-gray-900 hover:bg-gray-100"
+                      >
+                        Share
+                      </Link>
+                      <Link
+                        href={`/learn/pokemon-types`}
+                        className="rounded-full border border-gray-300 bg-white px-3 py-1 text-xs font-medium text-gray-900 hover:bg-gray-100"
+                      >
+                        View type chart
+                      </Link>
+                      <Link
+                        href={`/learn/pokemon-regions`}
+                        className="rounded-full border border-gray-300 bg-white px-3 py-1 text-xs font-medium text-gray-900 hover:bg-gray-100"
+                      >
+                        Browse regions
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </article>
+        </div>
+      </section>
     </main>
   );
 }
