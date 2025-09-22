@@ -5,11 +5,11 @@ import { usePathname } from 'next/navigation';
 
 const routes = [
   { label: 'Home', path: '/' },
-  { label: 'Pokédex', path: '/pokedex' },
   { label: 'Learn', path: '/learn' },
   { label: 'Types', path: '/learn/pokemon-types' },
   { label: 'Regions', path: '/learn/pokemon-regions' },
   { label: 'Generations', path: '/learn/pokemon-generations' },
+  { label: 'Pokédex', path: '/pokedex' },
   { label: 'About', path: '/about' },
 ];
 
