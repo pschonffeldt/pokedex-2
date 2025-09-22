@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 
 function Pokeball({ className = 'h-5 w-5 text-red-600' }) {
@@ -47,14 +48,14 @@ export default function JohtoPage() {
       <section className="border-b border-gray-100 bg-indigo-50/50">
         <div className="mx-auto max-w-7xl px-6 py-12 sm:px-8 sm:py-16 lg:px-12">
           <div className="flex items-start gap-3">
-            <Pokeball className="h-7 w-7 text-indigo-600" />
             <div>
               <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
                 Johto Region
               </h1>
               <p className="mt-3 max-w-prose text-gray-600 sm:text-lg">
-                Nestled west of Kanto, **Johto** blends tradition and nature—home to ancient towers,
-                roaming beasts, and a league that tests mastery across two regions.
+                Nestled west of Kanto, <span className="font-medium text-gray-900">Johto</span>{' '}
+                blends tradition and nature—home to ancient towers, roaming beasts, and a league
+                that tests mastery across two regions.
               </p>
             </div>
           </div>
@@ -232,11 +233,13 @@ export default function JohtoPage() {
                 <Pokeball className="h-5 w-5 text-indigo-600" />
                 Region map
               </h3>
-              <ul className="space-y-2 text-gray-800">
-                <li>Johto connects to Kanto, unlocking a rare two-region post-game.</li>
-                <li>Ecruteak’s towers reference phoenix and guardian myths (Ho-Oh & Lugia).</li>
-                <li>HeartGold/SoulSilver added the Pokéwalker accessory.</li>
-              </ul>
+              <Image
+                src="/images/jhoto-map.svg" // put the file in /public/og-image.png
+                alt="Johto region map"
+                width={350}
+                height={300}
+                className="rounded-lg"
+              />
             </div>
           </aside>
         </div>
