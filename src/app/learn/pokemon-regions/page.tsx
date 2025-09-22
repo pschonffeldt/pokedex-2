@@ -165,20 +165,6 @@ export default function PokemonRegions() {
             </div>
           </div>
 
-          {/* Quick browse chips (anchor links to cards below) */}
-          <div className="mt-8 flex flex-wrap gap-2">
-            {regions.map((region) => (
-              <Link
-                key={region.id}
-                href={`#${region.id}`}
-                className="rounded-full border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-700 hover:bg-gray-100"
-                aria-label={`Jump to ${region.name} (${region.gen})`}
-              >
-                {region.gen}
-              </Link>
-            ))}
-          </div>
-
           {/* CTAs */}
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
