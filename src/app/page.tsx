@@ -1,6 +1,7 @@
 // app/page.tsx
 'use client';
 
+import HeroSection from '@/components/hero';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -601,46 +602,29 @@ function StarterQuiz() {
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-white">
-      {/* Hero */}
-      <section className="border-b border-gray-100 bg-indigo-50/50">
-        <div className="mx-auto max-w-7xl px-6 py-14 sm:px-8 lg:px-12">
-          <div className="flex items-start gap-3">
-            <div>
-              <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
-                PokéWorld Explorer
-              </h1>
-              <p className="mt-3 max-w-2xl text-gray-600 sm:text-lg">
-                Learn, search, and master the Pokémon universe. Use our cutting-edge Pokédex, region
-                guides, type primer, and generation timeline to plan teams and explore from Kanto to
-                Paldea.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <Link href="/pokedex" className={primaryBtn}>
-                  Open Pokédex
-                </Link>
-                <Link href="/learn" className={darkBtn}>
-                  Start learning
-                </Link>
-              </div>
-              <div className="mt-6 flex flex-wrap gap-2 text-xs">
-                {[
-                  ['Regions', '/learn/pokemon-regions'],
-                  ['Types', '/learn/pokemon-types'],
-                  ['Generations', '/learn/pokemon-generations'],
-                ].map(([label, href]) => (
-                  <Link
-                    key={label}
-                    href={href}
-                    className="rounded-full border border-gray-200 bg-white px-3 py-1 font-medium text-gray-700 hover:bg-gray-100"
-                  >
-                    {label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
+      {/* Breadcrumb */}
+      <nav className="border-b border-gray-200 bg-white">
+        <div className="mx-auto flex h-16 max-w-7xl items-center gap-2 px-6 sm:px-8 lg:px-12 text-sm">
+          <Link href="/" className="text-gray-500 hover:text-gray-900">
+            Home
+          </Link>
         </div>
-      </section>
+      </nav>
+      {/* Component hero */}
+      <HeroSection
+        title="PokéWorld Explorer"
+        description={
+          <>
+            Learn, search, and master the Pokémon universe. Use our cutting-edge Pokédex, region
+            guides, type primer, and generation timeline to plan teams and explore from Kanto to
+            Paldea.
+          </>
+        }
+        actions={[
+          { href: '/pokedex', label: 'Open Pokédex', variant: 'primary' },
+          { href: '/types', label: 'Discover Pokémon Types', variant: 'dark' },
+        ]}
+      />
 
       {/* Core entry points (kept from your previous version) */}
       <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12">

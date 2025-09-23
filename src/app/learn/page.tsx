@@ -1,5 +1,6 @@
 'use client';
 
+import HeroSection from '@/components/hero';
 import Link from 'next/link';
 
 function Pokeball({ className = 'h-5 w-5 text-red-600' }) {
@@ -46,40 +47,20 @@ export default function LearnPage() {
           <span className="font-medium text-gray-900">Learn</span>
         </div>
       </nav>
-
-      {/* Hero (keep indigo bg) */}
-      <section className="border-b border-gray-100 bg-indigo-50/50">
-        <div className="mx-auto max-w-7xl px-6 py-12 sm:px-8 sm:py-16 lg:px-12">
-          <div className="flex items-start gap-3">
-            <div>
-              <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
-                Learn Pokémon
-              </h1>
-              <p className="mt-3 max-w-prose text-gray-600 sm:text-lg">
-                Your gateway to the Pokémon world—start with regions, master type matchups, trace
-                each generation, and dive into the Pokédex. Pick a topic below and begin your
-                journey.
-              </p>
-            </div>
-          </div>
-
-          {/* Primary actions (same button styling as other pages) */}
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link
-              href="/pokedex"
-              className="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700"
-            >
-              Open Pokédex
-            </Link>
-            <Link
-              href="/learn/pokemon-regions"
-              className="rounded-full bg-gray-900 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-black"
-            >
-              Browse Regions
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Component hero */}
+      <HeroSection
+        title="Learn Pokémon"
+        description={
+          <>
+            Your gateway to the Pokémon world—start with regions, master type matchups, trace each
+            generation, and dive into the Pokédex. Pick a topic below and begin your journey.
+          </>
+        }
+        actions={[
+          { href: '/pokedex', label: 'Open Pokédex', variant: 'primary' },
+          { href: '/learn/pokemon-types', label: 'Discover Pokémon Types', variant: 'dark' },
+        ]}
+      />
 
       {/* Core topics */}
       <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12">

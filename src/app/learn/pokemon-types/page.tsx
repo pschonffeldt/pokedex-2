@@ -1,5 +1,6 @@
 'use client';
 
+import HeroSection from '@/components/hero';
 import Link from 'next/link';
 
 function Pokeball({ className = 'h-5 w-5 text-red-600' }) {
@@ -278,40 +279,21 @@ export default function PokemonTypes() {
           <span className="font-medium text-gray-900">Types</span>
         </div>
       </nav>
-
-      {/* Hero */}
-      <section className="border-b border-gray-100 bg-indigo-50/50">
-        <div className="mx-auto max-w-7xl px-6 py-12 sm:px-8 sm:py-16 lg:px-12">
-          <div className="flex items-start gap-3">
-            <div>
-              <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
-                Pokémon Types
-              </h1>
-              <p className="mt-3 max-w-prose text-gray-600 sm:text-lg">
-                Learn how the 18 types interact—what each type beats, what walls it, and the best
-                ways to cover weaknesses. Open any type to see full charts, notable Pokémon, sample
-                sets, and team tips.
-              </p>
-            </div>
-          </div>
-
-          {/* Top actions */}
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link
-              href="/types"
-              className="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60"
-            >
-              Open full type chart
-            </Link>
-            <Link
-              href="/pokedex"
-              className="rounded-full bg-gray-900 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-black"
-            >
-              Open Pokédex
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Component hero */}
+      <HeroSection
+        title="Pokémon Types"
+        description={
+          <>
+            Learn how the 18 types interact—what each type beats, what walls it, and the best ways
+            to cover weaknesses. Open any type to see full charts, notable Pokémon, sample sets, and
+            team tips.
+          </>
+        }
+        actions={[
+          { href: '/pokedex', label: 'Open Pokédex', variant: 'primary' },
+          { href: '/types', label: 'Discover Pokémon Types', variant: 'dark' },
+        ]}
+      />
 
       {/* Type cards */}
       <section aria-labelledby="types-heading" className="pt-15 pb-10">

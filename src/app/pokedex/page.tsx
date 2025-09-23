@@ -8,6 +8,7 @@ import PokemonTitle from '@/components/pokemon-title';
 import PokemonType from '@/components/pokemon-type';
 import SearchForm from '@/components/search-form';
 import SpriteContainer from '@/components/sprite-container';
+import HeroSection from '@/components/hero';
 
 /* --------------------------- Types from your page --------------------------- */
 type StatName = 'hp' | 'attack' | 'defense' | 'special-attack' | 'special-defense' | 'speed';
@@ -122,59 +123,21 @@ export default function PokedexPage() {
           <span className="font-medium text-gray-900">Pokédex</span>
         </div>
       </nav>
-
-      {/* Hero */}
-      <section className="border-b border-gray-100 bg-indigo-50/50">
-        <div className="mx-auto max-w-7xl px-6 py-12 sm:px-8 sm:py-16 lg:px-12">
-          <div className="flex items-start gap-3">
-            <div>
-              <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
-                Pokédex
-              </h1>
-              <p className="mt-3 max-w-prose text-gray-600 sm:text-lg">
-                Fast, readable Pokémon profiles. Search by name or Pokédex #, then scan types,
-                height/weight, and base stats. Use examples below to try special names (Mr. Mime,
-                Nidoran forms) and see how our input normalization works.
-              </p>
-
-              {/* Quick actions */}
-              <div className="mt-6 flex flex-wrap gap-3">
-                <button onClick={handleRandomSearch} className={primaryBtn} type="button">
-                  Random Pokémon
-                </button>
-                <button onClick={handleClearAll} className={darkBtn} type="button">
-                  Clear
-                </button>
-                <Link
-                  href="/learn"
-                  className="rounded-full border border-gray-300 bg-white px-5 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-100"
-                >
-                  Learn hub
-                </Link>
-              </div>
-
-              {/* Example chips */}
-              <div className="mt-6 flex flex-wrap gap-2 text-xs">
-                {examples.map((label) => (
-                  <button
-                    key={label}
-                    type="button"
-                    onClick={() => {
-                      const value = label.startsWith('#') ? label.slice(1) : label;
-                      setSearchText(value);
-                      fetchPokemonByUserQuery(value);
-                    }}
-                    className="rounded-full border border-gray-200 bg-white px-3 py-1 font-medium text-gray-700 hover:bg-gray-100"
-                    title={`Search for ${label}`}
-                  >
-                    {label}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Component hero */}
+      <HeroSection
+        title="Pokédex"
+        description={
+          <>
+            Fast, readable Pokémon profiles. Search by name or Pokédex #, then scan types,
+            height/weight, and base stats. Use examples below to try special names (Mr. Mime,
+            Nidoran forms) and see how our input normalization works.
+          </>
+        }
+        actions={[
+          { href: '/learn', label: 'Start learning', variant: 'primary' },
+          { href: '/learn/pokemon-types', label: 'Discover Pokémon Types', variant: 'dark' },
+        ]}
+      />
 
       {/* Main content */}
       <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12">

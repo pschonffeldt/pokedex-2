@@ -1,6 +1,7 @@
 // app/learn/pokemon-regions/page.tsx
 'use client';
 
+import HeroSection from '@/components/hero';
 import Link from 'next/link';
 
 // Content types
@@ -147,41 +148,21 @@ export default function PokemonRegions() {
           <span className="font-medium text-gray-900">Regions</span>
         </div>
       </nav>
-
-      {/* Hero (neutral, not blue) */}
-      <section className="border-b border-gray-100 bg-indigo-50/50">
-        <div className="mx-auto max-w-7xl px-6 py-12 sm:px-8 sm:py-16 lg:px-12">
-          <div className="flex items-start gap-3">
-            {/* <Pokeball className="h-7 w-7 text-red-600" /> */}
-            <div>
-              <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
-                Regions of the Pokémon World
-              </h1>
-              <p className="mt-3 max-w-prose text-gray-600 sm:text-lg">
-                From iconic Kanto to open-world Paldea, explore each region’s geography, history,
-                and legendary Pokémon. Use this guide as your launchpad to discover unique cultures
-                and creatures across the Pokémon world.
-              </p>
-            </div>
-          </div>
-
-          {/* CTAs */}
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link
-              href="/pokedex"
-              className="rounded-full bg-gray-900 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-black"
-            >
-              Open Pokédex
-            </Link>
-            <Link
-              href="/types"
-              className="rounded-full border border-gray-300 bg-white px-5 py-2 text-sm font-semibold text-gray-900 shadow-sm transition-colors hover:bg-gray-100"
-            >
-              Battle & Type Guides
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Component hero */}
+      <HeroSection
+        title="Regions of the Pokémon World"
+        description={
+          <>
+            From iconic Kanto to open-world Paldea, explore each region’s geography, history, and
+            legendary Pokémon. Use this guide as your launchpad to discover unique cultures and
+            creatures across the Pokémon world.
+          </>
+        }
+        actions={[
+          { href: '/pokedex', label: 'Open Pokédex', variant: 'primary' },
+          { href: '/types', label: 'Discover Pokémon Types', variant: 'dark' },
+        ]}
+      />
       {/* Regions grid */}
       <section
         aria-labelledby="regions-heading"
