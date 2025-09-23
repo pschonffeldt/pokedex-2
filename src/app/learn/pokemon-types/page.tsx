@@ -1,27 +1,9 @@
 'use client';
 
+import Button from '@/components/button';
 import HeroSection from '@/components/hero';
 import InfoBox from '@/components/info-box';
 import Link from 'next/link';
-
-function Pokeball({ className = 'h-5 w-5 text-red-600' }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-      className={className}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <circle cx="12" cy="12" r="9" />
-      <line x1="3" y1="12" x2="21" y2="12" />
-      <circle cx="12" cy="12" r="3" fill="currentColor" />
-    </svg>
-  );
-}
 
 type TypeCard = {
   id: string; // anchor id
@@ -297,68 +279,63 @@ export default function PokemonTypes() {
       />
 
       {/* Type cards */}
-      <section aria-labelledby="types-heading" className="pt-15 pb-10">
+      <section aria-labelledby="types-heading" className="mx-auto px-6 py-12 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <h2 id="types-heading" className="sr-only">
             All Pokémon Types
           </h2>
 
           <div className="grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {types.map((t) => (
+            {types.map((type) => (
               <article
-                id={t.id}
-                key={t.id}
+                id={type.id}
+                key={type.id}
                 className="group h-full rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md"
               >
                 <div className="flex h-full flex-col p-6">
                   <div className="flex items-center justify-between gap-3">
                     <h3 className="text-xl font-semibold text-gray-900">
                       <span className="mr-1 text-lg" aria-hidden="true">
-                        {t.emoji}
+                        {type.emoji}
                       </span>
-                      {t.label}
+                      {type.label}
                     </h3>
                   </div>
 
                   <dl className="mt-3 space-y-2 text-sm">
                     <div className="flex gap-2">
                       <dt className="shrink-0 font-medium text-gray-900">Strong vs:</dt>
-                      <dd className="text-gray-700">{t.strongVs}</dd>
+                      <dd className="text-gray-700">{type.strongVs}</dd>
                     </div>
                     <div className="flex gap-2">
                       <dt className="shrink-0 font-medium text-gray-900">Struggles vs:</dt>
-                      <dd className="text-gray-700">{t.strugglesVs}</dd>
+                      <dd className="text-gray-700">{type.strugglesVs}</dd>
                     </div>
                     <div className="flex gap-2">
                       <dt className="shrink-0 font-medium text-gray-900">Weak to:</dt>
-                      <dd className="text-gray-700">{t.weakTo}</dd>
+                      <dd className="text-gray-700">{type.weakTo}</dd>
                     </div>
                     <div className="flex gap-2">
                       <dt className="shrink-0 font-medium text-gray-900">Resists:</dt>
-                      <dd className="text-gray-700">{t.resists}</dd>
+                      <dd className="text-gray-700">{type.resists}</dd>
                     </div>
-                    {t.immune && (
+                    {type.immune && (
                       <div className="flex gap-2">
                         <dt className="shrink-0 font-medium text-gray-900">Immune:</dt>
-                        <dd className="text-gray-700">{t.immune}</dd>
+                        <dd className="text-gray-700">{type.immune}</dd>
                       </div>
                     )}
-                    {t.statusNote && (
+                    {type.statusNote && (
                       <div className="flex gap-2">
                         <dt className="shrink-0 font-medium text-gray-900">Notes:</dt>
-                        <dd className="text-gray-700">{t.statusNote}</dd>
+                        <dd className="text-gray-700">{type.statusNote}</dd>
                       </div>
                     )}
                   </dl>
 
                   {/* CTAs pinned bottom */}
                   <div className="mt-auto pt-5 flex flex-wrap gap-2">
-                    <Link
-                      href={t.guideHref}
-                      className="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60"
-                    >
-                      Type Guide
-                    </Link>
+                    <Button href={type.guideHref}>Type Guide</Button>
                   </div>
                 </div>
               </article>
@@ -366,7 +343,7 @@ export default function PokemonTypes() {
           </div>
 
           {/* Coverage recipes */}
-          <div className="mt-12 rounded-2xl border border-gray-200 bg-white p-6">
+          {/* <div className="mt-12 rounded-2xl border border-gray-200 bg-white p-6">
             <h3 className="text-lg font-semibold text-gray-900">Coverage Recipes (Quick Wins)</h3>
             <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {[
@@ -416,7 +393,7 @@ export default function PokemonTypes() {
                 Learn coverage basics
               </Link>
             </div>
-          </div>
+          </div> */}
 
           {/* Status & hazards quick notes */}
           <div className="mt-12 rounded-2xl border border-gray-200 bg-white p-6">
@@ -446,21 +423,40 @@ export default function PokemonTypes() {
               </li>
             </ul>
           </div>
-
-          {/* How to use */}
         </div>
       </section>
+      {/* Info box component */}
       <InfoBox
-        title="How to use this page"
+        title="Make the most of Types"
         items={[
-          <>Use the chips to jump to a generation, then open its full guide.</>,
           <>
-            Compare <span className="font-medium text-gray-900">mechanics</span> cards to decide
-            which era fits your playstyle.
+            Building a team? Use the{' '}
+            <Link href="/pokedex" className="underline underline-offset-4 hover:no-underline">
+              Pokédex
+            </Link>{' '}
+            to find candidates by type and assemble simple{' '}
+            <span className="font-medium text-gray-900">coverage cores</span> (e.g., Water + Grass +
+            Electric).
           </>,
           <>
-            Skim the <span className="font-medium text-gray-900">timeline</span> to understand how
-            the series evolved.
+            Prepping bosses? Open a{' '}
+            <Link
+              href="/learn/pokemon-regions"
+              className="underline underline-offset-4 hover:no-underline"
+            >
+              Region guide
+            </Link>{' '}
+            to see gyms/trials, then plan counters with resistances and priority moves.
+          </>,
+          <>
+            Returning player? Skim{' '}
+            <Link
+              href="/learn/pokemon-generations"
+              className="underline underline-offset-4 hover:no-underline"
+            >
+              Generations
+            </Link>{' '}
+            to see mechanic changes that affect typing (Megas, Z-Moves, Dynamax, Terastalization).
           </>,
         ]}
       />

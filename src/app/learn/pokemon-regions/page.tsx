@@ -1,6 +1,7 @@
 // app/learn/pokemon-regions/page.tsx
 'use client';
 
+import Button from '@/components/button';
 import HeroSection from '@/components/hero';
 import InfoBox from '@/components/info-box';
 import Link from 'next/link';
@@ -182,7 +183,7 @@ export default function PokemonRegions() {
               aria-describedby={`region-${region.id}-desc`}
               className="group relative rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md"
             >
-              <div className="p-6">
+              <div className="flex h-full flex-col p-6">
                 <div className="flex items-center justify-between gap-3">
                   <h3
                     id={`region-${region.id}-title`}
@@ -218,13 +219,8 @@ export default function PokemonRegions() {
                   </div>
                 </dl>
 
-                <div className="mt-5 flex flex-wrap gap-2">
-                  <Link
-                    href={region.guideHref}
-                    className="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60"
-                  >
-                    Region Guide
-                  </Link>
+                <div className="mt-auto pt-5 flex flex-wrap gap-2">
+                  <Button href={region.guideHref}>See all regions</Button>
                 </div>
               </div>
             </article>
@@ -233,22 +229,31 @@ export default function PokemonRegions() {
       </section>
       {/* Info box container */}
       <InfoBox
-        title="How to use this page"
+        title="Make the most of Regions"
         items={[
           <>
-            Open any <span className="font-medium text-gray-900">Region Guide</span> for maps,
-            cities, gyms, and lore.
+            Click any card to open a <span className="font-medium text-gray-900">Region guide</span>
+            —cities, gyms, starters, legendaries, and travel tips.
           </>,
           <>
-            Use <span className="font-medium text-gray-900">View Pokédex</span> to load a Pokémon
-            list filtered by region.
-          </>,
-          <>
-            Jump to{' '}
-            <Link href="/types" className="underline underline-offset-4 hover:no-underline">
-              Types
+            Planning a new run? Check{' '}
+            <Link
+              href="/learn/pokemon-generations"
+              className="underline underline-offset-4 hover:no-underline"
+            >
+              Generations
             </Link>{' '}
-            to plan advantages and cover weaknesses.
+            for that region’s era—see signature mechanics and the best entry game.
+          </>,
+          <>
+            Prepping gyms or the League? Review the{' '}
+            <Link
+              href="/learn/pokemon-types"
+              className="underline underline-offset-4 hover:no-underline"
+            >
+              type chart
+            </Link>{' '}
+            and build dual-typing coverage to counter each leader’s team.
           </>,
         ]}
       />

@@ -44,7 +44,6 @@ export default function LearnPage() {
           { href: '/learn/pokemon-types', label: 'Discover Pokémon Types', variant: 'dark' },
         ]}
       />
-
       {/* Core topics */}
       <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12">
         <h2 className="sr-only">Core Topics</h2>
@@ -331,19 +330,62 @@ export default function LearnPage() {
       </section>
       {/* Info box container */}
       <InfoBox
-        title="How to use this page"
+        title="Make the most of Learn"
         items={[
           <>
-            Jump into a <span className="font-medium text-gray-900">Core Topic</span> to get the
-            fundamentals.
+            Pick a core topic —{' '}
+            <Link
+              href="/learn/pokemon-regions"
+              className="underline underline-offset-4 hover:no-underline"
+            >
+              Regions
+            </Link>
+            ,{' '}
+            <Link
+              href="/learn/pokemon-types"
+              className="underline underline-offset-4 hover:no-underline"
+            >
+              Types
+            </Link>{' '}
+            or{' '}
+            <Link
+              href="/learn/pokemon-generations"
+              className="underline underline-offset-4 hover:no-underline"
+            >
+              Generations
+            </Link>
+            —to get oriented fast.
+          </>,
+
+          <>
+            Planning a run? Start with a{' '}
+            <Link
+              href="/learn/pokemon-regions"
+              className="underline underline-offset-4 hover:no-underline"
+            >
+              Region guide
+            </Link>{' '}
+            for gyms, exclusives, and legendaries.
           </>,
           <>
-            Use the <span className="font-medium text-gray-900">Cheat Sheets</span> for quick
-            answers mid-play.
+            Brushing up on systems? Skim{' '}
+            <Link
+              href="/learn/pokemon-generations"
+              className="underline underline-offset-4 hover:no-underline"
+            >
+              Generations
+            </Link>{' '}
+            for what changed and the best entry game.
           </>,
           <>
-            Read a <span className="font-medium text-gray-900">Popular Guide</span> to go deeper on
-            a goal.
+            Building a team? Check the{' '}
+            <Link
+              href="/learn/pokemon-types"
+              className="underline underline-offset-4 hover:no-underline"
+            >
+              Type chart
+            </Link>{' '}
+            + coverage tips to patch weaknesses.
           </>,
         ]}
       />
