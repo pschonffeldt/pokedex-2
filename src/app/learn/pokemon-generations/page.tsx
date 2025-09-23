@@ -5,25 +5,6 @@ import HeroSection from '@/components/hero';
 import InfoBox from '@/components/info-box';
 import Link from 'next/link';
 
-function Pokeball({ className = 'h-5 w-5 text-red-600' }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-      className={className}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <circle cx="12" cy="12" r="9" />
-      <line x1="3" y1="12" x2="21" y2="12" />
-      <circle cx="12" cy="12" r="3" fill="currentColor" />
-    </svg>
-  );
-}
-
 type GenCard = {
   id: string;
   label: string; // Gen I, Gen II...
@@ -172,7 +153,7 @@ export default function PokemonGenerations() {
       />
       {/* Generation cards */}
       <section aria-labelledby="gens-heading" className="pb-1">
-        <div className="mx-auto max-w-7xl px-6 py-12 sm:px-8 sm:py-16 lg:px-12">
+        <div className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12">
           <h2 id="gens-heading" className="sr-only">
             All Pokémon Generations
           </h2>
