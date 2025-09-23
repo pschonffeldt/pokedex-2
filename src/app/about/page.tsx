@@ -1,5 +1,6 @@
 'use client';
 
+import Button from '@/components/button';
 import HeroSection from '@/components/hero';
 import Link from 'next/link';
 
@@ -56,44 +57,36 @@ export default function AboutPage() {
               </li>
             </ul>
             <div className="mt-auto pt-5">
-              <Link
-                href="/learn"
-                className="rounded-full bg-gray-900 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-black"
-              >
-                Explore the Learn hub
-              </Link>
+              <Button href="/learn">Explore the Learn hub</Button>
             </div>
           </article>
 
           {/* How it works / data */}
           <article className="group h-full rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-            <h3 className="text-lg font-semibold text-gray-900">How it works</h3>
-            <p className="mt-2 text-sm text-gray-700">
-              The Pokédex pulls live data from a public community API via a proxy for stability. We
-              layer clear formatting, input normalization (e.g., “Mr. Mime”, “Nidoran♀/♂”), and
-              tiny UX helpers so you can find what you need quickly.
-            </p>
-            <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-gray-700">
-              <li>
-                <span className="font-medium">Data source:</span> community PokéAPI (via proxy) for
-                sprites and stats.
-              </li>
-              <li>
-                <span className="font-medium">Normalization:</span> supports punctuation, gender
-                symbols, and dex # (e.g., <span className="font-mono">#150</span>).
-              </li>
-              <li>
-                <span className="font-medium">Design system:</span> accessible colors,
-                keyboard-friendly controls, and responsive cards.
-              </li>
-            </ul>
-            <div className="mt-auto pt-5">
-              <Link
-                href="/pokedex"
-                className="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60"
-              >
-                Open the Pokédex
-              </Link>
+            <div className="flex h-full flex-col">
+              <h3 className="text-lg font-semibold text-gray-900">How it works</h3>
+              <p className="mt-2 text-sm text-gray-700">
+                The Pokédex pulls live data from a public community API via a proxy for stability.
+                We layer clear formatting, input normalization (e.g., “Mr. Mime”, “Nidoran♀/♂”),
+                and tiny UX helpers so you can find what you need quickly.
+              </p>
+              <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-gray-700">
+                <li>
+                  <span className="font-medium">Data source:</span> community PokéAPI (via proxy)
+                  for sprites and stats.
+                </li>
+                <li>
+                  <span className="font-medium">Normalization:</span> supports punctuation, gender
+                  symbols, and dex # (e.g., <span className="font-mono">#150</span>).
+                </li>
+                <li>
+                  <span className="font-medium">Design system:</span> accessible colors,
+                  keyboard-friendly controls, and responsive cards.
+                </li>
+              </ul>
+              <div className="mt-auto pt-5">
+                <Button href="/pokedex">Open the Pokédex</Button>
+              </div>
             </div>
           </article>
 
@@ -142,57 +135,46 @@ export default function AboutPage() {
               </li>
             </ul>
             <div className="mt-auto pt-5">
-              <Link
-                href="/learn"
-                className="rounded-full border border-gray-300 bg-white px-5 py-2 text-sm font-semibold text-gray-900 shadow-sm transition-colors hover:bg-gray-100"
-              >
-                Visit the Learn hub
-              </Link>
+              <Button href="/learn">Visit the Learn hub</Button>
             </div>
           </article>
 
           {/* Roadmap */}
           <article className="group h-full rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-            <h3 className="text-lg font-semibold text-gray-900">Roadmap (what’s next)</h3>
-            <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-700">
-              <li>Team Builder with type-coverage meter & weakness heatmap</li>
-              <li>Interactive region maps (routes, tutors, sidequests, item routes)</li>
-              <li>Version exclusives browser with Pokédex deep-links</li>
-              <li>Starter chooser upgrades & in-game “story teams by budget”</li>
-              <li>Living Dex & Shiny tracker with shareable progress</li>
-            </ul>
-            <div className="mt-auto pt-5">
-              <Link
-                href="/contact"
-                className="rounded-full border border-gray-300 bg-white px-5 py-2 text-sm font-semibold text-gray-900 shadow-sm transition-colors hover:bg-gray-100"
-              >
-                Suggest a feature
-              </Link>
+            <div className="flex h-full flex-col">
+              <h3 className="text-lg font-semibold text-gray-900">Roadmap (what’s next)</h3>
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-700">
+                <li>Team Builder with type-coverage meter & weakness heatmap</li>
+                <li>Interactive region maps (routes, tutors, sidequests, item routes)</li>
+                <li>Version exclusives browser with Pokédex deep-links</li>
+                <li>Starter chooser upgrades & in-game “story teams by budget”</li>
+                <li>Living Dex & Shiny tracker with shareable progress</li>
+              </ul>
+              <div className="mt-auto pt-5">
+                <Button href="/contact">Suggest a feature</Button>
+              </div>
             </div>
           </article>
 
           {/* Contact & feedback */}
           <article className="group h-full rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-            <h3 className="text-lg font-semibold text-gray-900">Contact & Feedback</h3>
-            <p className="mt-2 text-sm text-gray-700">
-              Found a bug, spotted an error, or want to request a guide? We’d love to hear it. Clear
-              feedback helps make this better for everyone.
-            </p>
-            <ul className="mt-4 grid gap-2 text-sm text-gray-700">
-              <li className="rounded-lg border border-gray-200 bg-white px-3 py-2">
-                Report issues with page URL & steps to reproduce
-              </li>
-              <li className="rounded-lg border border-gray-200 bg-white px-3 py-2">
-                Share feature ideas or data corrections
-              </li>
-            </ul>
-            <div className="mt-auto pt-5">
-              <Link
-                href="/contact"
-                className="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60"
-              >
-                Contact us
-              </Link>
+            <div className="flex h-full flex-col">
+              <h3 className="text-lg font-semibold text-gray-900">Contact & Feedback</h3>
+              <p className="mt-2 text-sm text-gray-700">
+                Found a bug, spotted an error, or want to request a guide? We’d love to hear it.
+                Clear feedback helps make this better for everyone.
+              </p>
+              <ul className="mt-4 grid gap-2 text-sm text-gray-700">
+                <li className="rounded-lg border border-gray-200 bg-white px-3 py-2">
+                  Report issues with page URL & steps to reproduce
+                </li>
+                <li className="rounded-lg border border-gray-200 bg-white px-3 py-2">
+                  Share feature ideas or data corrections
+                </li>
+              </ul>
+              <div className="mt-auto pt-5">
+                <Button href="/contact">Contact us</Button>
+              </div>
             </div>
           </article>
         </div>
