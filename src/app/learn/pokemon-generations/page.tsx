@@ -330,7 +330,7 @@ export default function PokemonGenerations() {
 
           {/* Release timeline */}
           <div id="timeline" className="mt-12 rounded-2xl border border-gray-200 bg-white p-6">
-            <h3 className="text-lg font-semibold text-gray-900">Videogame Release Timeline</h3>
+            <h3 className="text-lg font-semibold text-gray-900">Videogame release timeline</h3>
             <ul className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3 text-sm">
               {[
                 ['Gen I (1996–1999)', 'Red/Blue/Yellow'],
