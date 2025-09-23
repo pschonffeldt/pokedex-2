@@ -26,7 +26,7 @@ export default function InfoBox({
     .join(' ');
 
   return (
-    <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12 border-b border-gray-100">
+    <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12 border-gray-100">
       <div className={boxClasses}>
         {title &&
           (typeof title === 'string' ? (

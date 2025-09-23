@@ -791,7 +791,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* NEW: the four value-dense sections */}
+      {/* Compoents, locally defined, to be turned into its own independant file */}
       <BeginnerPathsSection />
       <BossCountersSection />
       <VersionExclusivesSection />

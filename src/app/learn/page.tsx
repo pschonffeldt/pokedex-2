@@ -1,27 +1,9 @@
 'use client';
 
+import Button from '@/components/button';
 import HeroSection from '@/components/hero';
 import InfoBox from '@/components/info-box';
 import Link from 'next/link';
-
-function Pokeball({ className = 'h-5 w-5 text-red-600' }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-      className={className}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <circle cx="12" cy="12" r="9" />
-      <line x1="3" y1="12" x2="21" y2="12" />
-      <circle cx="12" cy="12" r="3" fill="currentColor" />
-    </svg>
-  );
-}
 
 const regions = [
   { name: 'Kanto', href: '/learn/pokemon-regions/kanto' },
@@ -66,7 +48,6 @@ export default function LearnPage() {
       {/* Core topics */}
       <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12">
         <h2 className="sr-only">Core Topics</h2>
-        <h2 className="text-lg font-semibold text-gray-900 pb-4">Core Topics</h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {/* Regions */}
           <article className="group rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
@@ -81,24 +62,19 @@ export default function LearnPage() {
                 Explore geography, cities, gyms, starters, and legendaries from Kanto to Paldea.
               </p>
               <ul className="mt-4 grid grid-cols-2 gap-2 text-sm text-gray-700">
-                {regions.map((r) => (
-                  <li key={r.name}>
+                {regions.map((region) => (
+                  <li key={region.name}>
                     <Link
-                      href={r.href}
+                      href={region.href}
                       className="block rounded-lg border border-gray-200 bg-white px-3 py-2 hover:bg-gray-50"
                     >
-                      {r.name}
+                      {region.name}
                     </Link>
                   </li>
                 ))}
               </ul>
               <div className="mt-5">
-                <Link
-                  href="/learn/pokemon-regions"
-                  className="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60"
-                >
-                  See all regions
-                </Link>
+                <Button href="/learn/pokemon-regions">See all regions</Button>
               </div>
             </div>
           </article>
@@ -157,18 +133,12 @@ export default function LearnPage() {
               </ul>
 
               <div className="mt-5">
-                <Link
-                  href="/types"
-                  className="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700"
-                >
-                  Open type chart
-                </Link>
+                <Button href="typess">Discover Pokémon Types</Button>
               </div>
             </div>
           </article>
 
           {/* Generations */}
-          {/* Generations — mini timeline */}
           <article className="group rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
             <div className="p-6">
               <div className="flex items-center justify-between">
@@ -234,23 +204,18 @@ export default function LearnPage() {
                 ))}
               </ul>
 
-              {/* CTA (matches your filled primary button) */}
+              {/* CTA */}
               <div className="mt-5">
-                <Link
-                  href="/generations"
-                  className="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700"
-                >
-                  Explore generations
-                </Link>
+                <Button href="/learn/pokemon-generations">Explore generations</Button>
               </div>
             </div>
           </article>
         </div>
         {/* High-value: Cheat Sheets */}
-        <div className="mt-12">
+        {/* <div className="mt-12">
           <h3 className="text-lg font-semibold text-gray-900">Cheat Sheets</h3>
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {/* Type effectiveness quick wins */}
+            // Type effectiveness quick wins
             <article className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
               <h4 className="mb-2 text-base font-semibold text-gray-900">Type Effectiveness</h4>
               <ul className="text-sm text-gray-800 space-y-1">
@@ -274,7 +239,7 @@ export default function LearnPage() {
               </div>
             </article>
 
-            {/* Team building roles */}
+            // Team building roles
             <article className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
               <h4 className="mb-2 text-base font-semibold text-gray-900">Team Building Roles</h4>
               <ul className="text-sm text-gray-800 space-y-1">
@@ -292,7 +257,7 @@ export default function LearnPage() {
               </div>
             </article>
 
-            {/* EVs / IVs / Natures */}
+            // EVs / IVs / Natures
             <article className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
               <h4 className="mb-2 text-base font-semibold text-gray-900">
                 Stats: EVs • IVs • Natures
@@ -312,9 +277,9 @@ export default function LearnPage() {
               </div>
             </article>
           </div>
-        </div>
+        </div> */}
         {/* High-value: Popular Guides */}
-        <div className="mt-12">
+        {/* <div className="mt-12">
           <h3 className="text-lg font-semibold text-gray-900">Popular Guides</h3>
           <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <article className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
@@ -362,7 +327,7 @@ export default function LearnPage() {
               </div>
             </article>
           </div>
-        </div>
+        </div> */}
       </section>
       {/* Info box container */}
       <InfoBox
