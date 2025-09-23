@@ -2,6 +2,7 @@
 'use client';
 
 import HeroSection from '@/components/hero';
+import InfoBox from '@/components/info-box';
 import Link from 'next/link';
 
 function Pokeball({ className = 'h-5 w-5 text-red-600' }) {
@@ -391,22 +392,21 @@ export default function PokemonGenerations() {
           </div>
         </div>
       </section>
-      {/* How to Use */}
-      <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12 border-b border-gray-100">
-        <div className="mb-12 rounded-2xl border border-gray-200 bg-indigo-50/50 p-6">
-          <ul className="mt-3 list-disc space-y-2 pl-6 text-sm text-gray-700">
-            <li>Use the chips to jump to a generation, then open its full guide.</li>
-            <li>
-              Compare <span className="font-medium text-gray-900">mechanics</span> cards to decide
-              which era fits your playstyle.
-            </li>
-            <li>
-              Skim the <span className="font-medium text-gray-900">timeline</span> to understand how
-              the series evolved.
-            </li>
-          </ul>
-        </div>
-      </section>
+      {/* Info box container */}
+      <InfoBox
+        title="How to use this page"
+        items={[
+          <>Use the chips to jump to a generation, then open its full guide.</>,
+          <>
+            Compare <span className="font-medium text-gray-900">mechanics</span> cards to decide
+            which era fits your playstyle.
+          </>,
+          <>
+            Skim the <span className="font-medium text-gray-900">timeline</span> to understand how
+            the series evolved.
+          </>,
+        ]}
+      />
     </main>
   );
 }
