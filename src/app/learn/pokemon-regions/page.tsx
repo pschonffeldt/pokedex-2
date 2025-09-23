@@ -220,7 +220,7 @@ export default function PokemonRegions() {
                 </dl>
 
                 <div className="mt-auto pt-5 flex flex-wrap gap-2">
-                  <Button href={region.guideHref}>See all regions</Button>
+                  <Button href={region.guideHref}>Discover {region.name} region</Button>
                 </div>
               </div>
             </article>

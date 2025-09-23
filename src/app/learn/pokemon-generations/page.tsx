@@ -1,6 +1,7 @@
 // app/learn/pokemon-generations/page.tsx
 'use client';
 
+import Button from '@/components/button';
 import HeroSection from '@/components/hero';
 import InfoBox from '@/components/info-box';
 import Link from 'next/link';
@@ -192,12 +193,7 @@ export default function PokemonGenerations() {
 
                   {/* CTAs pinned bottom */}
                   <div className="mt-auto pt-5 flex flex-wrap gap-2">
-                    <Link
-                      href={gen.guideHref}
-                      className="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60"
-                    >
-                      Generation Guide
-                    </Link>
+                    <Button href={gen.guideHref}>Generation Guide</Button>
                   </div>
                 </div>
               </article>
