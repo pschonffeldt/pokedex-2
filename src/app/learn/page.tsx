@@ -50,7 +50,7 @@ export default function LearnPage() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {/* Regions */}
           <article className="group rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
-            <div className="p-6">
+            <div className="flex h-full flex-col p-6">
               <div className="flex items-center justify-between">
                 <h3 className="text-xl font-semibold text-gray-900">Regions</h3>
                 <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700">
@@ -72,7 +72,7 @@ export default function LearnPage() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-5">
+              <div className="mt-auto pt-5 flex flex-wrap gap-2">
                 <Button href="/learn/pokemon-regions">See all regions</Button>
               </div>
             </div>
@@ -80,7 +80,7 @@ export default function LearnPage() {
 
           {/* Types */}
           <article className="group rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
-            <div className="p-6">
+            <div className="flex h-full flex-col p-6">
               <div className="flex items-center justify-between">
                 <h3 className="text-xl font-semibold text-gray-900">Types</h3>
                 <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700">
@@ -131,7 +131,7 @@ export default function LearnPage() {
                 ))}
               </ul>
 
-              <div className="mt-5">
+              <div className="mt-auto pt-5 flex flex-wrap gap-2">
                 <Button href="typess">Discover Pokémon Types</Button>
               </div>
             </div>
@@ -139,7 +139,7 @@ export default function LearnPage() {
 
           {/* Generations */}
           <article className="group rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
-            <div className="p-6">
+            <div className="flex h-full flex-col p-6">
               <div className="flex items-center justify-between">
                 <h3 className="text-xl font-semibold text-gray-900">Generations</h3>
                 <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700">
@@ -204,7 +204,7 @@ export default function LearnPage() {
               </ul>
 
               {/* CTA */}
-              <div className="mt-5">
+              <div className="mt-auto pt-5 flex flex-wrap gap-2">
                 <Button href="/learn/pokemon-generations">Explore generations</Button>
               </div>
             </div>
