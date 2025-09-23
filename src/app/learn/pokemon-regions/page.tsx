@@ -2,6 +2,7 @@
 'use client';
 
 import HeroSection from '@/components/hero';
+import InfoBox from '@/components/info-box';
 import Link from 'next/link';
 
 // Content types
@@ -230,30 +231,28 @@ export default function PokemonRegions() {
           ))}
         </div>
       </section>
+      {/* Info box container */}
 
-      {/* How to Use */}
-      <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12 border-b border-gray-100">
-        <div className="mb-12 rounded-2xl border border-gray-200 bg-indigo-50/50 p-6">
-          <h3 className="text-lg font-semibold text-gray-900">How to Use This Guide</h3>
-          <ul className="mt-3 list-disc pl-6 text-sm text-gray-700 space-y-2">
-            <li>
-              Open any <span className="font-medium text-gray-900">Region Guide</span> for maps,
-              cities, gyms, and lore.
-            </li>
-            <li>
-              Use <span className="font-medium text-gray-900">View Pokédex</span> to load a Pokémon
-              list filtered by region.
-            </li>
-            <li>
-              Jump to{' '}
-              <Link href="/types" className="underline underline-offset-4 hover:no-underline">
-                Types
-              </Link>{' '}
-              to plan advantages and cover weaknesses.
-            </li>
-          </ul>
-        </div>
-      </section>
+      <InfoBox
+        title="How to use this page"
+        items={[
+          <>
+            Open any <span className="font-medium text-gray-900">Region Guide</span> for maps,
+            cities, gyms, and lore.
+          </>,
+          <>
+            Use <span className="font-medium text-gray-900">View Pokédex</span> to load a Pokémon
+            list filtered by region.
+          </>,
+          <>
+            Jump to{' '}
+            <Link href="/types" className="underline underline-offset-4 hover:no-underline">
+              Types
+            </Link>{' '}
+            to plan advantages and cover weaknesses.
+          </>,
+        ]}
+      />
     </main>
   );
 }
