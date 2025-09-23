@@ -1,6 +1,7 @@
 'use client';
 
 import HeroSection from '@/components/hero';
+import InfoBox from '@/components/info-box';
 import Link from 'next/link';
 
 function Pokeball({ className = 'h-5 w-5 text-red-600' }) {
@@ -449,6 +450,20 @@ export default function PokemonTypes() {
           {/* How to use */}
         </div>
       </section>
+      <InfoBox
+        title="How to use this page"
+        items={[
+          <>Use the chips to jump to a generation, then open its full guide.</>,
+          <>
+            Compare <span className="font-medium text-gray-900">mechanics</span> cards to decide
+            which era fits your playstyle.
+          </>,
+          <>
+            Skim the <span className="font-medium text-gray-900">timeline</span> to understand how
+            the series evolved.
+          </>,
+        ]}
+      />
     </main>
   );
 }
