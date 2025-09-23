@@ -193,7 +193,7 @@ export default function PokemonGenerations() {
 
                   {/* CTAs pinned bottom */}
                   <div className="mt-auto pt-5 flex flex-wrap gap-2">
-                    <Button href={gen.guideHref}>Generation Guide</Button>
+                    <Button href={gen.guideHref}>Read {gen.label} Guide</Button>
                   </div>
                 </div>
               </article>
@@ -202,7 +202,7 @@ export default function PokemonGenerations() {
 
           {/* Mechanics glossary */}
           <div className="mt-12 rounded-2xl border border-gray-200 bg-white p-6">
-            <h3 className="text-lg font-semibold text-gray-900">Signature Mechanics by Era</h3>
+            <h3 className="text-lg font-semibold text-gray-900">Signature mechanics by era</h3>
             <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {[
                 [
@@ -240,25 +240,17 @@ export default function PokemonGenerations() {
                 </div>
               ))}
             </div>
-
-            <div className="mt-5">
-              <Link
-                href="/learn/pokemon-generations#timeline"
-                className="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60"
-              >
-                Jump to release timeline
-              </Link>
-            </div>
           </div>
 
           {/* Recommended entry points */}
           <div className="mt-12 rounded-2xl border border-gray-200 bg-white p-6">
             <h3 className="text-lg font-semibold text-gray-900">
-              Start Here: Best Entry Games by Playstyle
+              Start Here: Best entry games by playstyle
             </h3>
             <p className="mt-2 text-sm text-gray-600">
-              Pick the route that matches how you like to play. Each card explains why it’s a strong
-              first stop and where to go next.
+              Not sure where to begin? We compare each pick by playstyle, map size, story pace, and
+              convenience features, then explain why it’s a great first stop. You’ll see who the
+              game suits, what’s new this era, and a simple next step once the credits roll.
             </p>
 
             <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -359,28 +351,43 @@ export default function PokemonGenerations() {
             </ul>
 
             <div className="mt-5 flex flex-wrap gap-2">
-              <Link
-                href="/games"
-                className="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60"
-              >
-                Browse Games
-              </Link>
+              <Button href="/games">Browse Games</Button>
             </div>
           </div>
         </div>
       </section>
       {/* Info box container */}
       <InfoBox
-        title="How to use this page"
+        title="Make the most of Generations"
         items={[
-          <>Use the chips to jump to a generation, then open its full guide.</>,
           <>
-            Compare <span className="font-medium text-gray-900">mechanics</span> cards to decide
-            which era fits your playstyle.
+            Tap a gen chip to open its full guide—signature mechanics, best entry games, notable
+            QoL, starters, and legendaries.
           </>,
           <>
-            Skim the <span className="font-medium text-gray-900">timeline</span> to understand how
-            the series evolved.
+            Picking where to play? Pair the era with a world you’ll like in{' '}
+            <Link
+              href="/learn/pokemon-regions"
+              className="underline underline-offset-4 hover:no-underline"
+            >
+              Regions
+            </Link>
+            .
+          </>,
+          <>
+            Building a team? Review the{' '}
+            <Link
+              href="/learn/pokemon-types"
+              className="underline underline-offset-4 hover:no-underline"
+            >
+              type chart
+            </Link>{' '}
+            and then use the{' '}
+            <Link href="/pokedex" className="underline underline-offset-4 hover:no-underline">
+              Pokédex
+            </Link>{' '}
+            with <span className="font-medium text-gray-900">generation filters</span> to find
+            starters and early-game options.
           </>,
         ]}
       />
