@@ -232,7 +232,6 @@ export default function PokemonRegions() {
         </div>
       </section>
       {/* Info box container */}
-
       <InfoBox
         title="How to use this page"
         items={[
