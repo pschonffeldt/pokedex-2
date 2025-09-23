@@ -1,6 +1,7 @@
 'use client';
 
 import HeroSection from '@/components/hero';
+import InfoBox from '@/components/info-box';
 import Link from 'next/link';
 
 function Pokeball({ className = 'h-5 w-5 text-red-600' }) {
@@ -66,7 +67,6 @@ export default function LearnPage() {
       <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12">
         <h2 className="sr-only">Core Topics</h2>
         <h2 className="text-lg font-semibold text-gray-900 pb-4">Core Topics</h2>
-
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {/* Regions */}
           <article className="group rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
@@ -246,7 +246,6 @@ export default function LearnPage() {
             </div>
           </article>
         </div>
-
         {/* High-value: Cheat Sheets */}
         <div className="mt-12">
           <h3 className="text-lg font-semibold text-gray-900">Cheat Sheets</h3>
@@ -314,7 +313,6 @@ export default function LearnPage() {
             </article>
           </div>
         </div>
-
         {/* High-value: Popular Guides */}
         <div className="mt-12">
           <h3 className="text-lg font-semibold text-gray-900">Popular Guides</h3>
@@ -365,26 +363,25 @@ export default function LearnPage() {
             </article>
           </div>
         </div>
-
-        {/* How to use */}
-        <div className="mt-12 rounded-2xl border border-gray-200 bg-white p-6">
-          <h3 className="text-lg font-semibold text-gray-900">How to Use This Page</h3>
-          <ul className="mt-3 list-disc pl-6 text-sm text-gray-700 space-y-2">
-            <li>
-              Jump into a <span className="font-medium text-gray-900">Core Topic</span> to get the
-              fundamentals.
-            </li>
-            <li>
-              Use the <span className="font-medium text-gray-900">Cheat Sheets</span> for quick
-              answers mid-play.
-            </li>
-            <li>
-              Read a <span className="font-medium text-gray-900">Popular Guide</span> to go deeper
-              on a goal.
-            </li>
-          </ul>
-        </div>
       </section>
+      {/* Info box container */}
+      <InfoBox
+        title="How to use this page"
+        items={[
+          <>
+            Jump into a <span className="font-medium text-gray-900">Core Topic</span> to get the
+            fundamentals.
+          </>,
+          <>
+            Use the <span className="font-medium text-gray-900">Cheat Sheets</span> for quick
+            answers mid-play.
+          </>,
+          <>
+            Read a <span className="font-medium text-gray-900">Popular Guide</span> to go deeper on
+            a goal.
+          </>,
+        ]}
+      />
     </main>
   );
 }
