@@ -38,7 +38,7 @@ export default function AboutPage() {
       <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12">
         <div className="grid items-stretch gap-6 lg:grid-cols-3">
           {/* What this is */}
-          <article className="group h-full rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+          <article className="group h-full rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
             <h3 className="text-lg font-semibold text-gray-900">What is PokéWorld Explorer?</h3>
             <p className="mt-2 text-sm text-gray-700">
               A modern fan-made site focused on clarity and speed. It’s built to answer real player
@@ -62,7 +62,7 @@ export default function AboutPage() {
           </article>
 
           {/* How it works / data */}
-          <article className="group h-full rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+          <article className="group h-full rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
             <div className="flex h-full flex-col">
               <h3 className="text-lg font-semibold text-gray-900">How it works</h3>
               <p className="mt-2 text-sm text-gray-700">
@@ -91,7 +91,7 @@ export default function AboutPage() {
           </article>
 
           {/* Principles */}
-          <article className="group h-full rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+          <article className="group h-full rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
             <h3 className="text-lg font-semibold text-gray-900">Principles</h3>
             <ul className="mt-2 space-y-2 text-sm text-gray-700">
               <li className="rounded-lg border border-gray-200 bg-white px-3 py-2">
@@ -117,7 +117,7 @@ export default function AboutPage() {
         {/* Highlights */}
         <div className="mt-12 grid items-stretch gap-6 lg:grid-cols-3">
           {/* Guides & tools */}
-          <article className="group h-full rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+          <article className="group h-full rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
             <h3 className="text-lg font-semibold text-gray-900">Guides & Tools</h3>
             <p className="mt-2 text-sm text-gray-700">
               Learn pages are designed as <em>gateways</em>: short, valuable summaries that link to
@@ -140,7 +140,7 @@ export default function AboutPage() {
           </article>
 
           {/* Roadmap */}
-          <article className="group h-full rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+          <article className="group h-full rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
             <div className="flex h-full flex-col">
               <h3 className="text-lg font-semibold text-gray-900">Roadmap (what’s next)</h3>
               <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-700">
@@ -157,7 +157,7 @@ export default function AboutPage() {
           </article>
 
           {/* Contact & feedback */}
-          <article className="group h-full rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+          <article className="group h-full rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
             <div className="flex h-full flex-col">
               <h3 className="text-lg font-semibold text-gray-900">Contact & Feedback</h3>
               <p className="mt-2 text-sm text-gray-700">
@@ -180,7 +180,7 @@ export default function AboutPage() {
         </div>
 
         {/* FAQ */}
-        <div className="mt-12 rounded-2xl border border-gray-200 bg-white p-6">
+        <div className="mt-12 rounded-xl border border-gray-200 bg-white p-6">
           <h3 className="text-lg font-semibold text-gray-900">FAQ</h3>
           <dl className="mt-4 space-y-4 text-sm">
             <div>
