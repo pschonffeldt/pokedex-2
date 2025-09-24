@@ -12,6 +12,7 @@ const routes = [
   { label: 'Regions', path: '/learn/pokemon-regions' },
   { label: 'Generations', path: '/learn/pokemon-generations' },
   { label: 'Pokédex', path: '/pokedex' },
+  { label: 'Games', path: '/games' },
   { label: 'About', path: '/about' },
 ];
 
@@ -58,7 +59,7 @@ export default function MarketingHeader() {
         <div className="flex items-center gap-2">
           <Link
             href="/"
-            className="text-xl font-bold tracking-tight text-gray-900 transition-colors hover:text-indigo-600"
+            className="text-x font-bold tracking-tight text-gray-900 transition-colors hover:text-indigo-600"
           >
             PokéWorld Explorer
           </Link>
@@ -79,7 +80,7 @@ export default function MarketingHeader() {
         </div>
 
         {/* Desktop links */}
-        <ul className="ml-2 hidden items-center gap-2 lg:flex">
+        <ul className="hidden items-center lg:flex">
           {routes.map((route) => {
             const isActive = route.path === activeRoute?.path;
             return (
