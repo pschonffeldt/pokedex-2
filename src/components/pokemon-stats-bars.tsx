@@ -100,7 +100,7 @@ export default function PokemonStatsBars({ apiStats }: Props) {
 
   return (
     // Stats container
-    <div className="px-6 py-4">
+    <div className="flex flex-col">
       {/* Section title */}
       <p className="mb-3 text-xl font-bold text-black/100 text-center">Base Stats</p>
 
@@ -136,7 +136,7 @@ export default function PokemonStatsBars({ apiStats }: Props) {
           const delayStyle = hasStagger ? `${barIndex * DEFAULT_STAGGER_MS}ms` : undefined;
 
           return (
-            <div key={statName} className="grid grid-cols-[110px_1fr_48px] items-center gap-3">
+            <div key={statName} className="grid grid-cols-[110px_1fr_48px] items-center">
               {/* Left label (e.g., "HP") */}
               <span className="text-sm text-black/100 font-bold text-center">
                 {STAT_LABELS[statName]}

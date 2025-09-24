@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 
 interface Props {
@@ -11,7 +9,7 @@ interface Props {
   priority?: boolean;
 }
 
-export default function SpriteContainer({ spriteUrl, alt, size = 250, priority = false }: Props) {
+export default function SpriteContainer({ spriteUrl, alt, size = 300, priority = false }: Props) {
   return (
     <div className="mx-auto flex items-center justify-center" style={{ width: size, height: size }}>
       {spriteUrl ? (

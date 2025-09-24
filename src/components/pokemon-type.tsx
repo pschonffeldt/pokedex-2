@@ -1,5 +1,3 @@
-'use client';
-
 /**
  * PokemonType
  * -----------
@@ -59,12 +57,12 @@ export default function PokemonType({ types, weight, height }: PokemonTypeProps)
   const heightMDisplay = typeof height === 'number' ? (height / 10).toFixed(1) : '—';
 
   return (
-    <section className="flex flex-col items-center gap-4 px-6 py-4">
+    <section className="flex flex-col items-center px-6 py-2">
       {/* Section heading */}
       <h3 className="text-2xl font-bold text-black/100">Type</h3>
 
       {/* Type capsules row (supports 1–2 types; falls back to em dash) */}
-      <div className="min-h-20 flex flex-wrap items-center justify-center gap-2">
+      <div className="min-h-15 flex flex-wrap items-center justify-center gap-2">
         {types.length > 0 ? (
           types.map((rawTypeName) => {
             // Normalize type token for lookup (e.g., " Fire " → "fire")
@@ -74,7 +72,7 @@ export default function PokemonType({ types, weight, height }: PokemonTypeProps)
             return (
               <span
                 key={typeKey}
-                className="inline-block rounded-full px-4 py-1 text-sm font-semibold capitalize shadow-sm"
+                className="inline-block rounded-full px-5 py-1 text-sm font-semibold capitalize shadow-sm"
                 style={{ backgroundColor: bg, color: fg }}
                 aria-label={`Type ${toTitleCase(typeKey)}`}
               >

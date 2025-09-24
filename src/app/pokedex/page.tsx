@@ -9,6 +9,7 @@ import PokemonType from '@/components/pokemon-type';
 import SearchForm from '@/components/search-form';
 import SpriteContainer from '@/components/sprite-container';
 import HeroSection from '@/components/hero';
+import Button from '@/components/button';
 
 /* --------------------------- Types from your page --------------------------- */
 type StatName = 'hp' | 'attack' | 'defense' | 'special-attack' | 'special-defense' | 'speed';
@@ -166,25 +167,33 @@ export default function PokedexPage() {
               {/* Tips */}
               <div className="rounded-lg border border-gray-200 bg-white p-4">
                 <div className="text-sm font-semibold text-gray-900">Tips</div>
-                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-700">
+                <ul className="mt-2 list-disc space-y-2 pl-5 text-sm text-gray-700">
                   <li>
-                    Special names supported: <span className="font-medium">Mr. Mime</span>,{' '}
-                    <span className="font-medium">Farfetch’d</span>,{' '}
-                    <span className="font-medium">Nidoran♀/♂</span>.
+                    <span className="font-medium text-gray-900">Direct by Dex number:</span> type{' '}
+                    <span className="font-mono">384</span> for Rayquaza,{' '}
+                    <span className="font-mono">6</span> for Charizard, etc.
                   </li>
+
                   <li>
-                    Use <span className="font-medium">#</span> + number to jump by Dex ID (e.g.,{' '}
-                    <span className="font-medium">#384</span> for Rayquaza).
+                    <span className="font-medium text-gray-900">Name normalization:</span>{' '}
+                    case-insensitive; spaces & periods → hyphens; apostrophes removed. e.g. “Mr.
+                    Mime” → <span className="font-mono">mr-mime</span>, “Farfetch’d” →{' '}
+                    <span className="font-mono">farfetchd</span>. Gender symbols work: “Nidoran
+                    ♀/♂” or <span className="font-mono">nidoran-f</span>/
+                    <span className="font-mono">nidoran-m</span>.
                   </li>
+
                   <li>
-                    Want type advice? Visit the{' '}
-                    <Link
-                      href="/learn/pokemon-types"
-                      className="underline underline-offset-4 hover:no-underline"
-                    >
-                      Types page
-                    </Link>
-                    .
+                    <span className="font-medium text-gray-900">
+                      Forms & regionals (use hyphens):
+                    </span>{' '}
+                    <span className="font-mono">giratina-origin</span>,{' '}
+                    <span className="font-mono">deoxys-attack</span>,{' '}
+                    <span className="font-mono">lycanroc-dusk</span>,{' '}
+                    <span className="font-mono">charizard-gmax</span>,{' '}
+                    <span className="font-mono">meowth-galar</span>,{' '}
+                    <span className="font-mono">growlithe-hisui</span>,{' '}
+                    <span className="font-mono">tauros-paldea-combat</span>.
                   </li>
                 </ul>
               </div>
@@ -196,8 +205,8 @@ export default function PokedexPage() {
             <h2 className="text-xl font-semibold text-gray-900">Result</h2>
 
             {/* Status */}
-            <div className="mt-2 min-h-[28px] text-sm">
-              {isLoading && <span className="text-gray-600">Loading…</span>}
+            <div className="min-h-[28px] text-sm">
+              {isLoading && <span className="text-gray-600">Loading Pokémon…</span>}
               {!isLoading && errorMessage && <span className="text-red-600">{errorMessage}</span>}
               {!isLoading && !errorMessage && !pokemon && (
                 <span className="text-gray-500">Search for a Pokémon to see details.</span>
@@ -206,8 +215,8 @@ export default function PokedexPage() {
 
             {/* Details */}
             {pokemon && (
-              <div className="mt-4 grid gap-6 md:grid-cols-2">
-                <div className="space-y-4">
+              <div className="grid gap-2 md:grid-cols-2">
+                <div className="space-y-2">
                   <PokemonTitle name={pokemon.name} id={pokemon.id} />
                   <SpriteContainer
                     spriteUrl={pokemon.sprites.front_default ?? null}
@@ -221,8 +230,7 @@ export default function PokedexPage() {
                 </div>
 
                 <div className="space-y-4">
-                  <div className="rounded-lg border border-gray-200 bg-white p-4">
-                    <div className="text-sm font-semibold text-gray-900">Base Stats</div>
+                  <div className="rounded-lg border border-gray-200 bg-white p-2">
                     <div className="mt-2">
                       <PokemonStatsBars apiStats={pokemon.stats ?? []} />
                     </div>
@@ -231,24 +239,12 @@ export default function PokedexPage() {
                   <div className="rounded-lg border border-gray-200 bg-white p-4">
                     <div className="text-sm font-semibold text-gray-900">Quick Actions</div>
                     <div className="mt-3 flex flex-wrap gap-2">
-                      <Link
-                        href={`/pokedex?share=${pokemon.id}`}
-                        className="rounded-full border border-gray-300 bg-white px-3 py-1 text-xs font-medium text-gray-900 hover:bg-gray-100"
-                      >
+                      <Button href={`/pokedex?share=${pokemon.id}`} variant="outline" size="xs">
                         Share
-                      </Link>
-                      <Link
-                        href={`/learn/pokemon-types`}
-                        className="rounded-full border border-gray-300 bg-white px-3 py-1 text-xs font-medium text-gray-900 hover:bg-gray-100"
-                      >
-                        View type chart
-                      </Link>
-                      <Link
-                        href={`/learn/pokemon-regions`}
-                        className="rounded-full border border-gray-300 bg-white px-3 py-1 text-xs font-medium text-gray-900 hover:bg-gray-100"
-                      >
+                      </Button>
+                      <Button href={`/learn/pokemon-regions`} variant="outline" size="xs">
                         Browse regions
-                      </Link>
+                      </Button>
                     </div>
                   </div>
                 </div>
