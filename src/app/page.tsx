@@ -79,14 +79,16 @@ export default function HomePage() {
                 Geography, cities, gyms, starters, and legendaries—everything you need before a run.
               </p>
               <ul className="mt-4 grid grid-cols-2 gap-2 text-sm text-gray-700">
-                {[
-                  ['Kanto', '/learn/pokemon-regions/kanto'],
-                  ['Johto', '/learn/pokemon-regions/johto'],
-                  ['Hoenn', '/learn/pokemon-regions/hoenn'],
-                  ['Sinnoh', '/learn/pokemon-regions/sinnoh'],
-                  ['Unova', '/learn/pokemon-regions/unova'],
-                  ['Galar', '/learn/pokemon-regions/galar'],
-                ].map(([name, href]) => (
+                {(
+                  [
+                    ['Kanto', '/learn/pokemon-regions/kanto'],
+                    ['Johto', '/learn/pokemon-regions/johto'],
+                    ['Hoenn', '/learn/pokemon-regions/hoenn'],
+                    ['Sinnoh', '/learn/pokemon-regions/sinnoh'],
+                    ['Unova', '/learn/pokemon-regions/unova'],
+                    ['Galar', '/learn/pokemon-regions/galar'],
+                  ] as const
+                ).map(([name, href]) => (
                   <li key={name}>
                     <Link
                       href={href}
@@ -97,6 +99,7 @@ export default function HomePage() {
                   </li>
                 ))}
               </ul>
+
               <div className="mt-auto pt-5">
                 <div className="mt-auto pt-5">
                   <Button href="/learn/pokemon-regions" variant="dark">
