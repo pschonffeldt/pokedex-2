@@ -56,7 +56,7 @@ const DEFAULT_CARDS: BeginnerCard[] = [
 
 export default function BeginnerPaths({
   title = 'Beginner paths: choose a quick-start plan',
-  description = 'Follow a short checklist tailored to your background—every step links to the right spot.',
+  description = 'Choose the path that matches your experience. Each step jumps straight to the exact guide or tool—finish a path and you’ll have a region, starter, and a basic team ready.',
   cards = DEFAULT_CARDS,
   className = '',
   containerClassName = '',
