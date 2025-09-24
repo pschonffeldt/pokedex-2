@@ -181,15 +181,8 @@ export default function HomePage() {
                   ['Gen VII', '/learn/pokemon-generations#gen-vii'],
                   ['Gen VIII', '/learn/pokemon-generations#gen-viii'],
                   ['Gen IX', '/learn/pokemon-generations#gen-ix'],
-                ].map(([label, href]) => (
+                ].map(([label]) => (
                   <li key={label}>
-                    {/* Here we can enable the buttons to each gen page */}
-                    {/* <Link
-                      href={href}
-                      className="block rounded-lg border border-gray-200 bg-white px-3 py-2 hover:bg-gray-50"
-                    >
-                      {label}
-                    </Link> */}
                     <div className="block rounded-lg border border-gray-200 bg-white px-3 py-2 hover:bg-gray-50">
                       <p>{label}</p>
                     </div>
