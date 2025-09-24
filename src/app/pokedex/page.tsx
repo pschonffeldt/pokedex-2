@@ -45,7 +45,19 @@ export default function PokedexPage() {
 
   const fetchPokemonByUserQuery = async (userQuery: string) => {
     const normalizedQuery = normalizePokemonInput(userQuery);
-    if (!normalizedQuery) return;
+
+    // Empty input: show an error and stop.
+    if (!normalizedQuery) {
+      setErrorMessage('Please enter a Pokémon name or number (e.g., "Pikachu" or "25").');
+      setPokemon(null); // optional: clear any previous result
+      return;
+    }
+    // Easter egg for Chileans
+    if (normalizedQuery === 'tula') {
+      setErrorMessage('Que importa el nombre');
+      setPokemon(null);
+      return;
+    }
 
     setIsLoading(true);
     setErrorMessage(null);
@@ -57,7 +69,8 @@ export default function PokedexPage() {
       const response = await fetch(requestUrl);
 
       if (!response.ok) {
-        if (response.status === 404) throw new Error('Pokémon not found.');
+        if (response.status === 404)
+          throw new Error('Pokémon not found. Check spelling or try a Dex #.');
         throw new Error('Failed to fetch Pokémon.');
       }
 
@@ -236,7 +249,7 @@ export default function PokedexPage() {
                     </div>
                   </div>
 
-                  <div className="rounded-lg border border-gray-200 bg-white p-4">
+                  {/* <div className="rounded-lg border border-gray-200 bg-white p-4">
                     <div className="text-sm font-semibold text-gray-900">Quick Actions</div>
                     <div className="mt-3 flex flex-wrap gap-2">
                       <Button href={`/pokedex?share=${pokemon.id}`} variant="outline" size="xs">
@@ -246,7 +259,7 @@ export default function PokedexPage() {
                         Browse regions
                       </Button>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             )}
