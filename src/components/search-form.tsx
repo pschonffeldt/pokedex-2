@@ -28,21 +28,23 @@ export default function SearchForm({ searchText, setSearchText, onSearch }: Prop
           type="search"
           aria-label="Search Pokémon by name or number"
           className="
-            block w-full h-[60px] rounded-full
-            bg-white text-black placeholder:text-black/60
-            pl-12 pr-6
-            border border-white
-            transition-colors duration-150
+            block w-full h-12 rounded-full
+            bg-white text-gray-900 placeholder:text-gray-500/80
+            pl-11 pr-5
+            border border-gray-300 shadow-sm
+            transition-colors
+            hover:bg-gray-50
             focus-visible:outline-none
-            ring-blue-600 focus-visible:ring-2
-            ring-offset-0 ring-offset-white
-            hover:bg-secondary/90
+            focus:border-indigo-500
+            focus-visible:ring-2 focus-visible:ring-indigo-500/60
           "
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
           placeholder="e.g. Pikachu or 25"
           spellCheck={false}
           autoComplete="off"
+          autoCapitalize="off"
+          inputMode="search"
         />
       </div>
     </form>

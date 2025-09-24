@@ -3,19 +3,21 @@
 import Link from 'next/link';
 import * as React from 'react';
 
-type ButtonVariant = 'primary' | 'dark' | 'outline';
+type ButtonVariant = 'primary' | 'dark' | 'outline' | 'secondary';
 type ButtonSize = 'sm' | 'xs';
 
 type ButtonProps = {
   children: React.ReactNode;
   href?: string; // if provided -> renders <Link>
-  variant?: ButtonVariant; // 'primary' | 'dark' | 'outline'
+  variant?: ButtonVariant; // 'primary' | 'dark' | 'outline' | 'secondary'
   size?: ButtonSize; // 'sm' | 'xs'
   className?: string;
   type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
   ariaLabel?: string;
+  target?: React.HTMLAttributeAnchorTarget;
+  rel?: string;
 };
 
 export default function Button({
@@ -28,6 +30,8 @@ export default function Button({
   disabled = false,
   onClick,
   ariaLabel,
+  target,
+  rel,
 }: ButtonProps) {
   const base =
     'rounded-full font-semibold shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60 disabled:opacity-60 disabled:cursor-not-allowed';
@@ -37,17 +41,28 @@ export default function Button({
     xs: 'px-3 py-1 text-xs',
   };
 
+  // `secondary` is an alias of your outline style
+  const outlineClasses = 'border border-gray-300 bg-white text-gray-900 hover:bg-gray-100';
+
   const variantMap: Record<ButtonVariant, string> = {
     primary: 'bg-indigo-600 text-white hover:bg-indigo-700',
     dark: 'bg-gray-900 text-white hover:bg-black',
-    outline: 'border border-gray-300 bg-white text-gray-900 hover:bg-gray-100',
+    outline: outlineClasses,
+    secondary: outlineClasses,
   };
 
   const classes = [base, sizeMap[size], variantMap[variant], className].join(' ');
 
   if (href) {
     return (
-      <Link href={href} aria-label={ariaLabel} className={classes}>
+      <Link
+        href={href}
+        aria-label={ariaLabel}
+        className={classes}
+        onClick={onClick as React.MouseEventHandler<HTMLAnchorElement>}
+        target={target}
+        rel={rel}
+      >
         {children}
       </Link>
     );
@@ -56,7 +71,7 @@ export default function Button({
   return (
     <button
       type={type}
-      onClick={onClick}
+      onClick={onClick as React.MouseEventHandler<HTMLButtonElement>}
       disabled={disabled}
       aria-label={ariaLabel}
       className={classes}
@@ -66,20 +81,20 @@ export default function Button({
   );
 }
 
-// How to implement
-
-// import Button from '@/components/button';
-
-// // 1) Primary (indigo) — matches “See all regions”
-// <Button href="/learn/pokemon-regions">See all regions</Button>
-
-// // 2) Outline small — matches your tiny CTA chips
-// <Button href={c.cta[1]} variant="outline" size="xs">
-//   {c.cta[0]}
+// // Your example: secondary + onClick (no href -> <button>)
+// <Button variant="secondary" onClick={onSearch}>
+//   Search
 // </Button>
 
-// // 3) Dark — same as hero’s dark button
-// <Button href="/learn" variant="dark">Start learning</Button>
+// // Secondary as a link (still supports onClick)
+// <Button href="/pokedex" variant="secondary" onClick={() => console.log('navigating')}>
+//   Open Pokédex
+// </Button>
 
-// // As a real <button>
-// <Button onClick={handleClick} variant="primary">Do thing</Button>
+// // Tiny outline chip
+// <Button href={ctaHref} variant="outline" size="xs">
+//   {ctaLabel}
+// </Button>
+
+// // Dark hero button
+// <Button href="/learn" variant="dark">Start learning</Button>

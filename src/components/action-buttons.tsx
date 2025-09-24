@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
+import Button from '@/components/button';
 
 interface Props {
   onSearch: () => void;
@@ -10,7 +10,7 @@ interface Props {
 
 export default function ActionButtons({ onSearch, onRandom, onClear }: Props) {
   return (
-    <div className="flex justify-between items-center py-2 space-x-5">
+    <div className="flex flex-wrap justify-items-start py-2 space-x-4 gap-y-2">
       <Button variant="secondary" onClick={onSearch}>
         Search
       </Button>

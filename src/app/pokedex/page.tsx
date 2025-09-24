@@ -138,12 +138,11 @@ export default function PokedexPage() {
           { href: '/learn/pokemon-types', label: 'Discover Pokémon Types', variant: 'dark' },
         ]}
       />
-
       {/* Main content */}
       <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           {/* Search panel */}
-          <article className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+          <article className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
             <h2 className="text-xl font-semibold text-gray-900">Search</h2>
             <p className="mt-1 text-sm text-gray-600">
               Type a name (e.g., <span className="font-medium">pikachu</span>,{' '}
@@ -193,7 +192,7 @@ export default function PokedexPage() {
           </article>
 
           {/* Result panel */}
-          <article className="lg:col-span-2 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+          <article className="lg:col-span-2 rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
             <h2 className="text-xl font-semibold text-gray-900">Result</h2>
 
             {/* Status */}
