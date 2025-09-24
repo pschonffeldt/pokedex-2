@@ -17,16 +17,13 @@ export default function MarketingFooter() {
 
           {/* right: optional links */}
           <div className="flex gap-4 text-sm text-gray-500">
-            <a href="/privacy" className="hover:text-blue-600 transition-colors">
+            {/* <a href="/privacy" className="hover:text-blue-600 transition-colors">
               Privacy
             </a>
             <a href="/terms" className="hover:text-blue-600 transition-colors">
               Terms
-            </a>
-            <a
-              href="mailto:hello@pschonffeldt.dev"
-              className="hover:text-blue-600 transition-colors"
-            >
+            </a> */}
+            <a href="mailto:info@mitkof.cl" className="hover:text-blue-600 transition-colors">
               Contact
             </a>
           </div>
