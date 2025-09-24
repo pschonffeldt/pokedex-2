@@ -51,13 +51,13 @@ export default function HomePage() {
               </p>
               <ul className="mt-4 grid gap-2 text-sm text-gray-700">
                 <li className="rounded-lg border border-gray-200 bg-white px-3 py-2">
-                  Filter by region (Kanto → Paldea)
+                  Find by name or # (e.g., Pikachu, 25 — supports Mr. Mime, Nidoran♀/♂)
                 </li>
                 <li className="rounded-lg border border-gray-200 bg-white px-3 py-2">
-                  Type chips & weaknesses
+                  Quick view: types & stats (height/weight, base stats at a glance)
                 </li>
                 <li className="rounded-lg border border-gray-200 bg-white px-3 py-2">
-                  Base stats and evolutions
+                  Roll a random Pokémon (discover something new fast)
                 </li>
               </ul>
               <div className="mt-auto pt-5">
