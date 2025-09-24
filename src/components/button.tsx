@@ -81,7 +81,7 @@ export default function Button({
   );
 }
 
-// // Your example: secondary + onClick (no href -> <button>)
+// Secondary + onClick (no href -> <button>)
 // <Button variant="secondary" onClick={onSearch}>
 //   Search
 // </Button>
@@ -98,3 +98,9 @@ export default function Button({
 
 // // Dark hero button
 // <Button href="/learn" variant="dark">Start learning</Button>
+
+// // Dark button
+// <Button href="URL" variant="dark">BUTTON TEXT</Button>
+
+// // Dark button
+// <Button href="URL" variant="dark">BUTTON TEXT</Button>

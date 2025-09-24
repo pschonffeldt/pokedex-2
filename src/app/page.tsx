@@ -1,6 +1,8 @@
 // app/page.tsx
 'use client';
 
+import BeginnerPaths from '@/components/beginner-path';
+import Button from '@/components/button';
 import HeroSection from '@/components/hero';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -9,88 +11,6 @@ const primaryBtn =
   'rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60';
 const darkBtn =
   'rounded-full bg-gray-900 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-black';
-
-/* ----------------------------- Beginner Paths ----------------------------- */
-
-function BeginnerPathsSection() {
-  const cards: {
-    title: string;
-    steps: Array<[string, string]>;
-    cta: [string, string];
-  }[] = [
-    {
-      title: 'New to Pokémon?',
-      steps: [
-        ['Learn types (10 min)', '/learn/pokemon-types'],
-        ['Pick a region to start', '/learn/pokemon-regions'],
-        ['Choose a starter', '/learn/guides/starter-picks'],
-        ['Open the Pokédex', '/pokedex'],
-        ['Build basic coverage', '/learn/guides/type-coverage'],
-      ],
-      cta: ['Start learning', '/learn'],
-    },
-    {
-      title: 'Returning after Gen IV?',
-      steps: [
-        ['Skim the Generations timeline', '/learn/pokemon-generations'],
-        ['Read new mechanics (Megas → Tera)', '/learn/pokemon-generations#timeline'],
-        ['Check regional forms', '/pokedex?query=regional'],
-        ['Pick a modern entry', '/learn/pokemon-generations#recommended'],
-        ['Plan a team in the Pokédex', '/pokedex'],
-      ],
-      cta: ['Catch up fast', '/learn/pokemon-generations'],
-    },
-    {
-      title: 'Competitive curious?',
-      steps: [
-        ['Types & multipliers deep dive', '/learn/pokemon-types'],
-        ['Coverage recipes (BoltBeam, etc.)', '/learn/guides/type-coverage'],
-        ['Speed control & hazards 101', '/learn/guides/hazards'],
-        ['Build a sample core', '/learn/guides/sample-cores'],
-        ['Search sets in Pokédex', '/pokedex'],
-      ],
-      cta: ['Open type chart', '/types'],
-    },
-  ];
-
-  return (
-    <section className="mx-auto max-w-7xl px-6 pb-12 sm:px-8 lg:px-12">
-      <div className="rounded-2xl border border-gray-200 bg-white p-6">
-        <h3 className="text-lg font-semibold text-gray-900">
-          Beginner paths: choose a quick-start plan
-        </h3>
-        <p className="mt-2 text-sm text-gray-600">
-          Follow a short checklist tailored to your background—every step links to the right spot.
-        </p>
-
-        <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {cards.map((c) => (
-            <article key={c.title} className="rounded-xl border border-gray-200 bg-white p-4">
-              <div className="text-sm font-semibold text-gray-900">{c.title}</div>
-              <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm text-gray-700">
-                {c.steps.map(([label, href]) => (
-                  <li key={label}>
-                    <Link href={href} className="underline-offset-4 hover:underline">
-                      {label}
-                    </Link>
-                  </li>
-                ))}
-              </ol>
-              <div className="mt-3">
-                <Link
-                  href={c.cta[1]}
-                  className="rounded-full border border-gray-300 bg-white px-3 py-1 text-xs font-medium text-gray-900 hover:bg-gray-100"
-                >
-                  {c.cta[0]}
-                </Link>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ------------------------------- Boss Counters ------------------------------ */
 
@@ -651,9 +571,7 @@ export default function HomePage() {
                 </li>
               </ul>
               <div className="mt-auto pt-5">
-                <Link href="/pokedex" className={primaryBtn}>
-                  Open Pokédex
-                </Link>
+                <Button href="/pokedex">Open Pokédex</Button>
               </div>
             </div>
           </article>
@@ -690,9 +608,11 @@ export default function HomePage() {
                 ))}
               </ul>
               <div className="mt-auto pt-5">
-                <Link href="/learn/pokemon-regions" className={darkBtn}>
-                  Browse regions
-                </Link>
+                <div className="mt-auto pt-5">
+                  <Button href="/learn/pokemon-regions" variant="dark">
+                    Explore regions
+                  </Button>
+                </div>
               </div>
             </div>
           </article>
@@ -739,9 +659,7 @@ export default function HomePage() {
                 ))}
               </ul>
               <div className="mt-auto pt-5">
-                <Link href="/learn/pokemon-types" className={primaryBtn}>
-                  Explore types
-                </Link>
+                <Button href="/learn/pokemon-types">Explore types</Button>
               </div>
             </div>
           </article>
@@ -772,19 +690,23 @@ export default function HomePage() {
                   ['Gen IX', '/learn/pokemon-generations#gen-ix'],
                 ].map(([label, href]) => (
                   <li key={label}>
-                    <Link
+                    {/* Here we can enable the buttons to each gen page */}
+                    {/* <Link
                       href={href}
                       className="block rounded-lg border border-gray-200 bg-white px-3 py-2 hover:bg-gray-50"
                     >
                       {label}
-                    </Link>
+                    </Link> */}
+                    <div className="block rounded-lg border border-gray-200 bg-white px-3 py-2 hover:bg-gray-50">
+                      <p>{label}</p>
+                    </div>
                   </li>
                 ))}
               </ul>
               <div className="mt-auto pt-5">
-                <Link href="/learn/pokemon-generations" className={darkBtn}>
+                <Button href="/learn/pokemon-generations" variant="dark">
                   Explore generations
-                </Link>
+                </Button>
               </div>
             </div>
           </article>
@@ -792,7 +714,8 @@ export default function HomePage() {
       </section>
 
       {/* Compoents, locally defined, to be turned into its own independant file */}
-      <BeginnerPathsSection />
+      {/* <BeginnerPathsSection /> */}
+      <BeginnerPaths />
       <BossCountersSection />
       <VersionExclusivesSection />
       <StarterQuiz />
