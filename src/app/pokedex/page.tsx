@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import ActionButtons from '@/components/action-buttons';
 import PokemonStatsBars from '@/components/pokemon-stats-bars';
 import PokemonTitle from '@/components/pokemon-title';
@@ -9,7 +8,6 @@ import PokemonType from '@/components/pokemon-type';
 import SearchForm from '@/components/search-form';
 import SpriteContainer from '@/components/sprite-container';
 import HeroSection from '@/components/hero';
-import Button from '@/components/button';
 
 /* --------------------------- Types from your page --------------------------- */
 type StatName = 'hp' | 'attack' | 'defense' | 'special-attack' | 'special-defense' | 'speed';
@@ -130,10 +128,10 @@ export default function PokedexPage() {
       {/* Breadcrumb */}
       <nav className="border-b border-gray-200 bg-white">
         <div className="mx-auto flex h-16 max-w-7xl items-center gap-2 px-6 sm:px-8 lg:px-12 text-sm">
-          <Link href="/" className="text-gray-500 hover:text-gray-900">
+          {/* <Link href="/" className="text-gray-500 hover:text-gray-900">
             Home
           </Link>
-          <span className="text-gray-300">/</span>
+          <span className="text-gray-300">/</span> */}
           <span className="font-medium text-gray-900">Pokédex</span>
         </div>
       </nav>
@@ -248,18 +246,6 @@ export default function PokedexPage() {
                       <PokemonStatsBars apiStats={pokemon.stats ?? []} />
                     </div>
                   </div>
-
-                  {/* <div className="rounded-lg border border-gray-200 bg-white p-4">
-                    <div className="text-sm font-semibold text-gray-900">Quick Actions</div>
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      <Button href={`/pokedex?share=${pokemon.id}`} variant="outline" size="xs">
-                        Share
-                      </Button>
-                      <Button href={`/learn/pokemon-regions`} variant="outline" size="xs">
-                        Browse regions
-                      </Button>
-                    </div>
-                  </div> */}
                 </div>
               </div>
             )}
