@@ -128,10 +128,6 @@ export default function PokedexPage() {
       {/* Breadcrumb */}
       <nav className="border-b border-gray-200 bg-white">
         <div className="mx-auto flex h-16 max-w-7xl items-center gap-2 px-6 sm:px-8 lg:px-12 text-sm">
-          {/* <Link href="/" className="text-gray-500 hover:text-gray-900">
-            Home
-          </Link>
-          <span className="text-gray-300">/</span> */}
           <span className="font-medium text-gray-900">Pokédex</span>
         </div>
       </nav>
