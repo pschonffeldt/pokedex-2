@@ -16,8 +16,9 @@ type Region = {
   inspiration: string;
   highlights: string;
   legendaries: string;
-  guideHref: string; // keeps your /learn/pokemon-regions/* routes
-  pokedexHref: string; // optional deep link to region filter
+  guideHref: string;
+  pokedexHref: string;
+  generationHref: string;
 };
 
 // Content as object to later map
@@ -33,6 +34,7 @@ const regions: Region[] = [
     legendaries: 'Articuno, Zapdos, Moltres, Mewtwo',
     guideHref: '/learn/pokemon-regions/kanto',
     pokedexHref: '/pokedex?region=kanto',
+    generationHref: '/learn/pokemon-generations/gen-i',
   },
   {
     id: 'johto',
@@ -45,6 +47,7 @@ const regions: Region[] = [
     legendaries: 'Lugia, Ho-Oh, Raikou, Entei, Suicune',
     guideHref: '/learn/pokemon-regions/johto',
     pokedexHref: '/pokedex?region=johto',
+    generationHref: '/learn/pokemon-generations/gen-ii',
   },
   {
     id: 'hoenn',
@@ -57,6 +60,7 @@ const regions: Region[] = [
     legendaries: 'Groudon, Kyogre, Rayquaza',
     guideHref: '/learn/pokemon-regions/hoenn',
     pokedexHref: '/pokedex?region=hoenn',
+    generationHref: '/learn/pokemon-generations/gen-iii',
   },
   {
     id: 'sinnoh',
@@ -69,6 +73,7 @@ const regions: Region[] = [
     legendaries: 'Dialga, Palkia, Giratina, Arceus',
     guideHref: '/learn/pokemon-regions/sinnoh',
     pokedexHref: '/pokedex?region=sinnoh',
+    generationHref: '/learn/pokemon-generations/gen-iv',
   },
   {
     id: 'unova',
@@ -81,6 +86,7 @@ const regions: Region[] = [
     legendaries: 'Reshiram, Zekrom, Kyurem',
     guideHref: '/learn/pokemon-regions/unova',
     pokedexHref: '/pokedex?region=unova',
+    generationHref: '/learn/pokemon-generations/gen-v',
   },
   {
     id: 'kalos',
@@ -93,6 +99,7 @@ const regions: Region[] = [
     legendaries: 'Xerneas, Yveltal, Zygarde',
     guideHref: '/learn/pokemon-regions/kalos',
     pokedexHref: '/pokedex?region=kalos',
+    generationHref: '/learn/pokemon-generations/gen-vi',
   },
   {
     id: 'alola',
@@ -105,6 +112,7 @@ const regions: Region[] = [
     legendaries: 'Solgaleo, Lunala, Tapu guardians',
     guideHref: '/learn/pokemon-regions/alola',
     pokedexHref: '/pokedex?region=alola',
+    generationHref: '/learn/pokemon-generations/gen-vii',
   },
   {
     id: 'galar',
@@ -117,6 +125,7 @@ const regions: Region[] = [
     legendaries: 'Zacian, Zamazenta, Eternatus',
     guideHref: '/learn/pokemon-regions/galar',
     pokedexHref: '/pokedex?region=galar',
+    generationHref: '/learn/pokemon-generations/gen-viii',
   },
   {
     id: 'paldea',
@@ -129,6 +138,7 @@ const regions: Region[] = [
     legendaries: 'Koraidon, Miraidon',
     guideHref: '/learn/pokemon-regions/paldea',
     pokedexHref: '/pokedex?region=paldea',
+    generationHref: '/learn/pokemon-generations/gen-ix',
   },
 ];
 
@@ -195,9 +205,12 @@ export default function PokemonRegions() {
                   >
                     {region.name}
                   </h3>
-                  <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700">
-                    {region.gen}
-                  </span>
+                  {/* LING TO GENERATION! */}
+                  <Link href={region.generationHref}>
+                    <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700 hover:bg-gray-200">
+                      {region.gen}
+                    </span>
+                  </Link>
                 </div>
 
                 <p id={`region-${region.id}-desc`} className="mt-2 text-sm text-gray-600">
