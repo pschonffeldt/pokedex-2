@@ -243,7 +243,7 @@ export default function GalarPage() {
                 Region map
               </h3>
               <Image
-                src="/images/jhoto-map.svg" // put the file in /public/og-image.png
+                src="/images/wip-map.svg" // put the file in /public/og-image.png
                 alt="Galar region map"
                 width={350}
                 height={300}
