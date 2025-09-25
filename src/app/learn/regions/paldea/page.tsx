@@ -22,7 +22,7 @@ function Pokeball({ className = 'h-5 w-5 text-red-600' }) {
   );
 }
 
-export default function AlolaPage() {
+export default function PaldeaPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Breadcrumb */}
@@ -36,11 +36,11 @@ export default function AlolaPage() {
             Learn
           </Link>
           <span className="text-gray-300">/</span>
-          <Link href="/learn/pokemon-regions" className="text-gray-500 hover:text-gray-900">
+          <Link href="/learn/regions" className="text-gray-500 hover:text-gray-900">
             Regions
           </Link>
           <span className="text-gray-300">/</span>
-          <span className="font-medium text-gray-900">Alola</span>
+          <span className="font-medium text-gray-900">Paldea</span>
         </div>
       </nav>
 
@@ -50,13 +50,13 @@ export default function AlolaPage() {
           <div className="flex items-start gap-3">
             <div>
               <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
-                Alola Region
+                Paldea Region
               </h1>
               <p className="mt-3 max-w-prose text-gray-600 sm:text-lg">
-                A sun-soaked archipelago inspired by Hawaii,{' '}
-                <span className="font-medium text-gray-900">Alola</span> trades gyms for the Island
-                Challenge—trials, Totem Pokémon, and grand Kahuna battles. Regional forms, Z-Moves,
-                and a warm, laid-back culture make every island hop feel fresh and personal.
+                An Iberian-inspired peninsula turned truly open world. Choose your path across
+                Victory Road, the Path of Legends, or Starfall Street, master the Terastal
+                phenomenon, and descend into Area Zero beneath the Great Crater to uncover the
+                region’s deepest mysteries.
               </p>
             </div>
           </div>
@@ -65,19 +65,21 @@ export default function AlolaPage() {
           <dl className="mt-8 grid grid-cols-1 gap-4 text-sm sm:grid-cols-2 md:grid-cols-4">
             <div className="rounded-lg border border-gray-200 bg-white p-4">
               <dt className="font-medium text-gray-900">Generation</dt>
-              <dd className="text-gray-600">VII (Pokédex #722–809)</dd>
+              <dd className="text-gray-600">IX (Pokédex #906–1025)</dd>
             </div>
             <div className="rounded-lg border border-gray-200 bg-white p-4">
               <dt className="font-medium text-gray-900">Games</dt>
-              <dd className="text-gray-600">Sun, Moon • Ultra Sun, Ultra Moon</dd>
+              <dd className="text-gray-600">
+                Scarlet, Violet • The Teal Mask &amp; The Indigo Disk (DLC)
+              </dd>
             </div>
             <div className="rounded-lg border border-gray-200 bg-white p-4">
               <dt className="font-medium text-gray-900">Professor</dt>
-              <dd className="text-gray-600">Professor Kukui</dd>
+              <dd className="text-gray-600">Professor Sada (Scarlet) / Professor Turo (Violet)</dd>
             </div>
             <div className="rounded-lg border border-gray-200 bg-white p-4">
               <dt className="font-medium text-gray-900">Champion</dt>
-              <dd className="text-gray-600">You (first Champion)</dd>
+              <dd className="text-gray-600">Geeta (Top Champion)</dd>
             </div>
           </dl>
         </div>
@@ -92,10 +94,10 @@ export default function AlolaPage() {
             <article className="space-y-3">
               <h2 className="text-2xl font-bold text-gray-900">Overview</h2>
               <p className="text-gray-700">
-                Alola spans four main islands—Melemele, Akala, Ula&apos;ula, and Poni—plus Aether
-                Paradise offshore. Instead of badges, you clear trials led by Captains, then face
-                powerful Kahunas to progress. Poké Ride replaces HMs, encouraging exploration from
-                jungle trails to volcanic slopes and coral reefs.
+                Paldea centers on Mesagoza and its academy (Naranja/Uva), with routes fanning out
+                through provinces and biomes—from the Asado Desert and Glaseado Mountain to
+                Casseroya Lake’s shores. Ride Koraidon or Miraidon to traverse land, water, and air
+                as Terastallization reshapes team roles and type matchups.
               </p>
             </article>
 
@@ -104,18 +106,18 @@ export default function AlolaPage() {
               <h2 className="text-2xl font-bold text-gray-900">Key Cities & Towns</h2>
               <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {[
-                  "Hau'oli City",
-                  'Iki Town',
-                  'Heahea City',
-                  'Paniola Town',
-                  'Konikoni City',
-                  'Royal Avenue',
-                  'Malie City',
-                  'Tapu Village',
-                  'Po Town',
-                  'Seafolk Village',
-                  'Aether Paradise',
-                  'Mount Lanakila',
+                  'Mesagoza',
+                  'Los Platos',
+                  'Cortondo',
+                  'Artazon',
+                  'Levincia',
+                  'Cascarrafa',
+                  'Porto Marinada',
+                  'Zapapico',
+                  'Medali',
+                  'Montenevera',
+                  'Alfornada',
+                  'Glaseado (Gym)',
                 ].map((name) => (
                   <li
                     key={name}
@@ -132,14 +134,14 @@ export default function AlolaPage() {
               <h2 className="text-2xl font-bold text-gray-900">Gym Leaders</h2>
               <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {[
-                  ['Kahuna Hala', 'Fighting – Melemele Island'],
-                  ['Kahuna Olivia', 'Rock – Akala Island'],
-                  ['Kahuna Nanu', "Dark – Ula'ula Island"],
-                  ['Kahuna Hapu', 'Ground – Poni Island'],
-                  ['Ilima', 'Normal – Melemele (Trial Captain)'],
-                  ['Lana', 'Water – Brooklet Hill (Trial Captain)'],
-                  ['Kiawe', 'Fire – Wela Volcano Park (Trial Captain)'],
-                  ['Mallow', 'Grass – Lush Jungle (Trial Captain)'],
+                  ['Katy', 'Bug – Cortondo'],
+                  ['Brassius', 'Grass – Artazon'],
+                  ['Iono', 'Electric – Levincia'],
+                  ['Kofu', 'Water – Cascarrafa'],
+                  ['Larry', 'Normal – Medali'],
+                  ['Ryme', 'Ghost – Montenevera'],
+                  ['Tulip', 'Psychic – Alfornada'],
+                  ['Grusha', 'Ice – Glaseado Gym'],
                 ].map(([leader, info]) => (
                   <li key={leader} className="rounded-lg border border-gray-200 bg-white px-4 py-3">
                     <div className="font-medium text-gray-900">{leader}</div>
@@ -154,18 +156,20 @@ export default function AlolaPage() {
               <article className="space-y-3">
                 <h2 className="text-2xl font-bold text-gray-900">Starter Pokémon</h2>
                 <ul className="space-y-2 text-gray-800">
-                  <li>Rowlet (Grass/Flying)</li>
-                  <li>Litten (Fire)</li>
-                  <li>Popplio (Water)</li>
+                  <li>Sprigatito (Grass)</li>
+                  <li>Fuecoco (Fire)</li>
+                  <li>Quaxly (Water)</li>
                 </ul>
               </article>
 
               <article className="space-y-3">
                 <h2 className="text-2xl font-bold text-gray-900">Legendary & Mythical</h2>
                 <ul className="space-y-2 text-gray-800">
-                  <li>Solgaleo • Lunala • Necrozma</li>
-                  <li>Tapu Koko • Tapu Lele • Tapu Bulu • Tapu Fini</li>
-                  <li>Magearna • Marshadow • Zeraora (Mythical)</li>
+                  <li>Koraidon • Miraidon</li>
+                  <li>Ting-Lu • Chien-Pao • Wo-Chien • Chi-Yu</li>
+                  <li>
+                    Terapagos • Ogerpon • Okidogi • Munkidori • Fezandipiti • Pecharunt (Mythical)
+                  </li>
                 </ul>
               </article>
             </div>
@@ -174,11 +178,11 @@ export default function AlolaPage() {
             <article className="space-y-3">
               <h2 className="text-2xl font-bold text-gray-900">Notable Routes & Landmarks</h2>
               <ul className="list-disc pl-6 text-gray-800">
-                <li>Aether Paradise & Ultra Wormholes</li>
-                <li>Wela Volcano Park & Brooklet Hill</li>
-                <li>Lush Jungle & Malie Garden</li>
-                <li>Vast Poni Canyon & Poni Gauntlet</li>
-                <li>Mount Lanakila (Pokémon League)</li>
+                <li>Area Zero (Great Crater of Paldea)</li>
+                <li>Naranja/Uva Academy (Mesagoza)</li>
+                <li>Team Star Bases (Starfall Street)</li>
+                <li>Titan sites (Path of Legends)</li>
+                <li>Asado Desert • Casseroya Lake • Glaseado Mountain</li>
               </ul>
             </article>
 
@@ -191,7 +195,7 @@ export default function AlolaPage() {
                 Open Pokédex
               </Link>
               <Link
-                href="/learn/pokemon-regions"
+                href="/learn/regions"
                 className="rounded-full bg-gray-900 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-black"
               >
                 Back to Regions
@@ -208,9 +212,12 @@ export default function AlolaPage() {
                 Trivia
               </h3>
               <ul className="space-y-2 text-gray-800">
-                <li>Gyms are replaced by trials, Totem battles, and Kahuna grand trials.</li>
-                <li>Introduced regional variants known as Alolan forms.</li>
-                <li>Z-Moves let one Pokémon unleash a single, super-powered attack per battle.</li>
+                <li>First fully open-world mainline region with three concurrent story paths.</li>
+                <li>Terastallization can change a Pokémon’s type and boost Tera-type moves.</li>
+                <li>
+                  Ride Koraidon/Miraidon for traversal; “Let’s Go” auto-battles and TM crafting
+                  debut.
+                </li>
               </ul>
             </div>
             {/* Games & releases box */}
@@ -219,17 +226,17 @@ export default function AlolaPage() {
               <dl className="space-y-2 text-sm">
                 <div className="flex gap-2">
                   <dt className="shrink-0 font-medium text-gray-900">Original:</dt>
-                  <dd className="text-gray-700">Pokémon Sun & Moon (2016 – worldwide)</dd>
+                  <dd className="text-gray-700">Pokémon Scarlet &amp; Violet (2022 – worldwide)</dd>
                 </div>
                 <div className="flex gap-2">
                   <dt className="shrink-0 font-medium text-gray-900">Third Version:</dt>
-                  <dd className="text-gray-700">
-                    Pokémon Ultra Sun & Ultra Moon (2017 – worldwide)
-                  </dd>
+                  <dd className="text-gray-700">— (DLC released instead)</dd>
                 </div>
                 <div className="flex gap-2">
                   <dt className="shrink-0 font-medium text-gray-900">Remakes:</dt>
-                  <dd className="text-gray-700">—</dd>
+                  <dd className="text-gray-700">
+                    — (The Teal Mask &amp; The Indigo Disk, 2023 DLC)
+                  </dd>
                 </div>
               </dl>
             </div>
@@ -241,7 +248,7 @@ export default function AlolaPage() {
               </h3>
               <Image
                 src="/images/jhoto-map.svg" // put the file in /public/og-image.png
-                alt="Alola region map"
+                alt="Paldea region map"
                 width={350}
                 height={300}
                 className="rounded-lg"

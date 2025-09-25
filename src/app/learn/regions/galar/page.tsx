@@ -22,7 +22,7 @@ function Pokeball({ className = 'h-5 w-5 text-red-600' }) {
   );
 }
 
-export default function PaldeaPage() {
+export default function GalarPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Breadcrumb */}
@@ -36,11 +36,11 @@ export default function PaldeaPage() {
             Learn
           </Link>
           <span className="text-gray-300">/</span>
-          <Link href="/learn/pokemon-regions" className="text-gray-500 hover:text-gray-900">
+          <Link href="/learn/regions" className="text-gray-500 hover:text-gray-900">
             Regions
           </Link>
           <span className="text-gray-300">/</span>
-          <span className="font-medium text-gray-900">Paldea</span>
+          <span className="font-medium text-gray-900">Galar</span>
         </div>
       </nav>
 
@@ -50,13 +50,14 @@ export default function PaldeaPage() {
           <div className="flex items-start gap-3">
             <div>
               <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
-                Paldea Region
+                Galar Region
               </h1>
               <p className="mt-3 max-w-prose text-gray-600 sm:text-lg">
-                An Iberian-inspired peninsula turned truly open world. Choose your path across
-                Victory Road, the Path of Legends, or Starfall Street, master the Terastal
-                phenomenon, and descend into Area Zero beneath the Great Crater to uncover the
-                region’s deepest mysteries.
+                Inspired by the United Kingdom,{' '}
+                <span className="font-medium text-gray-900">Galar</span> mixes modern industry with
+                rolling countryside. Stadium battles showcase the Dynamax phenomenon, while the open
+                **Wild Area** connects cities and hosts co-op Max Raid dens—capping a league that
+                builds toward Wyndon’s grand finale.
               </p>
             </div>
           </div>
@@ -65,21 +66,21 @@ export default function PaldeaPage() {
           <dl className="mt-8 grid grid-cols-1 gap-4 text-sm sm:grid-cols-2 md:grid-cols-4">
             <div className="rounded-lg border border-gray-200 bg-white p-4">
               <dt className="font-medium text-gray-900">Generation</dt>
-              <dd className="text-gray-600">IX (Pokédex #906–1025)</dd>
+              <dd className="text-gray-600">VIII (Pokédex #810–898)</dd>
             </div>
             <div className="rounded-lg border border-gray-200 bg-white p-4">
               <dt className="font-medium text-gray-900">Games</dt>
               <dd className="text-gray-600">
-                Scarlet, Violet • The Teal Mask &amp; The Indigo Disk (DLC)
+                Sword &amp; Shield (expansions: Isle of Armor, Crown Tundra)
               </dd>
             </div>
             <div className="rounded-lg border border-gray-200 bg-white p-4">
               <dt className="font-medium text-gray-900">Professor</dt>
-              <dd className="text-gray-600">Professor Sada (Scarlet) / Professor Turo (Violet)</dd>
+              <dd className="text-gray-600">Professor Magnolia</dd>
             </div>
             <div className="rounded-lg border border-gray-200 bg-white p-4">
               <dt className="font-medium text-gray-900">Champion</dt>
-              <dd className="text-gray-600">Geeta (Top Champion)</dd>
+              <dd className="text-gray-600">Leon</dd>
             </div>
           </dl>
         </div>
@@ -94,10 +95,10 @@ export default function PaldeaPage() {
             <article className="space-y-3">
               <h2 className="text-2xl font-bold text-gray-900">Overview</h2>
               <p className="text-gray-700">
-                Paldea centers on Mesagoza and its academy (Naranja/Uva), with routes fanning out
-                through provinces and biomes—from the Asado Desert and Glaseado Mountain to
-                Casseroya Lake’s shores. Ride Koraidon or Miraidon to traverse land, water, and air
-                as Terastallization reshapes team roles and type matchups.
+                From Postwick’s humble beginnings to Wyndon’s colossal stadium, Galar’s routes weave
+                through coalworks, moors, and fairy-glow forests. The Rotom Phone, Camping &amp;
+                Curry, and version-exclusive gyms add flavor, while Chairman Rose’s energy plan and
+                the Dynamax mystery power the story behind the spotlight.
               </p>
             </article>
 
@@ -106,18 +107,17 @@ export default function PaldeaPage() {
               <h2 className="text-2xl font-bold text-gray-900">Key Cities & Towns</h2>
               <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {[
-                  'Mesagoza',
-                  'Los Platos',
-                  'Cortondo',
-                  'Artazon',
-                  'Levincia',
-                  'Cascarrafa',
-                  'Porto Marinada',
-                  'Zapapico',
-                  'Medali',
-                  'Montenevera',
-                  'Alfornada',
-                  'Glaseado (Gym)',
+                  'Postwick',
+                  'Wedgehurst',
+                  'Motostoke',
+                  'Turffield',
+                  'Hulbury',
+                  'Hammerlocke',
+                  'Stow-on-Side',
+                  'Ballonlea',
+                  'Circhester',
+                  'Spikemuth',
+                  'Wyndon',
                 ].map((name) => (
                   <li
                     key={name}
@@ -134,14 +134,14 @@ export default function PaldeaPage() {
               <h2 className="text-2xl font-bold text-gray-900">Gym Leaders</h2>
               <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {[
-                  ['Katy', 'Bug – Cortondo'],
-                  ['Brassius', 'Grass – Artazon'],
-                  ['Iono', 'Electric – Levincia'],
-                  ['Kofu', 'Water – Cascarrafa'],
-                  ['Larry', 'Normal – Medali'],
-                  ['Ryme', 'Ghost – Montenevera'],
-                  ['Tulip', 'Psychic – Alfornada'],
-                  ['Grusha', 'Ice – Glaseado Gym'],
+                  ['Milo', 'Grass – Turffield'],
+                  ['Nessa', 'Water – Hulbury'],
+                  ['Kabu', 'Fire – Motostoke'],
+                  ['Bea/Allister', 'Fighting/Ghost – Stow-on-Side (version exclusive)'],
+                  ['Opal', 'Fairy – Ballonlea'],
+                  ['Gordie/Melony', 'Rock/Ice – Circhester (version exclusive)'],
+                  ['Piers', 'Dark – Spikemuth'],
+                  ['Raihan', 'Dragon – Hammerlocke'],
                 ].map(([leader, info]) => (
                   <li key={leader} className="rounded-lg border border-gray-200 bg-white px-4 py-3">
                     <div className="font-medium text-gray-900">{leader}</div>
@@ -156,20 +156,19 @@ export default function PaldeaPage() {
               <article className="space-y-3">
                 <h2 className="text-2xl font-bold text-gray-900">Starter Pokémon</h2>
                 <ul className="space-y-2 text-gray-800">
-                  <li>Sprigatito (Grass)</li>
-                  <li>Fuecoco (Fire)</li>
-                  <li>Quaxly (Water)</li>
+                  <li>Grookey (Grass)</li>
+                  <li>Scorbunny (Fire)</li>
+                  <li>Sobble (Water)</li>
                 </ul>
               </article>
 
               <article className="space-y-3">
                 <h2 className="text-2xl font-bold text-gray-900">Legendary & Mythical</h2>
                 <ul className="space-y-2 text-gray-800">
-                  <li>Koraidon • Miraidon</li>
-                  <li>Ting-Lu • Chien-Pao • Wo-Chien • Chi-Yu</li>
-                  <li>
-                    Terapagos • Ogerpon • Okidogi • Munkidori • Fezandipiti • Pecharunt (Mythical)
-                  </li>
+                  <li>Zacian • Zamazenta • Eternatus</li>
+                  <li>Kubfu • Urshifu</li>
+                  <li>Regieleki • Regidrago • Calyrex</li>
+                  <li>Zarude (Mythical)</li>
                 </ul>
               </article>
             </div>
@@ -178,11 +177,11 @@ export default function PaldeaPage() {
             <article className="space-y-3">
               <h2 className="text-2xl font-bold text-gray-900">Notable Routes & Landmarks</h2>
               <ul className="list-disc pl-6 text-gray-800">
-                <li>Area Zero (Great Crater of Paldea)</li>
-                <li>Naranja/Uva Academy (Mesagoza)</li>
-                <li>Team Star Bases (Starfall Street)</li>
-                <li>Titan sites (Path of Legends)</li>
-                <li>Asado Desert • Casseroya Lake • Glaseado Mountain</li>
+                <li>Wild Area &amp; Max Raid Dens</li>
+                <li>Slumbering Weald</li>
+                <li>Wyndon Stadium &amp; Rose Tower</li>
+                <li>Isle of Armor (Master Dojo)</li>
+                <li>Crown Tundra (Dynamax Adventures)</li>
               </ul>
             </article>
 
@@ -195,7 +194,7 @@ export default function PaldeaPage() {
                 Open Pokédex
               </Link>
               <Link
-                href="/learn/pokemon-regions"
+                href="/learn/regions"
                 className="rounded-full bg-gray-900 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-black"
               >
                 Back to Regions
@@ -212,12 +211,9 @@ export default function PaldeaPage() {
                 Trivia
               </h3>
               <ul className="space-y-2 text-gray-800">
-                <li>First fully open-world mainline region with three concurrent story paths.</li>
-                <li>Terastallization can change a Pokémon’s type and boost Tera-type moves.</li>
-                <li>
-                  Ride Koraidon/Miraidon for traversal; “Let’s Go” auto-battles and TM crafting
-                  debut.
-                </li>
+                <li>First mainline region with the Wild Area and co-op raid battles.</li>
+                <li>Version-exclusive gyms (Bea/Allister and Gordie/Melony).</li>
+                <li>Dynamax and Gigantamax transform battles into stadium spectacles.</li>
               </ul>
             </div>
             {/* Games & releases box */}
@@ -226,16 +222,16 @@ export default function PaldeaPage() {
               <dl className="space-y-2 text-sm">
                 <div className="flex gap-2">
                   <dt className="shrink-0 font-medium text-gray-900">Original:</dt>
-                  <dd className="text-gray-700">Pokémon Scarlet &amp; Violet (2022 – worldwide)</dd>
+                  <dd className="text-gray-700">Pokémon Sword &amp; Shield (2019 – worldwide)</dd>
                 </div>
                 <div className="flex gap-2">
                   <dt className="shrink-0 font-medium text-gray-900">Third Version:</dt>
-                  <dd className="text-gray-700">— (DLC released instead)</dd>
+                  <dd className="text-gray-700">— (expansions released instead)</dd>
                 </div>
                 <div className="flex gap-2">
                   <dt className="shrink-0 font-medium text-gray-900">Remakes:</dt>
                   <dd className="text-gray-700">
-                    — (The Teal Mask &amp; The Indigo Disk, 2023 DLC)
+                    — (expansions: Isle of Armor &amp; Crown Tundra, 2020)
                   </dd>
                 </div>
               </dl>
@@ -248,7 +244,7 @@ export default function PaldeaPage() {
               </h3>
               <Image
                 src="/images/jhoto-map.svg" // put the file in /public/og-image.png
-                alt="Paldea region map"
+                alt="Galar region map"
                 width={350}
                 height={300}
                 className="rounded-lg"

@@ -22,7 +22,7 @@ function Pokeball({ className = 'h-5 w-5 text-red-600' }) {
   );
 }
 
-export default function JohtoPage() {
+export default function SinnohPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Breadcrumb */}
@@ -36,11 +36,11 @@ export default function JohtoPage() {
             Learn
           </Link>
           <span className="text-gray-300">/</span>
-          <Link href="/learn/pokemon-regions" className="text-gray-500 hover:text-gray-900">
+          <Link href="/learn/regions" className="text-gray-500 hover:text-gray-900">
             Regions
           </Link>
           <span className="text-gray-300">/</span>
-          <span className="font-medium text-gray-900">Kanto</span>
+          <span className="font-medium text-gray-900">Sinnoh</span>
         </div>
       </nav>
 
@@ -50,14 +50,13 @@ export default function JohtoPage() {
           <div className="flex items-start gap-3">
             <div>
               <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
-                Kanto Region
+                Sinnoh Region
               </h1>
               <p className="mt-3 max-w-prose text-gray-600 sm:text-lg">
-                The birthplace of the Pokémon journey,{' '}
-                <span className="font-medium text-gray-900">Kanto</span> is a compact and iconic
-                region of bustling cities, mysterious caves, and a classic gym circuit. From Pallet
-                Town to the Indigo Plateau, it’s where the original 151 were discovered and legends
-                first took flight.
+                A land of myths crowned by Mt. Coronet.{' '}
+                <span className="font-medium text-gray-900">Sinnoh</span> ties the Pokémon world’s
+                creation lore to modern adventures—Spear Pillar, the Distortion World, and a rich
+                Underground where exploration and discovery thrive.
               </p>
             </div>
           </div>
@@ -66,21 +65,22 @@ export default function JohtoPage() {
           <dl className="mt-8 grid grid-cols-1 gap-4 text-sm sm:grid-cols-2 md:grid-cols-4">
             <div className="rounded-lg border border-gray-200 bg-white p-4">
               <dt className="font-medium text-gray-900">Generation</dt>
-              <dd className="text-gray-600">I (Pokédex #001–151)</dd>
+              <dd className="text-gray-600">IV (Pokédex #387–493)</dd>
             </div>
             <div className="rounded-lg border border-gray-200 bg-white p-4">
               <dt className="font-medium text-gray-900">Games</dt>
               <dd className="text-gray-600">
-                Red, Blue, Yellow • FireRed, LeafGreen • Let’s Go Pikachu/Eevee
+                Diamond, Pearl, Platinum • Brilliant Diamond, Shining Pearl • Legends: Arceus
+                (Hisui)
               </dd>
             </div>
             <div className="rounded-lg border border-gray-200 bg-white p-4">
               <dt className="font-medium text-gray-900">Professor</dt>
-              <dd className="text-gray-600">Professor Oak</dd>
+              <dd className="text-gray-600">Professor Rowan</dd>
             </div>
             <div className="rounded-lg border border-gray-200 bg-white p-4">
               <dt className="font-medium text-gray-900">Champion</dt>
-              <dd className="text-gray-600">Blue (Rival)</dd>
+              <dd className="text-gray-600">Cynthia</dd>
             </div>
           </dl>
         </div>
@@ -95,11 +95,10 @@ export default function JohtoPage() {
             <article className="space-y-3">
               <h2 className="text-2xl font-bold text-gray-900">Overview</h2>
               <p className="text-gray-700">
-                Kanto blends modern industry with natural landmarks—Silph Co. in Saffron City,
-                Pokémon Tower in Lavender Town, and volcanic Cinnabar Island. Trainers start in
-                Pallet Town and head up Route 1 toward a gym tour that culminates at the Indigo
-                Plateau. Team Rocket’s schemes and legendary birds shape a journey that’s simple to
-                learn and endlessly replayable.
+                Sinnoh’s routes radiate around Mt. Coronet, splitting climates from snowy peaks to
+                flowered meadows. The Pokétch, Super Contests, and the (Grand) Underground add
+                layers of side content, while Team Galactic’s pursuit of time and space culminates
+                at Spear Pillar—and beyond in Platinum’s Distortion World.
               </p>
             </article>
 
@@ -108,17 +107,21 @@ export default function JohtoPage() {
               <h2 className="text-2xl font-bold text-gray-900">Key Cities & Towns</h2>
               <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {[
-                  'Pallet Town',
-                  'Viridian City',
-                  'Pewter City',
-                  'Cerulean City',
-                  'Vermilion City',
-                  'Lavender Town',
-                  'Celadon City',
-                  'Fuchsia City',
-                  'Saffron City',
-                  'Cinnabar Island',
-                  'Indigo Plateau',
+                  'Twinleaf Town',
+                  'Sandgem Town',
+                  'Jubilife City',
+                  'Oreburgh City',
+                  'Floaroma Town',
+                  'Eterna City',
+                  'Hearthome City',
+                  'Solaceon Town',
+                  'Veilstone City',
+                  'Pastoria City',
+                  'Celestic Town',
+                  'Canalave City',
+                  'Snowpoint City',
+                  'Sunyshore City',
+                  'Pokémon League',
                 ].map((name) => (
                   <li
                     key={name}
@@ -135,14 +138,14 @@ export default function JohtoPage() {
               <h2 className="text-2xl font-bold text-gray-900">Gym Leaders</h2>
               <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {[
-                  ['Brock', 'Rock – Pewter City'],
-                  ['Misty', 'Water – Cerulean City'],
-                  ['Lt. Surge', 'Electric – Vermilion City'],
-                  ['Erika', 'Grass – Celadon City'],
-                  ['Koga', 'Poison – Fuchsia City'],
-                  ['Sabrina', 'Psychic – Saffron City'],
-                  ['Blaine', 'Fire – Cinnabar Island'],
-                  ['Giovanni', 'Ground – Viridian City'],
+                  ['Roark', 'Rock – Oreburgh City'],
+                  ['Gardenia', 'Grass – Eterna City'],
+                  ['Maylene', 'Fighting – Veilstone City'],
+                  ['Crasher Wake', 'Water – Pastoria City'],
+                  ['Fantina', 'Ghost – Hearthome City'],
+                  ['Byron', 'Steel – Canalave City'],
+                  ['Candice', 'Ice – Snowpoint City'],
+                  ['Volkner', 'Electric – Sunyshore City'],
                 ].map(([leader, info]) => (
                   <li key={leader} className="rounded-lg border border-gray-200 bg-white px-4 py-3">
                     <div className="font-medium text-gray-900">{leader}</div>
@@ -157,18 +160,19 @@ export default function JohtoPage() {
               <article className="space-y-3">
                 <h2 className="text-2xl font-bold text-gray-900">Starter Pokémon</h2>
                 <ul className="space-y-2 text-gray-800">
-                  <li>Bulbasaur (Grass/Poison)</li>
-                  <li>Charmander (Fire)</li>
-                  <li>Squirtle (Water)</li>
+                  <li>Turtwig (Grass)</li>
+                  <li>Chimchar (Fire)</li>
+                  <li>Piplup (Water)</li>
                 </ul>
               </article>
 
               <article className="space-y-3">
                 <h2 className="text-2xl font-bold text-gray-900">Legendary & Mythical</h2>
                 <ul className="space-y-2 text-gray-800">
-                  <li>Articuno • Zapdos • Moltres</li>
-                  <li>Mewtwo</li>
-                  <li>Mew (Mythical, special distributions)</li>
+                  <li>Dialga • Palkia • Giratina</li>
+                  <li>Uxie • Mesprit • Azelf</li>
+                  <li>Heatran • Cresselia • Regigigas</li>
+                  <li>Shaymin • Darkrai • Arceus (Mythical)</li>
                 </ul>
               </article>
             </div>
@@ -177,10 +181,12 @@ export default function JohtoPage() {
             <article className="space-y-3">
               <h2 className="text-2xl font-bold text-gray-900">Notable Routes & Landmarks</h2>
               <ul className="list-disc pl-6 text-gray-800">
-                <li>Mt. Moon & Rock Tunnel</li>
-                <li>Power Plant & Seafoam Islands</li>
-                <li>Pokémon Tower (Lavender Town)</li>
-                <li>Victory Road → Indigo Plateau</li>
+                <li>Mt. Coronet &amp; Spear Pillar</li>
+                <li>Distortion World (Platinum)</li>
+                <li>Great Marsh (Pastoria)</li>
+                <li>Snowpoint Temple (Regigigas)</li>
+                <li>Stark Mountain (Heatran)</li>
+                <li>Solaceon Ruins (Unown)</li>
               </ul>
             </article>
 
@@ -193,7 +199,7 @@ export default function JohtoPage() {
                 Open Pokédex
               </Link>
               <Link
-                href="/learn/pokemon-regions"
+                href="/learn/regions"
                 className="rounded-full bg-gray-900 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-black"
               >
                 Back to Regions
@@ -210,9 +216,11 @@ export default function JohtoPage() {
                 Trivia
               </h3>
               <ul className="space-y-2 text-gray-800">
-                <li>The original 151 Pokémon were first cataloged in Kanto.</li>
-                <li>Silph Co. created the Master Ball in Saffron City.</li>
-                <li>Team Rocket hides in Celadon’s Game Corner.</li>
+                <li>Generation IV introduced the Physical/Special split for moves.</li>
+                <li>Super Contests and the Pokétch expanded side activities.</li>
+                <li>
+                  The Underground (Grand Underground in remakes) enables digging and Secret Bases.
+                </li>
               </ul>
             </div>
             {/* Games & releases box */}
@@ -221,18 +229,16 @@ export default function JohtoPage() {
               <dl className="space-y-2 text-sm">
                 <div className="flex gap-2">
                   <dt className="shrink-0 font-medium text-gray-900">Original:</dt>
-                  <dd className="text-gray-700">
-                    Pokémon Red & Green (1996 JP) • Red & Blue (1998–99 WW)
-                  </dd>
+                  <dd className="text-gray-700">Pokémon Diamond &amp; Pearl (2006 JP / 2007 WW)</dd>
                 </div>
                 <div className="flex gap-2">
                   <dt className="shrink-0 font-medium text-gray-900">Third Version:</dt>
-                  <dd className="text-gray-700">Pokémon Yellow (1998 JP / 1999–2000 WW)</dd>
+                  <dd className="text-gray-700">Pokémon Platinum (2008 JP / 2009 WW)</dd>
                 </div>
                 <div className="flex gap-2">
                   <dt className="shrink-0 font-medium text-gray-900">Remakes:</dt>
                   <dd className="text-gray-700">
-                    FireRed & LeafGreen (2004) • Let’s Go Pikachu/Eevee (2018)
+                    Brilliant Diamond &amp; Shining Pearl (2021) • Legends: Arceus (2022, Hisui)
                   </dd>
                 </div>
               </dl>
@@ -245,7 +251,7 @@ export default function JohtoPage() {
               </h3>
               <Image
                 src="/images/jhoto-map.svg" // put the file in /public/og-image.png
-                alt="Kanto region map"
+                alt="Sinnoh region map"
                 width={350}
                 height={300}
                 className="rounded-lg"

@@ -59,7 +59,7 @@ export const TYPE_CONTENT: Record<TypeId, TypePageContent> = {
     ],
     ctas: [
       { label: 'See Pokédex', href: '/pokedex' },
-      { label: 'Discover generations', href: '/learn/pokemon-generations' },
+      { label: 'Discover generations', href: '/learn/generations' },
     ],
   },
 
@@ -85,7 +85,7 @@ export const TYPE_CONTENT: Record<TypeId, TypePageContent> = {
     recommendedStarters: ['Charmander', 'Fennekin', 'Fuecoco'],
     ctas: [
       { label: 'See Pokédex', href: '/pokedex' },
-      { label: 'Discover generations', href: '/learn/pokemon-generations' },
+      { label: 'Discover generations', href: '/learn/generations' },
     ],
   },
 
@@ -108,7 +108,7 @@ export const TYPE_CONTENT: Record<TypeId, TypePageContent> = {
     recommendedStarters: ['Squirtle', 'Totodile', 'Mudkip', 'Quaxly'],
     ctas: [
       { label: 'See Pokédex', href: '/pokedex' },
-      { label: 'Discover generations', href: '/learn/pokemon-generations' },
+      { label: 'Discover generations', href: '/learn/generations' },
     ],
   },
 
@@ -134,7 +134,7 @@ export const TYPE_CONTENT: Record<TypeId, TypePageContent> = {
     recommendedStarters: ['Bulbasaur', 'Chikorita', 'Rowlet', 'Sprigatito'],
     ctas: [
       { label: 'See Pokédex', href: '/pokedex' },
-      { label: 'Discover generations', href: '/learn/pokemon-generations' },
+      { label: 'Discover generations', href: '/learn/generations' },
     ],
   },
 
@@ -160,7 +160,7 @@ export const TYPE_CONTENT: Record<TypeId, TypePageContent> = {
     recommendedStarters: ['Pikachu (Let’s Go)', 'Pawmot line (Paldea early-game)'],
     ctas: [
       { label: 'See Pokédex', href: '/pokedex' },
-      { label: 'Discover generations', href: '/learn/pokemon-generations' },
+      { label: 'Discover generations', href: '/learn/generations' },
     ],
   },
 
@@ -183,7 +183,7 @@ export const TYPE_CONTENT: Record<TypeId, TypePageContent> = {
     recommendedStarters: ['Alolan Vulpix (gift/event)', 'Snover line (early in some regions)'],
     ctas: [
       { label: 'See Pokédex', href: '/pokedex' },
-      { label: 'Discover generations', href: '/learn/pokemon-generations' },
+      { label: 'Discover generations', href: '/learn/generations' },
     ],
   },
 
@@ -206,7 +206,7 @@ export const TYPE_CONTENT: Record<TypeId, TypePageContent> = {
     recommendedStarters: ['Riolu line (gift in some games)', 'Mankey/Primeape (early routes)'],
     ctas: [
       { label: 'See Pokédex', href: '/pokedex' },
-      { label: 'Discover generations', href: '/learn/pokemon-generations' },
+      { label: 'Discover generations', href: '/learn/generations' },
     ],
   },
 
@@ -229,7 +229,7 @@ export const TYPE_CONTENT: Record<TypeId, TypePageContent> = {
     recommendedStarters: ['Koffing/Grimer (early options)', 'Foongus (mid-game utility)'],
     ctas: [
       { label: 'See Pokédex', href: '/pokedex' },
-      { label: 'Discover generations', href: '/learn/pokemon-generations' },
+      { label: 'Discover generations', href: '/learn/generations' },
     ],
   },
 
@@ -252,7 +252,7 @@ export const TYPE_CONTENT: Record<TypeId, TypePageContent> = {
     recommendedStarters: ['Sandshrew/Geodude (early), Quagsire line (mid-game)'],
     ctas: [
       { label: 'See Pokédex', href: '/pokedex' },
-      { label: 'Discover generations', href: '/learn/pokemon-generations' },
+      { label: 'Discover generations', href: '/learn/generations' },
     ],
   },
 
@@ -278,7 +278,7 @@ export const TYPE_CONTENT: Record<TypeId, TypePageContent> = {
     ],
     ctas: [
       { label: 'See Pokédex', href: '/pokedex' },
-      { label: 'Discover generations', href: '/learn/pokemon-generations' },
+      { label: 'Discover generations', href: '/learn/generations' },
     ],
   },
 
@@ -301,7 +301,7 @@ export const TYPE_CONTENT: Record<TypeId, TypePageContent> = {
     recommendedStarters: ['Abra/Ralts (early in many games)', 'Espurr (Gen VI)'],
     ctas: [
       { label: 'See Pokédex', href: '/pokedex' },
-      { label: 'Discover generations', href: '/learn/pokemon-generations' },
+      { label: 'Discover generations', href: '/learn/generations' },
     ],
   },
 
@@ -324,7 +324,7 @@ export const TYPE_CONTENT: Record<TypeId, TypePageContent> = {
     recommendedStarters: ['Scyther/Heracross (regional), Kricketune/Vivillon (early sweepers)'],
     ctas: [
       { label: 'See Pokédex', href: '/pokedex' },
-      { label: 'Discover generations', href: '/learn/pokemon-generations' },
+      { label: 'Discover generations', href: '/learn/generations' },
     ],
   },
 
@@ -347,7 +347,7 @@ export const TYPE_CONTENT: Record<TypeId, TypePageContent> = {
     recommendedStarters: ['Geodude/Onix early; Tyranitar line (late power)'],
     ctas: [
       { label: 'See Pokédex', href: '/pokedex' },
-      { label: 'Discover generations', href: '/learn/pokemon-generations' },
+      { label: 'Discover generations', href: '/learn/generations' },
     ],
   },
 
@@ -370,7 +370,7 @@ export const TYPE_CONTENT: Record<TypeId, TypePageContent> = {
     recommendedStarters: ['Gastly line (early in towers), Mimikyu (mid-game)'],
     ctas: [
       { label: 'See Pokédex', href: '/pokedex' },
-      { label: 'Discover generations', href: '/learn/pokemon-generations' },
+      { label: 'Discover generations', href: '/learn/generations' },
     ],
   },
 
@@ -393,7 +393,7 @@ export const TYPE_CONTENT: Record<TypeId, TypePageContent> = {
     recommendedStarters: ['Gible/Dratini (later capture), Tatsugiri as support partner'],
     ctas: [
       { label: 'See Pokédex', href: '/pokedex' },
-      { label: 'Discover generations', href: '/learn/pokemon-generations' },
+      { label: 'Discover generations', href: '/learn/generations' },
     ],
   },
 
@@ -416,7 +416,7 @@ export const TYPE_CONTENT: Record<TypeId, TypePageContent> = {
     recommendedStarters: ['Shinx/Litleo partners; early Stunky/Poochyena lines'],
     ctas: [
       { label: 'See Pokédex', href: '/pokedex' },
-      { label: 'Discover generations', href: '/learn/pokemon-generations' },
+      { label: 'Discover generations', href: '/learn/generations' },
     ],
   },
 
@@ -439,7 +439,7 @@ export const TYPE_CONTENT: Record<TypeId, TypePageContent> = {
     recommendedStarters: ['Magnemite/Aron (mid-game), Pawniard (early)'],
     ctas: [
       { label: 'See Pokédex', href: '/pokedex' },
-      { label: 'Discover generations', href: '/learn/pokemon-generations' },
+      { label: 'Discover generations', href: '/learn/generations' },
     ],
   },
 
@@ -462,7 +462,7 @@ export const TYPE_CONTENT: Record<TypeId, TypePageContent> = {
     recommendedStarters: ['Ralts (Fairy dual later), Jigglypuff line (support)'],
     ctas: [
       { label: 'See Pokédex', href: '/pokedex' },
-      { label: 'Discover generations', href: '/learn/pokemon-generations' },
+      { label: 'Discover generations', href: '/learn/generations' },
     ],
   },
 };

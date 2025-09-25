@@ -58,7 +58,7 @@ export default function Page({ params }: { params: { type: string } }) {
             Learn
           </Link>
           <span className="text-gray-300">/</span>
-          <Link href="/learn/pokemon-types" className="text-gray-500 hover:text-gray-900">
+          <Link href="/learn/types" className="text-gray-500 hover:text-gray-900">
             Types
           </Link>
           <span className="text-gray-300">/</span>
@@ -96,7 +96,7 @@ export default function Page({ params }: { params: { type: string } }) {
             return (
               <Link
                 key={id}
-                href={`/learn/pokemon-types/${id}`}
+                href={`/learn/types/${id}`}
                 aria-current={active ? 'page' : undefined}
                 className={[
                   'inline-flex items-center gap-1 rounded-full px-3 py-1 text-sm ring-1 transition',
@@ -237,7 +237,7 @@ export default function Page({ params }: { params: { type: string } }) {
           <>
             Study the full{' '}
             <Link
-              href="/learn/pokemon-types"
+              href="/learn/types"
               className="font-medium text-gray-900 underline-offset-4 hover:underline"
             >
               type chart
@@ -257,7 +257,7 @@ export default function Page({ params }: { params: { type: string } }) {
           <>
             Want a region-specific team? Start with a{' '}
             <Link
-              href="/learn/pokemon-regions"
+              href="/learn/regions"
               className="font-medium text-gray-900 underline-offset-4 hover:underline"
             >
               Region guide

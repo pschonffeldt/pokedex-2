@@ -6,15 +6,15 @@ import InfoBox from '@/components/info-box';
 import Link from 'next/link';
 
 const regions = [
-  { name: 'Kanto', href: '/learn/pokemon-regions/kanto' },
-  { name: 'Johto', href: '/learn/pokemon-regions/johto' },
-  { name: 'Hoenn', href: '/learn/pokemon-regions/hoenn' },
-  { name: 'Sinnoh', href: '/learn/pokemon-regions/sinnoh' },
-  { name: 'Unova', href: '/learn/pokemon-regions/unova' },
-  { name: 'Kalos', href: '/learn/pokemon-regions/kalos' },
-  { name: 'Alola', href: '/learn/pokemon-regions/alola' },
-  { name: 'Galar', href: '/learn/pokemon-regions/galar' },
-  { name: 'Paldea', href: '/learn/pokemon-regions/paldea' },
+  { name: 'Kanto', href: '/learn/regions/kanto' },
+  { name: 'Johto', href: '/learn/regions/johto' },
+  { name: 'Hoenn', href: '/learn/regions/hoenn' },
+  { name: 'Sinnoh', href: '/learn/regions/sinnoh' },
+  { name: 'Unova', href: '/learn/regions/unova' },
+  { name: 'Kalos', href: '/learn/regions/kalos' },
+  { name: 'Alola', href: '/learn/regions/alola' },
+  { name: 'Galar', href: '/learn/regions/galar' },
+  { name: 'Paldea', href: '/learn/regions/paldea' },
 ];
 
 export default function LearnPage() {
@@ -41,7 +41,7 @@ export default function LearnPage() {
         }
         actions={[
           { href: '/pokedex', label: 'Open Pokédex', variant: 'primary' },
-          { href: '/learn/pokemon-types', label: 'Discover Pokémon Types', variant: 'dark' },
+          { href: '/learn/types', label: 'Discover Pokémon Types', variant: 'dark' },
         ]}
       />
       {/* Core topics */}
@@ -73,7 +73,7 @@ export default function LearnPage() {
                 ))}
               </ul>
               <div className="mt-auto pt-5 flex flex-wrap gap-2">
-                <Button href="/learn/pokemon-regions">See all regions</Button>
+                <Button href="/learn/regions">See all regions</Button>
               </div>
             </div>
           </article>
@@ -205,7 +205,7 @@ export default function LearnPage() {
 
               {/* CTA */}
               <div className="mt-auto pt-5 flex flex-wrap gap-2">
-                <Button href="/learn/pokemon-generations">Explore generations</Button>
+                <Button href="/learn/generations">Explore generations</Button>
               </div>
             </div>
           </article>
@@ -334,22 +334,16 @@ export default function LearnPage() {
         items={[
           <>
             Pick a core topic —{' '}
-            <Link
-              href="/learn/pokemon-regions"
-              className="underline underline-offset-4 hover:no-underline"
-            >
+            <Link href="/learn/regions" className="underline underline-offset-4 hover:no-underline">
               Regions
             </Link>
             ,{' '}
-            <Link
-              href="/learn/pokemon-types"
-              className="underline underline-offset-4 hover:no-underline"
-            >
+            <Link href="/learn/types" className="underline underline-offset-4 hover:no-underline">
               Types
             </Link>{' '}
             or{' '}
             <Link
-              href="/learn/pokemon-generations"
+              href="/learn/generations"
               className="underline underline-offset-4 hover:no-underline"
             >
               Generations
@@ -359,10 +353,7 @@ export default function LearnPage() {
 
           <>
             Planning a run? Start with a{' '}
-            <Link
-              href="/learn/pokemon-regions"
-              className="underline underline-offset-4 hover:no-underline"
-            >
+            <Link href="/learn/regions" className="underline underline-offset-4 hover:no-underline">
               Region guide
             </Link>{' '}
             for gyms, exclusives, and legendaries.
@@ -370,7 +361,7 @@ export default function LearnPage() {
           <>
             Brushing up on systems? Skim{' '}
             <Link
-              href="/learn/pokemon-generations"
+              href="/learn/generations"
               className="underline underline-offset-4 hover:no-underline"
             >
               Generations
@@ -379,10 +370,7 @@ export default function LearnPage() {
           </>,
           <>
             Building a team? Check the{' '}
-            <Link
-              href="/learn/pokemon-types"
-              className="underline underline-offset-4 hover:no-underline"
-            >
+            <Link href="/learn/types" className="underline underline-offset-4 hover:no-underline">
               Type chart
             </Link>{' '}
             + coverage tips to patch weaknesses.

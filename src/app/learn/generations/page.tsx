@@ -1,4 +1,4 @@
-// app/learn/pokemon-generations/page.tsx
+// app/learn/generations/page.tsx
 'use client';
 
 import Button from '@/components/button';
@@ -27,7 +27,7 @@ const generations: GenCard[] = [
     games: 'Red/Blue/Yellow (LGPE as modern revisit)',
     mechanics: 'Foundations: types, badges, Elite Four',
     highlights: 'Kanto classics; simple meta; nostalgia run',
-    guideHref: '/learn/pokemon-generations/gen-i',
+    guideHref: '/learn/generations/gen-i',
     pokedexHref: '/pokedex?gen=1',
   },
   {
@@ -38,7 +38,7 @@ const generations: GenCard[] = [
     games: 'Gold/Silver/Crystal (HG/SS remakes)',
     mechanics: 'Day/Night, breeding, hold items, friendship',
     highlights: 'Johto + Kanto post-game; roaming beasts',
-    guideHref: '/learn/pokemon-generations/gen-ii',
+    guideHref: '/learn/generations/gen-ii',
     pokedexHref: '/pokedex?gen=2',
   },
   {
@@ -49,7 +49,7 @@ const generations: GenCard[] = [
     games: 'Ruby/Sapphire/Emerald (OR/AS remakes); FR/LG',
     mechanics: 'Abilities, Natures, weather meta',
     highlights: 'Hoenn seas; Battle Frontier; wireless link',
-    guideHref: '/learn/pokemon-generations/gen-iii',
+    guideHref: '/learn/generations/gen-iii',
     pokedexHref: '/pokedex?gen=3',
   },
   {
@@ -60,7 +60,7 @@ const generations: GenCard[] = [
     games: 'Diamond/Pearl/Platinum; BDSP; Legends: Arceus*',
     mechanics: 'Physical/Special split; online Wi-Fi',
     highlights: 'Sinnoh myths; Distortion World; Underground',
-    guideHref: '/learn/pokemon-generations/gen-iv',
+    guideHref: '/learn/generations/gen-iv',
     pokedexHref: '/pokedex?gen=4',
   },
   {
@@ -71,7 +71,7 @@ const generations: GenCard[] = [
     games: 'Black/White; Black 2/White 2',
     mechanics: 'Seasons; animated sprites; reusable TMs (B2W2)',
     highlights: 'Unova story; PWT; great 2D peak',
-    guideHref: '/learn/pokemon-generations/gen-v',
+    guideHref: '/learn/generations/gen-v',
     pokedexHref: '/pokedex?gen=5',
   },
   {
@@ -82,7 +82,7 @@ const generations: GenCard[] = [
     games: 'X/Y; OR/AS',
     mechanics: 'Fairy type; Mega Evolution; 3D engine',
     highlights: 'Kalos style; Friend Safari; hordes',
-    guideHref: '/learn/pokemon-generations/gen-vi',
+    guideHref: '/learn/generations/gen-vi',
     pokedexHref: '/pokedex?gen=6',
   },
   {
@@ -93,7 +93,7 @@ const generations: GenCard[] = [
     games: 'Sun/Moon; Ultra Sun/Ultra Moon; Let’s Go',
     mechanics: 'Z-Moves; Island Trials; regional forms',
     highlights: 'Alola vibes; Totem bosses; Festival Plaza',
-    guideHref: '/learn/pokemon-generations/gen-vii',
+    guideHref: '/learn/generations/gen-vii',
     pokedexHref: '/pokedex?gen=7',
   },
   {
@@ -104,7 +104,7 @@ const generations: GenCard[] = [
     games: 'Sword/Shield (+DLC); BDSP; Legends: Arceus*',
     mechanics: 'Dynamax/Gigantamax; Raids; Wild Area',
     highlights: 'Galar stadiums; co-op raids; QoL leaps',
-    guideHref: '/learn/pokemon-generations/gen-viii',
+    guideHref: '/learn/generations/gen-viii',
     pokedexHref: '/pokedex?gen=8',
   },
   {
@@ -115,7 +115,7 @@ const generations: GenCard[] = [
     games: 'Scarlet/Violet (+DLC)',
     mechanics: 'Terastallization; open world; TM crafting',
     highlights: 'Paldea’s three paths; Area Zero mysteries',
-    guideHref: '/learn/pokemon-generations/gen-ix',
+    guideHref: '/learn/generations/gen-ix',
     pokedexHref: '/pokedex?gen=9',
   },
 ];
@@ -149,7 +149,7 @@ export default function PokemonGenerations() {
         }
         actions={[
           { href: '/pokedex', label: 'Open Pokédex', variant: 'primary' },
-          { href: '/learn/pokemon-types', label: 'Discover Pokémon Types', variant: 'dark' },
+          { href: '/learn/types', label: 'Discover Pokémon Types', variant: 'dark' },
         ]}
       />
       {/* Generation cards */}
@@ -366,20 +366,14 @@ export default function PokemonGenerations() {
           </>,
           <>
             Picking where to play? Pair the era with a world you’ll like in{' '}
-            <Link
-              href="/learn/pokemon-regions"
-              className="underline underline-offset-4 hover:no-underline"
-            >
+            <Link href="/learn/regions" className="underline underline-offset-4 hover:no-underline">
               Regions
             </Link>
             .
           </>,
           <>
             Building a team? Review the{' '}
-            <Link
-              href="/learn/pokemon-types"
-              className="underline underline-offset-4 hover:no-underline"
-            >
+            <Link href="/learn/types" className="underline underline-offset-4 hover:no-underline">
               type chart
             </Link>{' '}
             and then use the{' '}
