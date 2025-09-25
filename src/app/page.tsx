@@ -8,6 +8,7 @@ import HeroSection from '@/components/hero';
 import StarterChooser from '@/components/starter-pokemon';
 import VersionExclusives from '@/components/version-exclusives';
 import Link from 'next/link';
+import { ALL_GENERATIONS, GENERATION_CONTENT, type GenerationKey } from '@/components/generations';
 
 const TYPES = [
   ['normal', '⚪️', 'Normal'],
@@ -178,32 +179,32 @@ export default function HomePage() {
                   Timeline
                 </span>
               </div>
+
               <p className="mt-2 text-sm text-gray-600">
-                What each era added—from Abilities to Terastallization—and the best entry game per
-                gen.
+                Each era changed how Pokémon is played—from breeding and Abilities to Z-Moves,
+                Dynamax, and Terastallization.
               </p>
+
               <ul className="mt-4 grid grid-cols-2 gap-2 text-sm text-gray-700">
-                {[
-                  ['Gen I', '/learn/pokemon-generations#gen-i'],
-                  ['Gen II', '/learn/pokemon-generations#gen-ii'],
-                  ['Gen III', '/learn/pokemon-generations#gen-iii'],
-                  ['Gen IV', '/learn/pokemon-generations#gen-iv'],
-                  ['Gen V', '/learn/pokemon-generations#gen-v'],
-                  ['Gen VI', '/learn/pokemon-generations#gen-vi'],
-                  ['Gen VII', '/learn/pokemon-generations#gen-vii'],
-                  ['Gen VIII', '/learn/pokemon-generations#gen-viii'],
-                  ['Gen IX', '/learn/pokemon-generations#gen-ix'],
-                ].map(([label]) => (
-                  <li key={label}>
-                    <div className="block rounded-lg border border-gray-200 bg-white px-3 py-2 hover:bg-gray-50">
-                      <p>{label}</p>
-                    </div>
-                  </li>
-                ))}
+                {(ALL_GENERATIONS as GenerationKey[]).map((id) => {
+                  const g = GENERATION_CONTENT[id];
+                  return (
+                    <li key={id}>
+                      <Link
+                        href={`/learn/pokemon-generations/${id}`}
+                        className="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 hover:bg-gray-50"
+                      >
+                        {/* <span className="text-base">{g.emoji}</span> */}
+                        <span>{g.label}</span>
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
+
               <div className="mt-auto pt-5">
                 <Button href="/learn/pokemon-generations" variant="dark">
-                  Explore generations
+                  View generations
                 </Button>
               </div>
             </div>
