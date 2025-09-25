@@ -3,13 +3,13 @@
 import Link from 'next/link';
 import * as React from 'react';
 
-type ButtonVariant = 'primary' | 'dark' | 'outline' | 'secondary';
+type ButtonVariant = 'primary' | 'dark' | 'outline' | 'secondary' | 'destructive';
 type ButtonSize = 'sm' | 'xs';
 
 type ButtonProps = {
   children: React.ReactNode;
   href?: string; // if provided -> renders <Link>
-  variant?: ButtonVariant; // 'primary' | 'dark' | 'outline' | 'secondary'
+  variant?: ButtonVariant; // 'primary' | 'dark' | 'outline' | 'secondary' | 'destructive
   size?: ButtonSize; // 'sm' | 'xs'
   className?: string;
   type?: 'button' | 'submit' | 'reset';
@@ -49,6 +49,7 @@ export default function Button({
     dark: 'bg-gray-900 text-white hover:bg-black',
     outline: outlineClasses,
     secondary: outlineClasses,
+    destructive: 'bg-red-600 text-white hover:bg-red-700',
   };
 
   const classes = [base, sizeMap[size], variantMap[variant], className].join(' ');

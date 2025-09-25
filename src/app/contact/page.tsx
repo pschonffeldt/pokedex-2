@@ -19,7 +19,7 @@ export default function ContactPage() {
 — 
 Sent from PokéWorld Explorer`
     );
-    window.location.href = `mailto:support@pokeworld.app?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@mitkof.cl?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -155,8 +155,8 @@ Sent from PokéWorld Explorer`
 
                 <div className="sm:col-span-2">
                   <div className="flex flex-wrap items-center gap-3">
-                    <Button type="submit" variant="primary">
-                      Send message
+                    <Button type="submit" variant="destructive">
+                      Form disable, use email instead
                     </Button>
                     <Button type="button" variant="outline" onClick={handleMailto}>
                       Open email app
