@@ -16,6 +16,7 @@ export default function ContactPage() {
 
 (Write your message here)
 
+
 — 
 Sent from PokéWorld Explorer`
     );
@@ -159,7 +160,7 @@ Sent from PokéWorld Explorer`
                       Form disable, use email instead
                     </Button>
                     <Button type="button" variant="outline" onClick={handleMailto}>
-                      Open email app
+                      Send email
                     </Button>
                   </div>
                   <p className="mt-3 text-xs text-gray-500">
