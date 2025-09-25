@@ -120,7 +120,7 @@ export default function LearnPage() {
                 ].map(({ key, label, emoji }) => (
                   <li key={key} className="flex items-center justify-center">
                     <Link
-                      href={`/types#${key}`}
+                      href={`learn/pokemon-types/${key}`}
                       title={label}
                       aria-label={`Type: ${label}`}
                       className="flex h-10 w-10 items-center justify-center rounded-lg border border-gray-200 bg-white text-2xl leading-none hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -132,7 +132,7 @@ export default function LearnPage() {
               </ul>
 
               <div className="mt-auto pt-5 flex flex-wrap gap-2">
-                <Button href="typess">Discover Pokémon Types</Button>
+                <Button href="learn/pokemon-types">Discover Pokémon Types</Button>
               </div>
             </div>
           </article>
@@ -154,7 +154,7 @@ export default function LearnPage() {
               </p>
 
               {/* Mini timeline (click to anchors on /generations) */}
-              <ul className="mt-4 grid gap-2 sm:grid-cols-2 md:grid-cols-3">
+              <ul className="mt-4 grid grid-cols-3 gap-2 text-sm text-gray-700">
                 {[
                   {
                     id: 'gen-i',
@@ -192,11 +192,11 @@ export default function LearnPage() {
                 ].map(({ id, label }) => (
                   <li key={id}>
                     <Link
-                      href={`/generations#${id}`}
+                      href={`/learn/pokemon-generations/${id}`}
                       className="block rounded-lg border border-gray-200 bg-white px-3 py-2 hover:bg-gray-50"
                     >
                       <div className="flex items-center justify-between">
-                        <span className="font-medium text-gray-900">{label}</span>
+                        <span>{label}</span>
                       </div>
                     </Link>
                   </li>
@@ -210,123 +210,6 @@ export default function LearnPage() {
             </div>
           </article>
         </div>
-        {/* High-value: Cheat Sheets */}
-        {/* <div className="mt-12">
-          <h3 className="text-lg font-semibold text-gray-900">Cheat Sheets</h3>
-          <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            // Type effectiveness quick wins
-            <article className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-              <h4 className="mb-2 text-base font-semibold text-gray-900">Type Effectiveness</h4>
-              <ul className="text-sm text-gray-800 space-y-1">
-                <li>
-                  Fairy <span className="font-medium">beats</span> Dragon • Dark • Fighting
-                </li>
-                <li>
-                  Steel <span className="font-medium">resists</span> 10 types (incl. Fairy, Ice)
-                </li>
-                <li>
-                  Ground <span className="font-medium">immune</span> to Electric • hits Steel/Rock
-                </li>
-              </ul>
-              <div className="mt-3">
-                <Link
-                  href="/types"
-                  className="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60"
-                >
-                  Full chart
-                </Link>
-              </div>
-            </article>
-
-            // Team building roles
-            <article className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-              <h4 className="mb-2 text-base font-semibold text-gray-900">Team Building Roles</h4>
-              <ul className="text-sm text-gray-800 space-y-1">
-                <li>Lead • Wallbreaker • Sweeper (set-up or scarf)</li>
-                <li>Defensive core: Physical wall + Special wall</li>
-                <li>Utility: Hazard setter/remover, status spreader</li>
-              </ul>
-              <div className="mt-3">
-                <Link
-                  href="/learn/guides/team-building"
-                  className="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60"
-                >
-                  Build a balanced team
-                </Link>
-              </div>
-            </article>
-
-            // EVs / IVs / Natures
-            <article className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-              <h4 className="mb-2 text-base font-semibold text-gray-900">
-                Stats: EVs • IVs • Natures
-              </h4>
-              <ul className="text-sm text-gray-800 space-y-1">
-                <li>EVs: +4 EV ≈ +1 stat point at Lv.100 (cap 510)</li>
-                <li>Natures: +10% one stat, −10% another</li>
-                <li>IVs: 0–31 per stat; affects Hidden Power (legacy)</li>
-              </ul>
-              <div className="mt-3">
-                <Link
-                  href="/learn/battle-basics/ev-iv-natures"
-                  className="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60"
-                >
-                  EV/IV basics
-                </Link>
-              </div>
-            </article>
-          </div>
-        </div> */}
-        {/* High-value: Popular Guides */}
-        {/* <div className="mt-12">
-          <h3 className="text-lg font-semibold text-gray-900">Popular Guides</h3>
-          <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <article className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-              <h4 className="text-base font-semibold text-gray-900">Starter Picks by Playstyle</h4>
-              <p className="mt-2 text-sm text-gray-700">
-                Offense vs. balance vs. bulky—starters that fit how you play, region by region.
-              </p>
-              <div className="mt-3">
-                <Link
-                  href="/learn/guides/starter-picks"
-                  className="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60"
-                >
-                  See recommendations
-                </Link>
-              </div>
-            </article>
-
-            <article className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-              <h4 className="text-base font-semibold text-gray-900">Legendary Hunt Paths</h4>
-              <p className="mt-2 text-sm text-gray-700">
-                Where to find box legendaries, sub-legends, and key requirements per region.
-              </p>
-              <div className="mt-3">
-                <Link
-                  href="/learn/guides/legendary-routes"
-                  className="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60"
-                >
-                  Plan your hunt
-                </Link>
-              </div>
-            </article>
-
-            <article className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-              <h4 className="text-base font-semibold text-gray-900">Shiny Hunting 101</h4>
-              <p className="mt-2 text-sm text-gray-700">
-                Odds, methods (Masuda, outbreaks, sandwiches), and quick setups to get started.
-              </p>
-              <div className="mt-3">
-                <Link
-                  href="/learn/guides/shiny-hunting"
-                  className="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60"
-                >
-                  Start shiny hunting
-                </Link>
-              </div>
-            </article>
-          </div>
-        </div> */}
       </section>
       {/* Info box container */}
       <InfoBox
