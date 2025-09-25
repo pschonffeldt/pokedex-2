@@ -3,6 +3,7 @@
 import * as React from 'react';
 import Button from '@/components/button';
 import HeroSection from '@/components/hero';
+import Link from 'next/link';
 
 type GameTag = 'main' | 'third' | 'remake' | 'open-world' | 'dlc' | 'legends';
 type Platform = 'GB' | 'GBC' | 'GBA' | 'DS' | '3DS' | 'Switch';
@@ -28,7 +29,7 @@ type Game = {
   highlights: string[];
   guideHref?: string; // to an eventual game/guide page
   generationHref?: string; // /learn/pokemon-generations#gen-x
-  regionHref?: string; // /learn/pokemon-regions/<region>
+  regionHref: string | URL; // /learn/pokemon-regions/<region>
   pokedexHref?: string; // /pokedex?region=<region>
 };
 
@@ -49,7 +50,7 @@ const GAMES: Game[] = [
   },
   {
     id: 'yellow',
-    title: 'Yellow (Special Pikachu Edition)',
+    title: 'Yellow',
     year: 1999,
     gen: 'Gen I',
     region: 'Kanto',
@@ -154,7 +155,7 @@ const GAMES: Game[] = [
   },
   {
     id: 'hgss',
-    title: 'HeartGold & SoulSilver (Johto Remakes)',
+    title: 'HeartGold & SoulSilver',
     year: 2009,
     gen: 'Gen IV',
     region: 'Johto',
@@ -205,7 +206,7 @@ const GAMES: Game[] = [
   },
   {
     id: 'oras',
-    title: 'Omega Ruby & Alpha Sapphire (Hoenn Remakes)',
+    title: 'Omega Ruby & Alpha Sapphire',
     year: 2014,
     gen: 'Gen VI',
     region: 'Hoenn',
@@ -241,7 +242,7 @@ const GAMES: Game[] = [
   },
   {
     id: 'lets-go',
-    title: "Let's Go Pikachu & Eevee (Kanto Refresh)",
+    title: "Let's Go Pikachu & Eevee",
     year: 2018,
     gen: 'Gen VII',
     region: 'Kanto',
@@ -265,7 +266,7 @@ const GAMES: Game[] = [
   },
   {
     id: 'swsh-dlc',
-    title: 'Sword/Shield – Isle of Armor & Crown Tundra (DLC)',
+    title: 'Isle of Armor & Crown Tundra',
     year: 2020,
     gen: 'Gen VIII',
     region: 'Galar',
@@ -276,7 +277,7 @@ const GAMES: Game[] = [
   },
   {
     id: 'pla',
-    title: 'Legends: Arceus (Hisui/Sinnoh prequel)',
+    title: 'Legends: Arceus',
     year: 2022,
     gen: 'Gen VIII',
     region: 'Hisui',
@@ -301,7 +302,7 @@ const GAMES: Game[] = [
   },
   {
     id: 'sv-dlc',
-    title: 'Scarlet/Violet – Teal Mask & Indigo Disk (DLC)',
+    title: 'Teal Mask & Indigo Disk',
     year: 2023,
     gen: 'Gen IX',
     region: 'Paldea',
@@ -436,9 +437,11 @@ export default function GamesPage() {
             >
               <div className="flex items-center justify-between gap-3">
                 <h3 className="text-lg font-semibold text-gray-900">{g.title}</h3>
-                <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700">
-                  {g.gen}
-                </span>
+                <Link href={g.regionHref}>
+                  <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700 hover:bg-gray-200">
+                    {g.gen}
+                  </span>
+                </Link>
               </div>
 
               <div className="mt-1 text-xs text-gray-600">
@@ -463,20 +466,6 @@ export default function GamesPage() {
                   </span>
                 ))}
               </div>
-
-              {/* CTAs (stick to bottom) */}
-              {/* <div className="mt-auto pt-5 flex flex-wrap gap-2">
-                {g.generationHref && (
-                  <Button href={g.generationHref} variant="outline" size="xs">
-                    Gen overview
-                  </Button>
-                )}
-                {g.regionHref && (
-                  <Button href={g.regionHref} variant="outline" size="xs">
-                    Region guide
-                  </Button>
-                )}
-              </div> */}
             </article>
           ))}
         </div>
