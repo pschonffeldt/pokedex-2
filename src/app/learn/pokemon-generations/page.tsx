@@ -149,7 +149,7 @@ export default function PokemonGenerations() {
         }
         actions={[
           { href: '/pokedex', label: 'Open Pokédex', variant: 'primary' },
-          { href: '/learn/pokemon-types', label: 'Discover Pokémon Types', variant: 'dark' },
+          { href: '/games', label: 'Discover Pokémon Games', variant: 'dark' },
         ]}
       />
       {/* Generation cards */}

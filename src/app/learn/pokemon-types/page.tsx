@@ -274,7 +274,7 @@ export default function PokemonTypes() {
         }
         actions={[
           { href: '/pokedex', label: 'Open Pokédex', variant: 'primary' },
-          { href: '/types', label: 'Discover Pokémon Types', variant: 'dark' },
+          { href: '/learn/pokemon-regions', label: 'Discover Pokémon Regions', variant: 'dark' },
         ]}
       />
 

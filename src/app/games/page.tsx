@@ -366,8 +366,8 @@ export default function GamesPage() {
           </>
         }
         actions={[
-          { href: '/learn/pokemon-generations', label: 'Explore generations', variant: 'primary' },
-          { href: '/pokedex', label: 'Open Pokédex', variant: 'dark' },
+          { href: '/pokedex', label: 'Open Pokédex', variant: 'primary' },
+          { href: '/learn', label: 'Open learning hub', variant: 'dark' },
         ]}
       />
 

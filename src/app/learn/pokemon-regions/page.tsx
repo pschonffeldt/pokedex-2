@@ -162,7 +162,11 @@ export default function PokemonRegions() {
         }
         actions={[
           { href: '/pokedex', label: 'Open Pokédex', variant: 'primary' },
-          { href: '/types', label: 'Discover Pokémon Types', variant: 'dark' },
+          {
+            href: '/learn/pokemon-generations',
+            label: 'Discover Pokémon Generations',
+            variant: 'dark',
+          },
         ]}
       />
       {/* Regions grid */}

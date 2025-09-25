@@ -54,7 +54,7 @@ export default function HomePage() {
         }
         actions={[
           { href: '/pokedex', label: 'Open Pokédex', variant: 'primary' },
-          { href: '/types', label: 'Discover Pokémon Types', variant: 'dark' },
+          { href: '/learn', label: 'Open learning hub', variant: 'dark' },
         ]}
       />
 
