@@ -24,7 +24,7 @@ const TYPE_STYLES: Record<TypeId, { emoji: string; chip: string; ring: string }>
   ghost: { emoji: '👻', chip: 'bg-violet-100 text-violet-800', ring: 'ring-violet-200' },
   dragon: { emoji: '🐉', chip: 'bg-purple-100 text-purple-800', ring: 'ring-purple-200' },
   dark: { emoji: '🌑', chip: 'bg-neutral-200 text-neutral-900', ring: 'ring-neutral-300' },
-  steel: { emoji: '🛡️', chip: 'bg-slate-100 text-slate-800', ring: 'ring-slate-200' },
+  steel: { emoji: '⚙️', chip: 'bg-slate-100 text-slate-800', ring: 'ring-slate-200' },
   fairy: { emoji: '✨', chip: 'bg-rose-100 text-rose-800', ring: 'ring-rose-200' },
 };
 

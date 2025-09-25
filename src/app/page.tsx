@@ -9,6 +9,27 @@ import StarterChooser from '@/components/starter-pokemon';
 import VersionExclusives from '@/components/version-exclusives';
 import Link from 'next/link';
 
+const TYPES = [
+  ['normal', '⚪️', 'Normal'],
+  ['fire', '🔥', 'Fire'],
+  ['water', '💧', 'Water'],
+  ['grass', '🌿', 'Grass'],
+  ['electric', '⚡️', 'Electric'],
+  ['ice', '❄️', 'Ice'],
+  ['fighting', '🥊', 'Fighting'],
+  ['poison', '🧪', 'Poison'],
+  ['ground', '🏜️', 'Ground'],
+  ['flying', '🕊️', 'Flying'],
+  ['psychic', '🔮', 'Psychic'],
+  ['bug', '🐛', 'Bug'],
+  ['rock', '🪨', 'Rock'],
+  ['ghost', '👻', 'Ghost'],
+  ['dragon', '🐉', 'Dragon'],
+  ['dark', '🌑', 'Dark'],
+  ['steel', '⚙️', 'Steel'],
+  ['fairy', '✨', 'Fairy'],
+] as const;
+
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-white">
@@ -111,6 +132,7 @@ export default function HomePage() {
           </article>
 
           {/* Types */}
+
           <article className="group h-full rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
             <div className="flex h-full flex-col p-6">
               <div className="flex items-center justify-between">
@@ -119,38 +141,28 @@ export default function HomePage() {
                   Battle Basics
                 </span>
               </div>
+
               <p className="mt-2 text-sm text-gray-600">
                 Master matchups in seconds—18 types with strengths, weaknesses, and coverage tips.
               </p>
+
+              {/* Emoji grid that links to each type page */}
               <ul className="mt-4 grid grid-cols-6 gap-2">
-                {[
-                  '⚪️',
-                  '🔥',
-                  '💧',
-                  '🌿',
-                  '⚡️',
-                  '❄️',
-                  '🥊',
-                  '🧪',
-                  '🏜️',
-                  '🕊️',
-                  '🔮',
-                  '🐛',
-                  '🪨',
-                  '👻',
-                  '🐉',
-                  '🌑',
-                  '⚙️',
-                  '✨',
-                ].map((e, i) => (
-                  <li
-                    key={i}
-                    className="flex items-center justify-center rounded-lg border border-gray-200 bg-white text-xl"
-                  >
-                    <span className="py-1">{e}</span>
+                {TYPES.map(([id, emoji, label]) => (
+                  <li key={id}>
+                    <Link
+                      href={`/learn/pokemon-types/${id}`}
+                      title={label}
+                      aria-label={label}
+                      className="block rounded-lg border border-gray-200 bg-white text-xl hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60"
+                    >
+                      <span className="sr-only">{label}</span>
+                      <span className="flex h-10 items-center justify-center">{emoji}</span>
+                    </Link>
                   </li>
                 ))}
               </ul>
+
               <div className="mt-auto pt-5">
                 <Button href="/learn/pokemon-types">Explore types</Button>
               </div>
