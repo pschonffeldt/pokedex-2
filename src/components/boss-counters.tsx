@@ -755,7 +755,7 @@ export default function BossCounters({
   data = DEFAULT_DATA,
   className = '',
   containerClassName = '',
-  ctaHref = '/learn/regions',
+  ctaHref = '/learn/pokemon-regions',
   ctaLabel = 'Open region guides',
 }: BossCountersProps) {
   const regions = React.useMemo(() => Object.keys(data), [data]);

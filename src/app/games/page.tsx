@@ -28,8 +28,8 @@ type Game = {
   tags: GameTag[];
   highlights: string[];
   guideHref?: string; // to an eventual game/guide page
-  generationHref?: string; // /learn/generations#gen-x
-  regionHref?: string; // /learn/regions/<region>
+  generationHref?: string; // /learn/pokemon-generations#gen-x
+  regionHref?: string; // /learn/pokemon-regions/<region>
   pokedexHref?: string; // /pokedex?region=<region>
 };
 
@@ -44,8 +44,8 @@ const GAMES: Game[] = [
     platform: 'GB',
     tags: ['main'],
     highlights: ['The beginning—151 to catch', 'Classic gym path', 'Version exclusives'],
-    generationHref: '/learn/generations#gen-i',
-    regionHref: '/learn/regions/kanto',
+    generationHref: '/learn/pokemon-generations#gen-i',
+    regionHref: '/learn/pokemon-regions/kanto',
     pokedexHref: '/pokedex?region=Kanto',
   },
   {
@@ -57,8 +57,8 @@ const GAMES: Game[] = [
     platform: 'GB',
     tags: ['third'],
     highlights: ['Anime-inspired follow-up', 'Pikachu partner', 'QoL tweaks for the run'],
-    generationHref: '/learn/generations#gen-i',
-    regionHref: '/learn/regions/kanto',
+    generationHref: '/learn/pokemon-generations#gen-i',
+    regionHref: '/learn/pokemon-regions/kanto',
   },
 
   /* Gen II */
@@ -71,8 +71,8 @@ const GAMES: Game[] = [
     platform: 'GBC',
     tags: ['main'],
     highlights: ['Day/Night + breeding', 'Post-game Kanto return', '100 new Pokémon'],
-    generationHref: '/learn/generations#gen-ii',
-    regionHref: '/learn/regions/johto',
+    generationHref: '/learn/pokemon-generations#gen-ii',
+    regionHref: '/learn/pokemon-regions/johto',
   },
   {
     id: 'crystal',
@@ -83,8 +83,8 @@ const GAMES: Game[] = [
     platform: 'GBC',
     tags: ['third'],
     highlights: ['Suicune story', 'Battle Tower debut', 'First playable female hero'],
-    generationHref: '/learn/generations#gen-ii',
-    regionHref: '/learn/regions/johto',
+    generationHref: '/learn/pokemon-generations#gen-ii',
+    regionHref: '/learn/pokemon-regions/johto',
   },
 
   /* Gen III */
@@ -97,8 +97,8 @@ const GAMES: Game[] = [
     platform: 'GBA',
     tags: ['main'],
     highlights: ['Abilities & Natures arrive', 'Double battles', 'Secret Bases'],
-    generationHref: '/learn/generations#gen-iii',
-    regionHref: '/learn/regions/hoenn',
+    generationHref: '/learn/pokemon-generations#gen-iii',
+    regionHref: '/learn/pokemon-regions/hoenn',
   },
   {
     id: 'emerald',
@@ -113,8 +113,8 @@ const GAMES: Game[] = [
       'Team Magma/Aqua combined',
       'Best Gen III single-cartridge pick',
     ],
-    generationHref: '/learn/generations#gen-iii',
-    regionHref: '/learn/regions/hoenn',
+    generationHref: '/learn/pokemon-generations#gen-iii',
+    regionHref: '/learn/pokemon-regions/hoenn',
   },
   {
     id: 'frlg',
@@ -125,7 +125,7 @@ const GAMES: Game[] = [
     platform: 'GBA',
     tags: ['remake'],
     highlights: ['Modernized Kanto', 'Wireless adapter multiplayer', 'Sevii Islands post-game'],
-    regionHref: '/learn/regions/kanto',
+    regionHref: '/learn/pokemon-regions/kanto',
   },
 
   /* Gen IV */
@@ -138,8 +138,8 @@ const GAMES: Game[] = [
     platform: 'DS',
     tags: ['main'],
     highlights: ['Physical/Special split', 'Online trading era begins', 'Underground'],
-    generationHref: '/learn/generations#gen-iv',
-    regionHref: '/learn/regions/sinnoh',
+    generationHref: '/learn/pokemon-generations#gen-iv',
+    regionHref: '/learn/pokemon-regions/sinnoh',
   },
   {
     id: 'plat',
@@ -150,8 +150,8 @@ const GAMES: Game[] = [
     platform: 'DS',
     tags: ['third'],
     highlights: ['Refined Sinnoh pacing', 'Distortion World', 'The “correct” Gen IV pick'],
-    generationHref: '/learn/generations#gen-iv',
-    regionHref: '/learn/regions/sinnoh',
+    generationHref: '/learn/pokemon-generations#gen-iv',
+    regionHref: '/learn/pokemon-regions/sinnoh',
   },
   {
     id: 'hgss',
@@ -162,7 +162,7 @@ const GAMES: Game[] = [
     platform: 'DS',
     tags: ['remake'],
     highlights: ['Beloved remakes', 'Pokéwalker accessory', 'Two regions in one save'],
-    regionHref: '/learn/regions/johto',
+    regionHref: '/learn/pokemon-regions/johto',
   },
 
   /* Gen V */
@@ -175,8 +175,8 @@ const GAMES: Game[] = [
     platform: 'DS',
     tags: ['main'],
     highlights: ['All-new Dex until post-game', 'Animated sprites', 'Strong story'],
-    generationHref: '/learn/generations#gen-v',
-    regionHref: '/learn/regions/unova',
+    generationHref: '/learn/pokemon-generations#gen-v',
+    regionHref: '/learn/pokemon-regions/unova',
   },
   {
     id: 'bw2',
@@ -187,8 +187,8 @@ const GAMES: Game[] = [
     platform: 'DS',
     tags: ['third'],
     highlights: ['Direct sequels', 'Challenge/Assist Modes', 'PokéStar Studios & Join Avenue'],
-    generationHref: '/learn/generations#gen-v',
-    regionHref: '/learn/regions/unova',
+    generationHref: '/learn/pokemon-generations#gen-v',
+    regionHref: '/learn/pokemon-regions/unova',
   },
 
   /* Gen VI */
@@ -201,8 +201,8 @@ const GAMES: Game[] = [
     platform: '3DS',
     tags: ['main'],
     highlights: ['3D jump', 'Fairy type introduced', 'Mega Evolutions'],
-    generationHref: '/learn/generations#gen-vi',
-    regionHref: '/learn/regions/kalos',
+    generationHref: '/learn/pokemon-generations#gen-vi',
+    regionHref: '/learn/pokemon-regions/kalos',
   },
   {
     id: 'oras',
@@ -213,7 +213,7 @@ const GAMES: Game[] = [
     platform: '3DS',
     tags: ['remake'],
     highlights: ['Modern Hoenn', 'DexNav hunting', 'Delta Episode post-game'],
-    regionHref: '/learn/regions/hoenn',
+    regionHref: '/learn/pokemon-regions/hoenn',
   },
 
   /* Gen VII */
@@ -226,8 +226,8 @@ const GAMES: Game[] = [
     platform: '3DS',
     tags: ['main'],
     highlights: ['Trials instead of Gyms', 'Z-Moves', 'Regional forms'],
-    generationHref: '/learn/generations#gen-vii',
-    regionHref: '/learn/regions/alola',
+    generationHref: '/learn/pokemon-generations#gen-vii',
+    regionHref: '/learn/pokemon-regions/alola',
   },
   {
     id: 'usum',
@@ -238,7 +238,7 @@ const GAMES: Game[] = [
     platform: '3DS',
     tags: ['third'],
     highlights: ['Expanded story', 'Ultra Wormholes', 'Better endgame'],
-    regionHref: '/learn/regions/alola',
+    regionHref: '/learn/pokemon-regions/alola',
   },
   {
     id: 'lets-go',
@@ -249,7 +249,7 @@ const GAMES: Game[] = [
     platform: 'Switch',
     tags: ['remake'],
     highlights: ['Streamlined catching', 'Great on-ramp for new players', 'Local co-op'],
-    regionHref: '/learn/regions/kanto',
+    regionHref: '/learn/pokemon-regions/kanto',
   },
 
   /* Gen VIII */
@@ -262,7 +262,7 @@ const GAMES: Game[] = [
     platform: 'Switch',
     tags: ['main'],
     highlights: ['Dynamax', 'Wild Area hub', 'Strong online/co-op support'],
-    regionHref: '/learn/regions/galar',
+    regionHref: '/learn/pokemon-regions/galar',
   },
   {
     id: 'swsh-dlc',
@@ -273,7 +273,7 @@ const GAMES: Game[] = [
     platform: 'Switch',
     tags: ['dlc'],
     highlights: ['Open exploration zones', 'Raid legendaries', 'Great endgame loop'],
-    regionHref: '/learn/regions/galar',
+    regionHref: '/learn/pokemon-regions/galar',
   },
   {
     id: 'pla',
@@ -284,8 +284,8 @@ const GAMES: Game[] = [
     platform: 'Switch',
     tags: ['legends', 'open-world'],
     highlights: ['Action-forward catching', 'Agile/Strong styles', 'Exploration-first design'],
-    generationHref: '/learn/generations#gen-viii',
-    regionHref: '/learn/regions/sinnoh',
+    generationHref: '/learn/pokemon-generations#gen-viii',
+    regionHref: '/learn/pokemon-regions/sinnoh',
   },
 
   /* Gen IX */
@@ -298,7 +298,7 @@ const GAMES: Game[] = [
     platform: 'Switch',
     tags: ['main', 'open-world'],
     highlights: ['Fully open-world', 'Terastallization', 'Three-path campaign'],
-    regionHref: '/learn/regions/paldea',
+    regionHref: '/learn/pokemon-regions/paldea',
   },
   {
     id: 'sv-dlc',
@@ -309,7 +309,7 @@ const GAMES: Game[] = [
     platform: 'Switch',
     tags: ['dlc'],
     highlights: ['New areas & mons', 'BB League & Blueberry quests', 'Great late-game variety'],
-    regionHref: '/learn/regions/paldea',
+    regionHref: '/learn/pokemon-regions/paldea',
   },
 ];
 
@@ -375,7 +375,7 @@ export default function GamesPage() {
           </>
         }
         actions={[
-          { href: '/learn/generations', label: 'Explore generations', variant: 'primary' },
+          { href: '/learn/pokemon-generations', label: 'Explore generations', variant: 'primary' },
           { href: '/pokedex', label: 'Open Pokédex', variant: 'dark' },
         ]}
       />
@@ -492,10 +492,10 @@ export default function GamesPage() {
 
         {/* Page CTAs */}
         <div className="mt-8 flex flex-wrap gap-3">
-          <Button href="/learn/generations" variant="primary">
+          <Button href="/learn/pokemon-generations" variant="primary">
             Compare by generation
           </Button>
-          <Button href="/learn/regions" variant="dark">
+          <Button href="/learn/pokemon-regions" variant="dark">
             Explore by region
           </Button>
         </div>

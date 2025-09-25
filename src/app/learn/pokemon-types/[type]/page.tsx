@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Button from '@/components/button';
 import InfoBox from '@/components/info-box';
-import { TYPE_CONTENT, ALL_TYPES, isTypeKey, type TypeId } from '@/components/pkm-types';
+import { TYPE_CONTENT, ALL_TYPES, isTypeKey, type TypeId } from '@/components/types';
 import HeroSection from '@/components/hero';
 import Chip from '@/components/chip';
 
@@ -58,7 +58,7 @@ export default function Page({ params }: { params: { type: string } }) {
             Learn
           </Link>
           <span className="text-gray-300">/</span>
-          <Link href="/learn/pkm-types" className="text-gray-500 hover:text-gray-900">
+          <Link href="/learn/pokemon-types" className="text-gray-500 hover:text-gray-900">
             Types
           </Link>
           <span className="text-gray-300">/</span>
@@ -83,7 +83,7 @@ export default function Page({ params }: { params: { type: string } }) {
         description={<>{data.hero.blurb}</>}
         actions={[
           { href: '/pokedex', label: 'Open Pokédex', variant: 'primary' },
-          { href: '/pkm-types', label: 'Open type chart', variant: 'dark' },
+          { href: '/types', label: 'Open type chart', variant: 'dark' },
         ]}
       />
       {/* MAIN */}
@@ -96,7 +96,7 @@ export default function Page({ params }: { params: { type: string } }) {
             return (
               <Link
                 key={id}
-                href={`/learn/pkm-types/${id}`}
+                href={`/learn/pokemon-types/${id}`}
                 aria-current={active ? 'page' : undefined}
                 className={[
                   'inline-flex items-center gap-1 rounded-full px-3 py-1 text-sm ring-1 transition',
@@ -237,7 +237,7 @@ export default function Page({ params }: { params: { type: string } }) {
           <>
             Study the full{' '}
             <Link
-              href="/learn/pkm-types"
+              href="/learn/pokemon-types"
               className="font-medium text-gray-900 underline-offset-4 hover:underline"
             >
               type chart
@@ -247,7 +247,7 @@ export default function Page({ params }: { params: { type: string } }) {
           <>
             Patch weaknesses using our{' '}
             <Link
-              href="/learn/guides/pkm-type-coverage"
+              href="/learn/guides/type-coverage"
               className="font-medium text-gray-900 underline-offset-4 hover:underline"
             >
               coverage tips
@@ -257,7 +257,7 @@ export default function Page({ params }: { params: { type: string } }) {
           <>
             Want a region-specific team? Start with a{' '}
             <Link
-              href="/learn/regions"
+              href="/learn/pokemon-regions"
               className="font-medium text-gray-900 underline-offset-4 hover:underline"
             >
               Region guide

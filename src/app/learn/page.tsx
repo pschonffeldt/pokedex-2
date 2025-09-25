@@ -6,15 +6,15 @@ import InfoBox from '@/components/info-box';
 import Link from 'next/link';
 
 const regions = [
-  { name: 'Kanto', href: '/learn/regions/kanto' },
-  { name: 'Johto', href: '/learn/regions/johto' },
-  { name: 'Hoenn', href: '/learn/regions/hoenn' },
-  { name: 'Sinnoh', href: '/learn/regions/sinnoh' },
-  { name: 'Unova', href: '/learn/regions/unova' },
-  { name: 'Kalos', href: '/learn/regions/kalos' },
-  { name: 'Alola', href: '/learn/regions/alola' },
-  { name: 'Galar', href: '/learn/regions/galar' },
-  { name: 'Paldea', href: '/learn/regions/paldea' },
+  { name: 'Kanto', href: '/learn/pokemon-regions/kanto' },
+  { name: 'Johto', href: '/learn/pokemon-regions/johto' },
+  { name: 'Hoenn', href: '/learn/pokemon-regions/hoenn' },
+  { name: 'Sinnoh', href: '/learn/pokemon-regions/sinnoh' },
+  { name: 'Unova', href: '/learn/pokemon-regions/unova' },
+  { name: 'Kalos', href: '/learn/pokemon-regions/kalos' },
+  { name: 'Alola', href: '/learn/pokemon-regions/alola' },
+  { name: 'Galar', href: '/learn/pokemon-regions/galar' },
+  { name: 'Paldea', href: '/learn/pokemon-regions/paldea' },
 ];
 
 export default function LearnPage() {
@@ -41,7 +41,7 @@ export default function LearnPage() {
         }
         actions={[
           { href: '/pokedex', label: 'Open Pokédex', variant: 'primary' },
-          { href: '/learn/pkm-types', label: 'Discover Pokémon Types', variant: 'dark' },
+          { href: '/learn/pokemon-types', label: 'Discover Pokémon Types', variant: 'dark' },
         ]}
       />
       {/* Core topics */}
@@ -73,7 +73,7 @@ export default function LearnPage() {
                 ))}
               </ul>
               <div className="mt-auto pt-5 flex flex-wrap gap-2">
-                <Button href="/learn/regions">See all regions</Button>
+                <Button href="/learn/pokemon-regions">See all regions</Button>
               </div>
             </div>
           </article>
@@ -120,7 +120,7 @@ export default function LearnPage() {
                 ].map(({ key, label, emoji }) => (
                   <li key={key} className="flex items-center justify-center">
                     <Link
-                      href={`/pkm-types#${key}`}
+                      href={`/types#${key}`}
                       title={label}
                       aria-label={`Type: ${label}`}
                       className="flex h-10 w-10 items-center justify-center rounded-lg border border-gray-200 bg-white text-2xl leading-none hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -205,7 +205,7 @@ export default function LearnPage() {
 
               {/* CTA */}
               <div className="mt-auto pt-5 flex flex-wrap gap-2">
-                <Button href="/learn/generations">Explore generations</Button>
+                <Button href="/learn/pokemon-generations">Explore generations</Button>
               </div>
             </div>
           </article>
@@ -230,7 +230,7 @@ export default function LearnPage() {
               </ul>
               <div className="mt-3">
                 <Link
-                  href="/pkm-types"
+                  href="/types"
                   className="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60"
                 >
                   Full chart
@@ -334,19 +334,22 @@ export default function LearnPage() {
         items={[
           <>
             Pick a core topic —{' '}
-            <Link href="/learn/regions" className="underline underline-offset-4 hover:no-underline">
+            <Link
+              href="/learn/pokemon-regions"
+              className="underline underline-offset-4 hover:no-underline"
+            >
               Regions
             </Link>
             ,{' '}
             <Link
-              href="/learn/pkm-types"
+              href="/learn/pokemon-types"
               className="underline underline-offset-4 hover:no-underline"
             >
               Types
             </Link>{' '}
             or{' '}
             <Link
-              href="/learn/generations"
+              href="/learn/pokemon-generations"
               className="underline underline-offset-4 hover:no-underline"
             >
               Generations
@@ -356,7 +359,10 @@ export default function LearnPage() {
 
           <>
             Planning a run? Start with a{' '}
-            <Link href="/learn/regions" className="underline underline-offset-4 hover:no-underline">
+            <Link
+              href="/learn/pokemon-regions"
+              className="underline underline-offset-4 hover:no-underline"
+            >
               Region guide
             </Link>{' '}
             for gyms, exclusives, and legendaries.
@@ -364,7 +370,7 @@ export default function LearnPage() {
           <>
             Brushing up on systems? Skim{' '}
             <Link
-              href="/learn/generations"
+              href="/learn/pokemon-generations"
               className="underline underline-offset-4 hover:no-underline"
             >
               Generations
@@ -374,7 +380,7 @@ export default function LearnPage() {
           <>
             Building a team? Check the{' '}
             <Link
-              href="/learn/pkm-types"
+              href="/learn/pokemon-types"
               className="underline underline-offset-4 hover:no-underline"
             >
               Type chart

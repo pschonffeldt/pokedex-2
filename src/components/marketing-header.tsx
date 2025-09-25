@@ -8,11 +8,11 @@ import Button from '@/components/button';
 const routes = [
   { label: 'Home', path: '/' },
   { label: 'Learn', path: '/learn' },
-  { label: 'Types', path: '/learn/pkm-types' },
-  { label: 'Regions', path: '/learn/regions' },
-  { label: 'Generations', path: '/learn/generations' },
-  { label: 'Games', path: '/games' },
+  { label: 'Types', path: '/learn/pokemon-types' },
+  { label: 'Regions', path: '/learn/pokemon-regions' },
+  { label: 'Generations', path: '/learn/pokemon-generations' },
   { label: 'Pokédex', path: '/pokedex' },
+  { label: 'Games', path: '/games' },
   { label: 'About', path: '/about' },
 ];
 

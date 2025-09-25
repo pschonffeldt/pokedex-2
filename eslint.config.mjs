@@ -11,7 +11,7 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   // Next.js + TypeScript rules
-  ...compat.extends('next/core-web-vitals', 'next/pkm-typescript'),
+  ...compat.extends('next/core-web-vitals', 'next/typescript'),
 
   // Prettier must come last to turn off conflicting formatting rules
   ...compat.extends('prettier'),

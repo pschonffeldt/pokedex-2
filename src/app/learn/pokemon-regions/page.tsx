@@ -1,4 +1,4 @@
-// app/learn/regions/page.tsx
+// app/learn/pokemon-regions/page.tsx
 'use client';
 
 import Button from '@/components/button';
@@ -16,7 +16,7 @@ type Region = {
   inspiration: string;
   highlights: string;
   legendaries: string;
-  guideHref: string; // keeps your /learn/regions/* routes
+  guideHref: string; // keeps your /learn/pokemon-regions/* routes
   pokedexHref: string; // optional deep link to region filter
 };
 
@@ -31,7 +31,7 @@ const regions: Region[] = [
     inspiration: 'Kantō (Japan)',
     highlights: 'Pallet Town, Saffron City, iconic Gym circuit',
     legendaries: 'Articuno, Zapdos, Moltres, Mewtwo',
-    guideHref: '/learn/regions/kanto',
+    guideHref: '/learn/pokemon-regions/kanto',
     pokedexHref: '/pokedex?region=kanto',
   },
   {
@@ -43,7 +43,7 @@ const regions: Region[] = [
     inspiration: 'Kansai (Japan)',
     highlights: 'Ecruteak lore, cross-region travel with Kanto',
     legendaries: 'Lugia, Ho-Oh, Raikou, Entei, Suicune',
-    guideHref: '/learn/regions/johto',
+    guideHref: '/learn/pokemon-regions/johto',
     pokedexHref: '/pokedex?region=johto',
   },
   {
@@ -55,7 +55,7 @@ const regions: Region[] = [
     inspiration: 'Kyushu (Japan)',
     highlights: 'Weather mechanics, expansive ocean routes',
     legendaries: 'Groudon, Kyogre, Rayquaza',
-    guideHref: '/learn/regions/hoenn',
+    guideHref: '/learn/pokemon-regions/hoenn',
     pokedexHref: '/pokedex?region=hoenn',
   },
   {
@@ -67,7 +67,7 @@ const regions: Region[] = [
     inspiration: 'Hokkaido (Japan)',
     highlights: 'Physical/Special split era, lore-rich areas',
     legendaries: 'Dialga, Palkia, Giratina, Arceus',
-    guideHref: '/learn/regions/sinnoh',
+    guideHref: '/learn/pokemon-regions/sinnoh',
     pokedexHref: '/pokedex?region=sinnoh',
   },
   {
@@ -79,7 +79,7 @@ const regions: Region[] = [
     inspiration: 'New York & surroundings (USA)',
     highlights: 'Route variety, bold story themes',
     legendaries: 'Reshiram, Zekrom, Kyurem',
-    guideHref: '/learn/regions/unova',
+    guideHref: '/learn/pokemon-regions/unova',
     pokedexHref: '/pokedex?region=unova',
   },
   {
@@ -91,7 +91,7 @@ const regions: Region[] = [
     inspiration: 'Northern France',
     highlights: 'Mega Evolution system, Lumiose City',
     legendaries: 'Xerneas, Yveltal, Zygarde',
-    guideHref: '/learn/regions/kalos',
+    guideHref: '/learn/pokemon-regions/kalos',
     pokedexHref: '/pokedex?region=kalos',
   },
   {
@@ -103,7 +103,7 @@ const regions: Region[] = [
     inspiration: 'Hawaii (USA)',
     highlights: 'Island Challenge, regional forms',
     legendaries: 'Solgaleo, Lunala, Tapu guardians',
-    guideHref: '/learn/regions/alola',
+    guideHref: '/learn/pokemon-regions/alola',
     pokedexHref: '/pokedex?region=alola',
   },
   {
@@ -115,7 +115,7 @@ const regions: Region[] = [
     inspiration: 'United Kingdom',
     highlights: 'Gym stadiums, Wild Area exploration',
     legendaries: 'Zacian, Zamazenta, Eternatus',
-    guideHref: '/learn/regions/galar',
+    guideHref: '/learn/pokemon-regions/galar',
     pokedexHref: '/pokedex?region=galar',
   },
   {
@@ -127,7 +127,7 @@ const regions: Region[] = [
     inspiration: 'Iberian Peninsula (Spain & Portugal)',
     highlights: 'Free exploration, school-themed narrative arcs',
     legendaries: 'Koraidon, Miraidon',
-    guideHref: '/learn/regions/paldea',
+    guideHref: '/learn/pokemon-regions/paldea',
     pokedexHref: '/pokedex?region=paldea',
   },
 ];
@@ -162,7 +162,7 @@ export default function PokemonRegions() {
         }
         actions={[
           { href: '/pokedex', label: 'Open Pokédex', variant: 'primary' },
-          { href: '/pkm-types', label: 'Discover Pokémon Types', variant: 'dark' },
+          { href: '/types', label: 'Discover Pokémon Types', variant: 'dark' },
         ]}
       />
       {/* Regions grid */}
@@ -238,7 +238,7 @@ export default function PokemonRegions() {
           <>
             Planning a new run? Check{' '}
             <Link
-              href="/learn/generations"
+              href="/learn/pokemon-generations"
               className="underline underline-offset-4 hover:no-underline"
             >
               Generations
@@ -248,7 +248,7 @@ export default function PokemonRegions() {
           <>
             Prepping gyms or the League? Review the{' '}
             <Link
-              href="/learn/pkm-types"
+              href="/learn/pokemon-types"
               className="underline underline-offset-4 hover:no-underline"
             >
               type chart

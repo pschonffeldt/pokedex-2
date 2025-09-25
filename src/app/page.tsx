@@ -53,7 +53,7 @@ export default function HomePage() {
         }
         actions={[
           { href: '/pokedex', label: 'Open Pokédex', variant: 'primary' },
-          { href: '/pkm-types', label: 'Discover Pokémon Types', variant: 'dark' },
+          { href: '/types', label: 'Discover Pokémon Types', variant: 'dark' },
         ]}
       />
 
@@ -102,12 +102,12 @@ export default function HomePage() {
               <ul className="mt-4 grid grid-cols-2 gap-2 text-sm text-gray-700">
                 {(
                   [
-                    ['Kanto', '/learn/regions/kanto'],
-                    ['Johto', '/learn/regions/johto'],
-                    ['Hoenn', '/learn/regions/hoenn'],
-                    ['Sinnoh', '/learn/regions/sinnoh'],
-                    ['Unova', '/learn/regions/unova'],
-                    ['Galar', '/learn/regions/galar'],
+                    ['Kanto', '/learn/pokemon-regions/kanto'],
+                    ['Johto', '/learn/pokemon-regions/johto'],
+                    ['Hoenn', '/learn/pokemon-regions/hoenn'],
+                    ['Sinnoh', '/learn/pokemon-regions/sinnoh'],
+                    ['Unova', '/learn/pokemon-regions/unova'],
+                    ['Galar', '/learn/pokemon-regions/galar'],
                   ] as const
                 ).map(([name, href]) => (
                   <li key={name}>
@@ -123,7 +123,7 @@ export default function HomePage() {
 
               <div className="mt-auto pt-5">
                 <div className="mt-auto pt-5">
-                  <Button href="/learn/regions" variant="dark">
+                  <Button href="/learn/pokemon-regions" variant="dark">
                     Explore regions
                   </Button>
                 </div>
@@ -151,7 +151,7 @@ export default function HomePage() {
                 {TYPES.map(([id, emoji, label]) => (
                   <li key={id}>
                     <Link
-                      href={`/learn/pkm-types/${id}`}
+                      href={`/learn/pokemon-types/${id}`}
                       title={label}
                       aria-label={label}
                       className="block rounded-lg border border-gray-200 bg-white text-xl hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60"
@@ -164,7 +164,7 @@ export default function HomePage() {
               </ul>
 
               <div className="mt-auto pt-5">
-                <Button href="/learn/pkm-types">Explore types</Button>
+                <Button href="/learn/pokemon-types">Explore types</Button>
               </div>
             </div>
           </article>
@@ -184,15 +184,15 @@ export default function HomePage() {
               </p>
               <ul className="mt-4 grid grid-cols-2 gap-2 text-sm text-gray-700">
                 {[
-                  ['Gen I', '/learn/generations#gen-i'],
-                  ['Gen II', '/learn/generations#gen-ii'],
-                  ['Gen III', '/learn/generations#gen-iii'],
-                  ['Gen IV', '/learn/generations#gen-iv'],
-                  ['Gen V', '/learn/generations#gen-v'],
-                  ['Gen VI', '/learn/generations#gen-vi'],
-                  ['Gen VII', '/learn/generations#gen-vii'],
-                  ['Gen VIII', '/learn/generations#gen-viii'],
-                  ['Gen IX', '/learn/generations#gen-ix'],
+                  ['Gen I', '/learn/pokemon-generations#gen-i'],
+                  ['Gen II', '/learn/pokemon-generations#gen-ii'],
+                  ['Gen III', '/learn/pokemon-generations#gen-iii'],
+                  ['Gen IV', '/learn/pokemon-generations#gen-iv'],
+                  ['Gen V', '/learn/pokemon-generations#gen-v'],
+                  ['Gen VI', '/learn/pokemon-generations#gen-vi'],
+                  ['Gen VII', '/learn/pokemon-generations#gen-vii'],
+                  ['Gen VIII', '/learn/pokemon-generations#gen-viii'],
+                  ['Gen IX', '/learn/pokemon-generations#gen-ix'],
                 ].map(([label]) => (
                   <li key={label}>
                     <div className="block rounded-lg border border-gray-200 bg-white px-3 py-2 hover:bg-gray-50">
@@ -202,7 +202,7 @@ export default function HomePage() {
                 ))}
               </ul>
               <div className="mt-auto pt-5">
-                <Button href="/learn/generations" variant="dark">
+                <Button href="/learn/pokemon-generations" variant="dark">
                   Explore generations
                 </Button>
               </div>

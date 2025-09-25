@@ -22,7 +22,7 @@ function Pokeball({ className = 'h-5 w-5 text-red-600' }) {
   );
 }
 
-export default function AlolaPage() {
+export default function HoennPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Breadcrumb */}
@@ -36,11 +36,11 @@ export default function AlolaPage() {
             Learn
           </Link>
           <span className="text-gray-300">/</span>
-          <Link href="/learn/regions" className="text-gray-500 hover:text-gray-900">
+          <Link href="/learn/pokemon-regions" className="text-gray-500 hover:text-gray-900">
             Regions
           </Link>
           <span className="text-gray-300">/</span>
-          <span className="font-medium text-gray-900">Alola</span>
+          <span className="font-medium text-gray-900">Hoenn</span>
         </div>
       </nav>
 
@@ -50,13 +50,14 @@ export default function AlolaPage() {
           <div className="flex items-start gap-3">
             <div>
               <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
-                Alola Region
+                Hoenn Region
               </h1>
               <p className="mt-3 max-w-prose text-gray-600 sm:text-lg">
-                A sun-soaked archipelago inspired by Hawaii,{' '}
-                <span className="font-medium text-gray-900">Alola</span> trades gyms for the Island
-                Challenge—trials, Totem Pokémon, and grand Kahuna battles. Regional forms, Z-Moves,
-                and a warm, laid-back culture make every island hop feel fresh and personal.
+                Set across vast seas and volcanic highlands,{' '}
+                <span className="font-medium text-gray-900">Hoenn</span> is all about exploration.
+                Secret Bases, Pokémon Contests, and the land–sea clash between Team Magma and Team
+                Aqua define a journey that dives underwater, scales Mt. Chimney, and ends beneath
+                the skies where Rayquaza watches over the region.
               </p>
             </div>
           </div>
@@ -65,19 +66,21 @@ export default function AlolaPage() {
           <dl className="mt-8 grid grid-cols-1 gap-4 text-sm sm:grid-cols-2 md:grid-cols-4">
             <div className="rounded-lg border border-gray-200 bg-white p-4">
               <dt className="font-medium text-gray-900">Generation</dt>
-              <dd className="text-gray-600">VII (Pokédex #722–809)</dd>
+              <dd className="text-gray-600">III (Pokédex #252–386)</dd>
             </div>
             <div className="rounded-lg border border-gray-200 bg-white p-4">
               <dt className="font-medium text-gray-900">Games</dt>
-              <dd className="text-gray-600">Sun, Moon • Ultra Sun, Ultra Moon</dd>
+              <dd className="text-gray-600">
+                Ruby, Sapphire, Emerald • Omega Ruby, Alpha Sapphire
+              </dd>
             </div>
             <div className="rounded-lg border border-gray-200 bg-white p-4">
               <dt className="font-medium text-gray-900">Professor</dt>
-              <dd className="text-gray-600">Professor Kukui</dd>
+              <dd className="text-gray-600">Professor Birch</dd>
             </div>
             <div className="rounded-lg border border-gray-200 bg-white p-4">
               <dt className="font-medium text-gray-900">Champion</dt>
-              <dd className="text-gray-600">You (first Champion)</dd>
+              <dd className="text-gray-600">Steven Stone (Emerald: Wallace)</dd>
             </div>
           </dl>
         </div>
@@ -92,10 +95,11 @@ export default function AlolaPage() {
             <article className="space-y-3">
               <h2 className="text-2xl font-bold text-gray-900">Overview</h2>
               <p className="text-gray-700">
-                Alola spans four main islands—Melemele, Akala, Ula&apos;ula, and Poni—plus Aether
-                Paradise offshore. Instead of badges, you clear trials led by Captains, then face
-                powerful Kahunas to progress. Poké Ride replaces HMs, encouraging exploration from
-                jungle trails to volcanic slopes and coral reefs.
+                Hoenn is a nature-forward region dotted with coral coasts, rainforests, and an
+                active volcano. Trainers begin in Littleroot Town, trek through Petalburg Woods, and
+                unlock surfing and diving to navigate currents and underwater caves. Abilities and
+                Natures debuted here, deepening team-building strategy alongside the revamped
+                PokéNav and Contest circuits.
               </p>
             </article>
 
@@ -104,18 +108,22 @@ export default function AlolaPage() {
               <h2 className="text-2xl font-bold text-gray-900">Key Cities & Towns</h2>
               <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {[
-                  "Hau'oli City",
-                  'Iki Town',
-                  'Heahea City',
-                  'Paniola Town',
-                  'Konikoni City',
-                  'Royal Avenue',
-                  'Malie City',
-                  'Tapu Village',
-                  'Po Town',
-                  'Seafolk Village',
-                  'Aether Paradise',
-                  'Mount Lanakila',
+                  'Littleroot Town',
+                  'Oldale Town',
+                  'Petalburg City',
+                  'Rustboro City',
+                  'Dewford Town',
+                  'Slateport City',
+                  'Mauville City',
+                  'Verdanturf Town',
+                  'Fallarbor Town',
+                  'Lavaridge Town',
+                  'Fortree City',
+                  'Lilycove City',
+                  'Mossdeep City',
+                  'Sootopolis City',
+                  'Pacifidlog Town',
+                  'Ever Grande City',
                 ].map((name) => (
                   <li
                     key={name}
@@ -132,14 +140,14 @@ export default function AlolaPage() {
               <h2 className="text-2xl font-bold text-gray-900">Gym Leaders</h2>
               <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {[
-                  ['Kahuna Hala', 'Fighting – Melemele Island'],
-                  ['Kahuna Olivia', 'Rock – Akala Island'],
-                  ['Kahuna Nanu', "Dark – Ula'ula Island"],
-                  ['Kahuna Hapu', 'Ground – Poni Island'],
-                  ['Ilima', 'Normal – Melemele (Trial Captain)'],
-                  ['Lana', 'Water – Brooklet Hill (Trial Captain)'],
-                  ['Kiawe', 'Fire – Wela Volcano Park (Trial Captain)'],
-                  ['Mallow', 'Grass – Lush Jungle (Trial Captain)'],
+                  ['Roxanne', 'Rock – Rustboro City'],
+                  ['Brawly', 'Fighting – Dewford Town'],
+                  ['Wattson', 'Electric – Mauville City'],
+                  ['Flannery', 'Fire – Lavaridge Town'],
+                  ['Norman', 'Normal – Petalburg City'],
+                  ['Winona', 'Flying – Fortree City'],
+                  ['Tate & Liza', 'Psychic – Mossdeep City'],
+                  ['Wallace/Juan', 'Water – Sootopolis City'],
                 ].map(([leader, info]) => (
                   <li key={leader} className="rounded-lg border border-gray-200 bg-white px-4 py-3">
                     <div className="font-medium text-gray-900">{leader}</div>
@@ -154,18 +162,19 @@ export default function AlolaPage() {
               <article className="space-y-3">
                 <h2 className="text-2xl font-bold text-gray-900">Starter Pokémon</h2>
                 <ul className="space-y-2 text-gray-800">
-                  <li>Rowlet (Grass/Flying)</li>
-                  <li>Litten (Fire)</li>
-                  <li>Popplio (Water)</li>
+                  <li>Treecko (Grass)</li>
+                  <li>Torchic (Fire)</li>
+                  <li>Mudkip (Water)</li>
                 </ul>
               </article>
 
               <article className="space-y-3">
                 <h2 className="text-2xl font-bold text-gray-900">Legendary & Mythical</h2>
                 <ul className="space-y-2 text-gray-800">
-                  <li>Solgaleo • Lunala • Necrozma</li>
-                  <li>Tapu Koko • Tapu Lele • Tapu Bulu • Tapu Fini</li>
-                  <li>Magearna • Marshadow • Zeraora (Mythical)</li>
+                  <li>Groudon • Kyogre • Rayquaza</li>
+                  <li>Latias • Latios</li>
+                  <li>Regirock • Regice • Registeel</li>
+                  <li>Jirachi • Deoxys (Mythical)</li>
                 </ul>
               </article>
             </div>
@@ -174,11 +183,12 @@ export default function AlolaPage() {
             <article className="space-y-3">
               <h2 className="text-2xl font-bold text-gray-900">Notable Routes & Landmarks</h2>
               <ul className="list-disc pl-6 text-gray-800">
-                <li>Aether Paradise & Ultra Wormholes</li>
-                <li>Wela Volcano Park & Brooklet Hill</li>
-                <li>Lush Jungle & Malie Garden</li>
-                <li>Vast Poni Canyon & Poni Gauntlet</li>
-                <li>Mount Lanakila (Pokémon League)</li>
+                <li>Mt. Chimney & Jagged Pass</li>
+                <li>Meteor Falls & Shoal Cave</li>
+                <li>Seafloor Cavern (Aqua/Magma)</li>
+                <li>Sky Pillar (Rayquaza)</li>
+                <li>Safari Zone & Secret Base sites</li>
+                <li>Routes 132–134 ocean currents</li>
               </ul>
             </article>
 
@@ -191,7 +201,7 @@ export default function AlolaPage() {
                 Open Pokédex
               </Link>
               <Link
-                href="/learn/regions"
+                href="/learn/pokemon-regions"
                 className="rounded-full bg-gray-900 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-black"
               >
                 Back to Regions
@@ -208,9 +218,9 @@ export default function AlolaPage() {
                 Trivia
               </h3>
               <ul className="space-y-2 text-gray-800">
-                <li>Gyms are replaced by trials, Totem battles, and Kahuna grand trials.</li>
-                <li>Introduced regional variants known as Alolan forms.</li>
-                <li>Z-Moves let one Pokémon unleash a single, super-powered attack per battle.</li>
+                <li>Introduced Abilities and Natures, transforming competitive play.</li>
+                <li>Dive lets you explore underwater routes and hidden areas.</li>
+                <li>Secret Bases and Pokémon Contests began in Hoenn.</li>
               </ul>
             </div>
             {/* Games & releases box */}
@@ -219,17 +229,15 @@ export default function AlolaPage() {
               <dl className="space-y-2 text-sm">
                 <div className="flex gap-2">
                   <dt className="shrink-0 font-medium text-gray-900">Original:</dt>
-                  <dd className="text-gray-700">Pokémon Sun & Moon (2016 – worldwide)</dd>
+                  <dd className="text-gray-700">Pokémon Ruby & Sapphire (2002 JP / 2003 WW)</dd>
                 </div>
                 <div className="flex gap-2">
                   <dt className="shrink-0 font-medium text-gray-900">Third Version:</dt>
-                  <dd className="text-gray-700">
-                    Pokémon Ultra Sun & Ultra Moon (2017 – worldwide)
-                  </dd>
+                  <dd className="text-gray-700">Pokémon Emerald (2004 JP / 2005 WW)</dd>
                 </div>
                 <div className="flex gap-2">
                   <dt className="shrink-0 font-medium text-gray-900">Remakes:</dt>
-                  <dd className="text-gray-700">—</dd>
+                  <dd className="text-gray-700">Omega Ruby & Alpha Sapphire (2014)</dd>
                 </div>
               </dl>
             </div>
@@ -241,7 +249,7 @@ export default function AlolaPage() {
               </h3>
               <Image
                 src="/images/jhoto-map.svg" // put the file in /public/og-image.png
-                alt="Alola region map"
+                alt="Hoenn region map"
                 width={350}
                 height={300}
                 className="rounded-lg"

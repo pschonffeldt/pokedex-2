@@ -179,7 +179,7 @@ Sent from PokéWorld Explorer`
                 <li>
                   Looking for counters? Try the{' '}
                   <Link
-                    href="/learn/pkm-types"
+                    href="/learn/pokemon-types"
                     className="font-medium text-indigo-600 hover:text-indigo-700"
                   >
                     Types guide
@@ -189,7 +189,7 @@ Sent from PokéWorld Explorer`
                 <li>
                   Planning a run? Start with{' '}
                   <Link
-                    href="/learn/regions"
+                    href="/learn/pokemon-regions"
                     className="font-medium text-indigo-600 hover:text-indigo-700"
                   >
                     Region guides

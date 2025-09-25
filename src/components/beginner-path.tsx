@@ -22,35 +22,35 @@ const DEFAULT_CARDS: BeginnerCard[] = [
   {
     title: 'New to Pokémon?',
     steps: [
-      ['Learn types (10 min)', '/learn/pkm-types'],
-      ['Pick a region to start', '/learn/regions'],
+      ['Learn types (10 min)', '/learn/pokemon-types'],
+      ['Pick a region to start', '/learn/pokemon-regions'],
       ['Choose a starter', '/learn/guides/starter-picks'],
       ['Open the Pokédex', '/pokedex'],
-      ['Build basic coverage', '/learn/guides/pkm-type-coverage'],
+      ['Build basic coverage', '/learn/guides/type-coverage'],
     ],
     cta: ['Start learning', '/learn'],
   },
   {
     title: 'Returning after Gen IV?',
     steps: [
-      ['Skim the Generations timeline', '/learn/generations'],
-      ['Read new mechanics (Megas → Tera)', '/learn/generations#timeline'],
+      ['Skim the Generations timeline', '/learn/pokemon-generations'],
+      ['Read new mechanics (Megas → Tera)', '/learn/pokemon-generations#timeline'],
       ['Check regional forms', '/pokedex?query=regional'],
-      ['Pick a modern entry', '/learn/generations#recommended'],
+      ['Pick a modern entry', '/learn/pokemon-generations#recommended'],
       ['Plan a team in the Pokédex', '/pokedex'],
     ],
-    cta: ['Catch up fast', '/learn/generations'],
+    cta: ['Catch up fast', '/learn/pokemon-generations'],
   },
   {
     title: 'Competitive curious?',
     steps: [
-      ['Types & multipliers deep dive', '/learn/pkm-types'],
-      ['Coverage recipes (BoltBeam, etc.)', '/learn/guides/pkm-type-coverage'],
+      ['Types & multipliers deep dive', '/learn/pokemon-types'],
+      ['Coverage recipes (BoltBeam, etc.)', '/learn/guides/type-coverage'],
       ['Speed control & hazards 101', '/learn/guides/hazards'],
       ['Build a sample core', '/learn/guides/sample-cores'],
       ['Search sets in Pokédex', '/pokedex'],
     ],
-    cta: ['Open type chart', 'learn/pkm-types'],
+    cta: ['Open type chart', 'learn/pokemon-types'],
   },
 ];
 
