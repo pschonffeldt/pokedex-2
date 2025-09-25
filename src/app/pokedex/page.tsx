@@ -143,7 +143,7 @@ export default function PokedexPage() {
         }
         actions={[
           { href: '/learn', label: 'Start learning', variant: 'primary' },
-          { href: '/learn/types', label: 'Discover Pokémon Types', variant: 'dark' },
+          { href: '/learn/pkm-types', label: 'Discover Pokémon Types', variant: 'dark' },
         ]}
       />
       {/* Main content */}

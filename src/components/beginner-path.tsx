@@ -22,11 +22,11 @@ const DEFAULT_CARDS: BeginnerCard[] = [
   {
     title: 'New to Pokémon?',
     steps: [
-      ['Learn types (10 min)', '/learn/types'],
+      ['Learn types (10 min)', '/learn/pkm-types'],
       ['Pick a region to start', '/learn/regions'],
       ['Choose a starter', '/learn/guides/starter-picks'],
       ['Open the Pokédex', '/pokedex'],
-      ['Build basic coverage', '/learn/guides/type-coverage'],
+      ['Build basic coverage', '/learn/guides/pkm-type-coverage'],
     ],
     cta: ['Start learning', '/learn'],
   },
@@ -44,13 +44,13 @@ const DEFAULT_CARDS: BeginnerCard[] = [
   {
     title: 'Competitive curious?',
     steps: [
-      ['Types & multipliers deep dive', '/learn/types'],
-      ['Coverage recipes (BoltBeam, etc.)', '/learn/guides/type-coverage'],
+      ['Types & multipliers deep dive', '/learn/pkm-types'],
+      ['Coverage recipes (BoltBeam, etc.)', '/learn/guides/pkm-type-coverage'],
       ['Speed control & hazards 101', '/learn/guides/hazards'],
       ['Build a sample core', '/learn/guides/sample-cores'],
       ['Search sets in Pokédex', '/pokedex'],
     ],
-    cta: ['Open type chart', 'learn/types'],
+    cta: ['Open type chart', 'learn/pkm-types'],
   },
 ];
 

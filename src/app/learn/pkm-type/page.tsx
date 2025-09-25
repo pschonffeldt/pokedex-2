@@ -15,7 +15,7 @@ type TypeCard = {
   resists: string; // defensive resists
   immune?: string; // defensive immunities
   statusNote?: string; // notable status/ability/weather notes (1-liner)
-  guideHref: string; // /learn/types/fire
+  guideHref: string; // /learn/pkm-types/fire
   pokedexHref: string; // /pokedex?type=fire
 };
 
@@ -30,7 +30,7 @@ const types: TypeCard[] = [
     resists: '—',
     immune: 'Ghost',
     statusNote: 'Simple movepools; pairs well with Fighting/Ground coverage.',
-    guideHref: '/learn/types/normal',
+    guideHref: '/learn/pkm-types/normal',
     pokedexHref: '/pokedex?type=normal',
   },
   {
@@ -42,7 +42,7 @@ const types: TypeCard[] = [
     weakTo: 'Ground, Rock, Water',
     resists: 'Bug, Fairy, Fire, Grass, Ice, Steel',
     statusNote: 'Sun empowers Fire; Fire-types cannot be burned.',
-    guideHref: '/learn/types/fire',
+    guideHref: '/learn/pkm-types/fire',
     pokedexHref: '/pokedex?type=fire',
   },
   {
@@ -54,7 +54,7 @@ const types: TypeCard[] = [
     weakTo: 'Electric, Grass',
     resists: 'Fire, Ice, Steel, Water',
     statusNote: 'Rain boosts Water & softens Fire; great with Electric/Ice (BoltBeam).',
-    guideHref: '/learn/types/water',
+    guideHref: '/learn/pkm-types/water',
     pokedexHref: '/pokedex?type=water',
   },
   {
@@ -66,7 +66,7 @@ const types: TypeCard[] = [
     weakTo: 'Bug, Fire, Flying, Ice, Poison',
     resists: 'Electric, Grass, Ground, Water',
     statusNote: 'Immune to powder/Leech Seed; loves Sun (Chlorophyll).',
-    guideHref: '/learn/types/grass',
+    guideHref: '/learn/pkm-types/grass',
     pokedexHref: '/pokedex?type=grass',
   },
   {
@@ -78,7 +78,7 @@ const types: TypeCard[] = [
     weakTo: 'Ground',
     resists: 'Electric, Flying, Steel',
     statusNote: 'Electric-types don’t get paralyzed; pairs with Ice (BoltBeam).',
-    guideHref: '/learn/types/electric',
+    guideHref: '/learn/pkm-types/electric',
     pokedexHref: '/pokedex?type=electric',
   },
   {
@@ -90,7 +90,7 @@ const types: TypeCard[] = [
     weakTo: 'Fighting, Fire, Rock, Steel',
     resists: 'Ice',
     statusNote: 'Snow favors Ice; amazing coverage, fragile on defense.',
-    guideHref: '/learn/types/ice',
+    guideHref: '/learn/pkm-types/ice',
     pokedexHref: '/pokedex?type=ice',
   },
   {
@@ -102,7 +102,7 @@ const types: TypeCard[] = [
     weakTo: 'Fairy, Flying, Psychic',
     resists: 'Bug, Dark, Rock',
     statusNote: 'Breaks Steels/Rocks; appreciates Ghost/Dark coverage.',
-    guideHref: '/learn/types/fighting',
+    guideHref: '/learn/pkm-types/fighting',
     pokedexHref: '/pokedex?type=fighting',
   },
   {
@@ -114,7 +114,7 @@ const types: TypeCard[] = [
     weakTo: 'Ground, Psychic',
     resists: 'Bug, Fairy, Fighting, Grass, Poison',
     statusNote: 'Poison-types can’t be poisoned; grounded Poison absorbs Toxic Spikes.',
-    guideHref: '/learn/types/poison',
+    guideHref: '/learn/pkm-types/poison',
     pokedexHref: '/pokedex?type=poison',
   },
   {
@@ -127,7 +127,7 @@ const types: TypeCard[] = [
     resists: 'Poison, Rock',
     immune: 'Electric (incl. Thunder Wave)',
     statusNote: 'EdgeQuake (Rock+Ground) is elite coverage.',
-    guideHref: '/learn/types/ground',
+    guideHref: '/learn/pkm-types/ground',
     pokedexHref: '/pokedex?type=ground',
   },
   {
@@ -140,7 +140,7 @@ const types: TypeCard[] = [
     resists: 'Bug, Fighting, Grass',
     immune: 'Ground (most cases); Spikes/Toxic Spikes',
     statusNote: 'Pairs with Ground (EdgeQuake partners).',
-    guideHref: '/learn/types/flying',
+    guideHref: '/learn/pkm-types/flying',
     pokedexHref: '/pokedex?type=flying',
   },
   {
@@ -152,7 +152,7 @@ const types: TypeCard[] = [
     weakTo: 'Bug, Dark, Ghost',
     resists: 'Fighting, Psychic',
     statusNote: 'Prefers partners to handle Steels/Darks (Ground/Fairy).',
-    guideHref: '/learn/types/psychic',
+    guideHref: '/learn/pkm-types/psychic',
     pokedexHref: '/pokedex?type=psychic',
   },
   {
@@ -164,7 +164,7 @@ const types: TypeCard[] = [
     weakTo: 'Fire, Flying, Rock',
     resists: 'Fighting, Grass, Ground',
     statusNote: 'Great early-game utility; shines with pivot moves.',
-    guideHref: '/learn/types/bug',
+    guideHref: '/learn/pkm-types/bug',
     pokedexHref: '/pokedex?type=bug',
   },
   {
@@ -176,7 +176,7 @@ const types: TypeCard[] = [
     weakTo: 'Fighting, Grass, Ground, Steel, Water',
     resists: 'Fire, Flying, Normal, Poison',
     statusNote: 'Sand boosts Rock sp. defense; pairs with Ground/Steel walls.',
-    guideHref: '/learn/types/rock',
+    guideHref: '/learn/pkm-types/rock',
     pokedexHref: '/pokedex?type=rock',
   },
   {
@@ -189,7 +189,7 @@ const types: TypeCard[] = [
     resists: 'Bug, Poison',
     immune: 'Normal, Fighting; trap immunity',
     statusNote: 'Spinblocks hazards; pairs with Fairy/Fighting offenses.',
-    guideHref: '/learn/types/ghost',
+    guideHref: '/learn/pkm-types/ghost',
     pokedexHref: '/pokedex?type=ghost',
   },
   {
@@ -201,7 +201,7 @@ const types: TypeCard[] = [
     weakTo: 'Dragon, Fairy, Ice',
     resists: 'Electric, Fire, Grass, Water',
     statusNote: 'Often special attackers; likes Steel/Fairy teammates.',
-    guideHref: '/learn/types/dragon',
+    guideHref: '/learn/pkm-types/dragon',
     pokedexHref: '/pokedex?type=dragon',
   },
   {
@@ -214,7 +214,7 @@ const types: TypeCard[] = [
     resists: 'Dark, Ghost',
     immune: 'Psychic (defensive); ignores Prankster status (Gen VII+)',
     statusNote: 'Pairs with Fighting/Ground to break Steels.',
-    guideHref: '/learn/types/dark',
+    guideHref: '/learn/pkm-types/dark',
     pokedexHref: '/pokedex?type=dark',
   },
   {
@@ -227,7 +227,7 @@ const types: TypeCard[] = [
     resists: 'Many (incl. Bug, Dragon, Fairy, Flying, Grass, Ice, Normal, Psychic, Rock, Steel)',
     immune: 'Poison (status & moves)',
     statusNote: 'Premier defensive type; set hazards and pivot.',
-    guideHref: '/learn/types/steel',
+    guideHref: '/learn/pkm-types/steel',
     pokedexHref: '/pokedex?type=steel',
   },
   {
@@ -240,7 +240,7 @@ const types: TypeCard[] = [
     resists: 'Bug, Dark, Fighting',
     immune: 'Dragon',
     statusNote: 'Checks Dragons/Darks; loves Ground/Fire partners for Steels.',
-    guideHref: '/learn/types/fairy',
+    guideHref: '/learn/pkm-types/fairy',
     pokedexHref: '/pokedex?type=fairy',
   },
 ];
@@ -274,7 +274,7 @@ export default function PokemonTypes() {
         }
         actions={[
           { href: '/pokedex', label: 'Open Pokédex', variant: 'primary' },
-          { href: '/types', label: 'Discover Pokémon Types', variant: 'dark' },
+          { href: '/pkm-types', label: 'Discover Pokémon Types', variant: 'dark' },
         ]}
       />
 
@@ -387,7 +387,7 @@ export default function PokemonTypes() {
             </div>
             <div className="mt-5">
               <Link
-                href="/learn/guides/type-coverage"
+                href="/learn/guides/pkm-type-coverage"
                 className="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60"
               >
                 Learn coverage basics

@@ -149,7 +149,7 @@ export default function PokemonGenerations() {
         }
         actions={[
           { href: '/pokedex', label: 'Open Pokédex', variant: 'primary' },
-          { href: '/learn/types', label: 'Discover Pokémon Types', variant: 'dark' },
+          { href: '/learn/pkm-types', label: 'Discover Pokémon Types', variant: 'dark' },
         ]}
       />
       {/* Generation cards */}
@@ -373,7 +373,10 @@ export default function PokemonGenerations() {
           </>,
           <>
             Building a team? Review the{' '}
-            <Link href="/learn/types" className="underline underline-offset-4 hover:no-underline">
+            <Link
+              href="/learn/pkm-types"
+              className="underline underline-offset-4 hover:no-underline"
+            >
               type chart
             </Link>{' '}
             and then use the{' '}

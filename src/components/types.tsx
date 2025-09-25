@@ -1,4 +1,4 @@
-// src/content/types.ts
+// src/content/pkm-types.ts
 
 export type TypeId =
   | 'normal'

@@ -225,7 +225,7 @@ export default function StarterChooser({
                   <Button href="/pokedex" variant="primary">
                     Open Pokédex
                   </Button>
-                  <Button href="/learn/types" variant="dark">
+                  <Button href="/learn/pkm-types" variant="dark">
                     Review type coverage
                   </Button>
                 </div>

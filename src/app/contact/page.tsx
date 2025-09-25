@@ -179,7 +179,7 @@ Sent from PokéWorld Explorer`
                 <li>
                   Looking for counters? Try the{' '}
                   <Link
-                    href="/learn/types"
+                    href="/learn/pkm-types"
                     className="font-medium text-indigo-600 hover:text-indigo-700"
                   >
                     Types guide

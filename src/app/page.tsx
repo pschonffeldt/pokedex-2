@@ -53,7 +53,7 @@ export default function HomePage() {
         }
         actions={[
           { href: '/pokedex', label: 'Open Pokédex', variant: 'primary' },
-          { href: '/types', label: 'Discover Pokémon Types', variant: 'dark' },
+          { href: '/pkm-types', label: 'Discover Pokémon Types', variant: 'dark' },
         ]}
       />
 
@@ -151,7 +151,7 @@ export default function HomePage() {
                 {TYPES.map(([id, emoji, label]) => (
                   <li key={id}>
                     <Link
-                      href={`/learn/types/${id}`}
+                      href={`/learn/pkm-types/${id}`}
                       title={label}
                       aria-label={label}
                       className="block rounded-lg border border-gray-200 bg-white text-xl hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60"
@@ -164,7 +164,7 @@ export default function HomePage() {
               </ul>
 
               <div className="mt-auto pt-5">
-                <Button href="/learn/types">Explore types</Button>
+                <Button href="/learn/pkm-types">Explore types</Button>
               </div>
             </div>
           </article>

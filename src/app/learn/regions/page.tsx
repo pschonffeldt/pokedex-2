@@ -162,7 +162,7 @@ export default function PokemonRegions() {
         }
         actions={[
           { href: '/pokedex', label: 'Open Pokédex', variant: 'primary' },
-          { href: '/types', label: 'Discover Pokémon Types', variant: 'dark' },
+          { href: '/pkm-types', label: 'Discover Pokémon Types', variant: 'dark' },
         ]}
       />
       {/* Regions grid */}
@@ -247,7 +247,10 @@ export default function PokemonRegions() {
           </>,
           <>
             Prepping gyms or the League? Review the{' '}
-            <Link href="/learn/types" className="underline underline-offset-4 hover:no-underline">
+            <Link
+              href="/learn/pkm-types"
+              className="underline underline-offset-4 hover:no-underline"
+            >
               type chart
             </Link>{' '}
             and build dual-typing coverage to counter each leader’s team.
